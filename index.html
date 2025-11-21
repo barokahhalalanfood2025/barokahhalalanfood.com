@@ -2,14 +2,25 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+    
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self' https:; 
+        script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com; 
+        style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; 
+        font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; 
+        img-src 'self' data: https:; 
+        connect-src 'self' https://cloudflareinsights.com;
+    ">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="facebook-domain-verification" content="di94yzdinnazm60ywer87215y3dhpf" />
 
     <title>BAROKAH HALALAN FOOD | Makanan Sehat, Halal & Thoyyib untuk Keluarga</title>
     <meta name="description" content="Produsen makanan sehat, halal, dan berkah. Solusi gizi terbaik untuk keluarga Indonesia. Abon Sapi Premium Tanpa MSG dan berbagai produk pilihan lainnya.">
     
     <link rel="stylesheet" href="style.css">
+    
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
     <link rel="apple-touch-icon" href="apple-icon-180x180.png">
@@ -157,3 +168,4 @@
 
 </body>
 </html>
+
