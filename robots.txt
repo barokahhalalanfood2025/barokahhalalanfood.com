@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://barokahhalalanfood.com/sitemap.xml
