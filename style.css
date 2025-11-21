@@ -6,18 +6,18 @@
 .fas { font-family: 'Font Awesome 6 Free'; font-weight: 900; }
 .fab { font-family: 'Font Awesome 6 Brands'; font-weight: 400; }
 
+/* Definisi Ikon */
 .fa-check:before { content: "\f00c"; } .fa-whatsapp:before { content: "\f232"; } .fa-instagram:before { content: "\f16d"; } .fa-facebook:before { content: "\f09a"; } .fa-tiktok:before { content: "\e07b"; } .fa-youtube:before { content: "\f167"; } .fa-store:before { content: "\f54e"; } .fa-arrow-right:before { content: "\f061"; } .fa-leaf:before { content: "\f06c"; } .fa-star:before { content: "\f005"; } .fa-handshake:before { content: "\f2b5"; } .fa-utensils:before { content: "\f2e7"; } .fa-map-marker-alt:before { content: "\f3c5"; }
 
-/* === 2. VARIABEL WARNA (PERBAIKAN KONTRAS) === */
+/* === 2. VARIABEL WARNA (DIPERBAIKI: LEBIH GELAP UNTUK KONTRAS) === */
 :root {
-    --primary-red: #d93025; /* Merah sedikit lebih gelap */
-    --dark-red: #b91c1c;
-    --primary-green: #188038; /* Hijau Google (lebih kontras) */
-    --dark-green: #14532d;
-    --text-dark: #202124; /* Hampir hitam */
-    --text-gray: #5f6368; /* Abu gelap standar Google */
-    --text-light: #ffffff;
-    --bg-light: #f8f9fa;
+    --primary-red: #c2201a; /* Merah lebih gelap */
+    --dark-red: #991b1b;
+    --primary-green: #14532d; /* Hijau SANGAT GELAP (Agar tulisan putih terbaca jelas) */
+    --dark-green: #0f3d20;
+    --text-dark: #111827; /* Hitam pekat */
+    --text-gray: #374151; /* Abu tua */
+    --bg-light: #f9fafb;
     --white: #ffffff;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
@@ -61,26 +61,26 @@ header { background: var(--white); padding: 1rem 0; box-shadow: var(--shadow); p
 .product-card { background: var(--white); border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; height: 100%; border: 1px solid #e5e7eb; }
 .product-img { height: 200px; width: 100%; object-fit: cover; background-color: #f1f5f9; }
 .product-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-.product-category { font-size: 0.8rem; text-transform: uppercase; color: var(--text-gray); font-weight: 700; letter-spacing: 0.5px; } /* Kontras diperbaiki */
+.product-category { font-size: 0.8rem; text-transform: uppercase; color: var(--text-gray); font-weight: 700; letter-spacing: 0.5px; } 
 .product-title { font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0; color: var(--text-dark); }
-.product-desc { font-size: 0.95rem; color: var(--text-gray); margin-bottom: 1.5rem; flex-grow: 1; } /* Kontras diperbaiki */
+.product-desc { font-size: 0.95rem; color: var(--text-gray); margin-bottom: 1.5rem; flex-grow: 1; } 
 
 .btn-product { display: block; text-align: center; background: var(--primary-red); color: var(--white); padding: 0.75rem; border-radius: 0.5rem; font-weight: 600; }
 .btn-product:hover { background: var(--dark-red); }
 
-.btn-disabled { background: #9ca3af; /* Abu lebih gelap agar terbaca */ color: #ffffff; cursor: not-allowed; }
+.btn-disabled { background: #6b7280; color: #ffffff; cursor: not-allowed; }
 
-/* === 8. PARTNERSHIP === */
+/* === 8. PARTNERSHIP (KONTRAS DIPERBAIKI) === */
 .partner-section { background: var(--bg-light); padding: 4rem 0; border-top: 1px solid #e5e7eb; }
 .partner-box { background: var(--primary-green); color: var(--white); padding: 3rem; border-radius: 1rem; text-align: center; }
 .partner-box h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem; color: var(--white); }
-.partner-box p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; color: #f0fdf4; } /* Teks putih kehijauan */
+.partner-box p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; color: #ffffff; opacity: 0.9; } /* Teks putih */
 .btn-white { background: var(--white); color: var(--primary-green); padding: 0.75rem 2rem; border-radius: 99px; font-weight: 700; display: inline-block; margin-top: 1.5rem; }
-.btn-white:hover { background: #f0fdf4; }
+.btn-white:hover { background: #f0fdf4; color: var(--dark-green); }
 
 /* === 9. FOOTER === */
 footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: center; }
 .social-links { margin: 1.5rem 0; font-size: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; }
-.social-links a { color: #d1d5db; }
+.social-links a { color: #e5e7eb; } /* Icon lebih terang */
 .social-links a:hover { color: var(--white); }
 .footer-copy { font-size: 0.875rem; border-top: 1px solid #374151; margin-top: 2rem; padding-top: 1.5rem; }
