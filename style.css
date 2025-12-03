@@ -78,116 +78,173 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
 .social-links a:hover { color: var(--white); }
 .footer-copy { font-size: 0.875rem; border-top: 1px solid #374151; margin-top: 2rem; padding-top: 1.5rem; }
 
-/* --- STYLE KHUSUS HERO PREMIUM (FONT & ANIMASI) --- */
+/* --- CSS HERO BOLD (MERAH MENYALA) --- */
 
-/* 1. Import Font Mahal (Eczar & Poppins) */
-@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@700;800&family=Poppins:wght@400;600;700&display=swap');
+/* Import Font (Wajib ada di paling atas CSS atau di Head HTML) */
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@800&family=Poppins:wght@400;600;800&display=swap');
 
-/* 2. Layout Hero Baru */
-#hero-premium {
-    /* Background Gradient Halus tapi Cerah */
-    background: linear-gradient(135deg, #fff1f2 0%, #ffffff 100%); 
-    padding: 4rem 1.5rem 5rem;
+/* Section Container */
+.hero-bold {
+    background: linear-gradient(135deg, #c2201a 0%, #7f1d1d 100%); /* Merah Gradasi */
+    padding: 5rem 1.5rem 7rem; /* Padding bawah lebih besar untuk curve */
     text-align: center;
+    color: white;
+    position: relative;
     overflow: hidden;
 }
 
-/* 3. Judul Besar & Mencolok */
-.premium-title {
-    font-family: 'Eczar', serif; /* Font Serif Tebal */
-    font-weight: 800;
-    font-size: 2.8rem; /* Ukuran Besar */
-    line-height: 1.2;
-    color: #1f2937; /* Warna Gelap Elegan */
-    margin-bottom: 1rem;
-    text-transform: capitalize;
+/* Wrapper Konten */
+.bold-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
 }
 
-/* Kata Kunci yang Di-Highlight Merah */
-.highlight-red {
-    color: #c2201a; /* Merah Brand Anda */
+/* Judul Utama */
+.bold-title {
+    font-family: 'Eczar', serif;
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    color: #ffffff;
+}
+
+/* Highlight Kuning */
+.bold-highlight {
+    color: #fde047;
+    font-style: italic;
     position: relative;
     display: inline-block;
 }
-/* Garis bawah kuning seperti stabilo */
-.highlight-red::after {
-    content: '';
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    width: 100%;
-    height: 8px;
-    background-color: rgba(253, 224, 71, 0.6); /* Kuning Transparan */
-    z-index: -1;
-    transform: rotate(-2deg);
-}
 
-/* 4. Deskripsi yang Enak Dibaca */
-.premium-desc {
+/* Deskripsi */
+.bold-desc {
     font-family: 'Poppins', sans-serif;
     font-size: 1.15rem;
-    color: #4b5563;
-    max-width: 700px;
     margin: 0 auto 2rem;
+    color: #fca5a5; /* Merah muda pucat */
     line-height: 1.6;
+    max-width: 650px;
 }
 
-/* 5. Tombol Mencolok (Merah & Berdenyut) */
-.btn-striking {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #c2201a; /* Merah Menyala */
-    color: white !important;
-    padding: 1rem 2.5rem;
-    border-radius: 50px; /* Bentuk Kapsul */
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    text-decoration: none;
-    box-shadow: 0 10px 25px rgba(194, 32, 26, 0.4); /* Bayangan Merah */
-    transition: all 0.3s ease;
-    animation: btnPulse 2s infinite; /* Efek Denyut */
-}
-
-.btn-striking:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(194, 32, 26, 0.5);
-    background-color: #991b1b;
-}
-
-/* Animasi Denyut */
-@keyframes btnPulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(194, 32, 26, 0.7); }
-    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(194, 32, 26, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(194, 32, 26, 0); }
-}
-
-/* 6. Info Trust (COD/Halal) */
-.trust-icons {
-    margin-top: 2rem;
+/* Badges Transparan */
+.bold-badges {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #14532d; /* Hijau Halal */
+    gap: 12px;
+    margin-bottom: 2.5rem;
 }
-.trust-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    background: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+.bold-badges span {
+    font-family: 'Poppins', sans-serif;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
 }
 
-/* Responsif HP */
+/* Box Gambar */
+.bold-img-box {
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+}
+/* Efek Glow di belakang gambar */
+.bold-img-box::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    background: rgba(255,255,255,0.3);
+    filter: blur(40px);
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.bold-img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    transform: rotate(-2deg); /* Miring dikit biar artsy */
+    border: 4px solid rgba(255,255,255,0.2);
+}
+
+/* Tombol CTA Kuning */
+.btn-bold {
+    display: inline-block;
+    background: #fde047; /* Kuning Terang */
+    color: #991b1b; /* Teks Merah */
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    text-decoration: none;
+    box-shadow: 0 8px 0px #b45309, 0 20px 40px rgba(0,0,0,0.3);
+    transition: all 0.2s;
+    margin-top: -40px; /* Naik menumpuk gambar */
+    position: relative;
+    z-index: 20;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.btn-bold:hover {
+    background: #fff000;
+    transform: translateY(-3px);
+}
+.btn-bold:active {
+    transform: translateY(5px);
+    box-shadow: 0 3px 0px #b45309;
+}
+
+/* Animasi Wiggle (Goyang) */
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+.wiggle-effect { animation: wiggle 3s infinite ease-in-out; }
+
+/* Info Trust (COD) */
+.bold-trust {
+    margin-top: 2.5rem;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+}
+
+/* Dekorasi Gelombang Bawah */
+.wave-bottom {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+}
+
+/* --- RESPONSIF HP --- */
 @media (max-width: 768px) {
-    .premium-title { font-size: 2rem; }
-    .btn-striking { width: 90%; justify-content: center; }
-    .trust-icons { flex-wrap: wrap; gap: 10px; }
+    .hero-bold { padding: 4rem 1rem 5rem; }
+    .bold-title { font-size: 2.2rem; }
+    .bold-img { max-width: 90%; transform: rotate(0deg); } /* Gambar lurus di HP */
+    .btn-bold { 
+        width: 100%; 
+        font-size: 1.1rem; 
+        padding: 1rem; 
+        margin-top: 1rem; /* Jarak normal di HP */
+    }
+    .bold-desc { font-size: 1rem; }
 }
