@@ -541,16 +541,13 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
 .proof-box {
     position: relative;
 }
-.proof-img {
+.cod-animasi {
     width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-    transform: rotate(-2deg);
-    border: 5px solid white;
-    transition: 0.3s;
-}
-.proof-box:hover .proof-img {
-    transform: rotate(0deg) scale(1.02);
+    max-width: 500px; /* Batas maksimal agar tidak terlalu besar */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Posisi tengah */
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15)); /* Bayangan halus mengikuti bentuk gambar */
 }
 /* Badge Mengambang */
 .floating-badge {
@@ -643,3 +640,4 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     .feature-item { text-align: left; }
     .trust-title { font-size: 1.8rem; }
 }
+
