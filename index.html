@@ -293,28 +293,328 @@
     </div>
 </section>
 
-        <section class="values-section">
-            <div class="container">
-                <h2 class="section-title">Mengapa Memilih Barokah Halalan Food?</h2>
-                <div class="values-grid">
-                    <div class="value-card">
-                        <i class="fas fa-check value-icon"></i>
-                        <h3>100% Halal & Thoyyib</h3>
-                        <p>Bahan baku pilihan yang diproses sesuai syariat Islam dan standar kebersihan tinggi.</p>
-                    </div>
-                    <div class="value-card">
-                        <i class="fas fa-leaf value-icon"></i>
-                        <h3>Tanpa MSG & Pengawet</h3>
-                        <p>Aman dikonsumsi balita hingga lansia. Fokus pada cita rasa alami bahan asli.</p>
-                    </div>
-                    <div class="value-card">
-                        <i class="fas fa-star value-icon"></i>
-                        <h3>Kualitas Premium</h3>
-                        <p>Menggunakan bahan grade A, seperti daging sapi murni dan minyak kelapa baru.</p>
-                    </div>
+        <style>
+    /* --- STYLE KHUSUS SECTION 2 (EDUKASI) --- */
+    
+    /* Pemisah Gelombang (Wave) agar transisi cantik */
+    .wave-divider {
+        position: relative;
+        top: -1px; /* Tempel ke section atas */
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        z-index: 2;
+    }
+    .wave-divider svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 60px;
+    }
+    .wave-fill {
+        fill: #ffffff; /* Warna sama dengan background section ini */
+    }
+
+    /* Container Utama */
+    #problem-section {
+        background-color: #ffffff;
+        padding: 0 1rem 4rem 1rem;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+    }
+
+    /* Judul Section */
+    .sec-title {
+        font-family: 'Eczar', serif;
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: #1f2937;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Sub-judul Merah */
+    .sec-subtitle {
+        font-size: 1.1rem;
+        color: #c2201a; /* Merah Brand */
+        font-weight: 700;
+        margin-bottom: 3rem;
+        display: inline-block;
+        border-bottom: 2px solid #fde047; /* Garis bawah kuning */
+        padding-bottom: 5px;
+    }
+
+    /* Grid Kartu */
+    .problem-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* Desain Kartu Modern */
+    .problem-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: left;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Bayangan halus */
+        border: 1px solid #f3f4f6;
+        transition: 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+    .problem-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(194, 32, 26, 0.1);
+        border-color: #fecaca;
+    }
+
+    /* Ikon di Kartu */
+    .card-icon-box {
+        width: 60px;
+        height: 60px;
+        background: #fee2e2; /* Background merah muda */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+    .card-icon {
+        font-size: 1.8rem;
+        color: #c2201a;
+    }
+
+    /* Teks di Kartu */
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        color: #1f2937;
+    }
+    .card-text {
+        font-size: 0.95rem;
+        color: #4b5563;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    /* Quote Dokter/Ahli */
+    .card-quote {
+        font-size: 0.85rem;
+        font-style: italic;
+        color: #6b7280;
+        border-left: 3px solid #fde047;
+        padding-left: 10px;
+        margin-top: auto; /* Dorong ke bawah */
+    }
+
+    /* Box Fakta Gizi (Biru Muda) */
+    .fact-box {
+        background: #eff6ff;
+        border-radius: 15px;
+        padding: 2rem;
+        max-width: 800px;
+        margin: 4rem auto 0;
+        border-left: 5px solid #3b82f6;
+        text-align: left;
+    }
+    .fact-title {
+        color: #1e40af;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Responsif HP */
+    @media (max-width: 600px) {
+        .sec-title { font-size: 1.5rem; }
+        .problem-card { padding: 1.5rem; }
+    }
+</style>
+
+<div class="wave-divider">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="wave-fill"></path>
+    </svg>
+</div>
+
+<section id="problem-section">
+    <div class="container">
+        
+        <h2 class="sec-title">Yakin Gizi Anak Sudah Cukup?<br>Hati-Hati Ancaman <span style="color:#c2201a;">Gizi Buruk!</span></h2>
+        <p class="sec-subtitle">Mencegah Stunting JAUH Lebih Mudah Daripada Mengobati</p>
+
+        <div class="problem-grid">
+            
+            <div class="problem-card">
+                <div class="card-icon-box"><i class="fas fa-utensils card-icon"></i></div>
+                <h3 class="card-title">Anak GTM & Lepeh Makan?</h3>
+                <p class="card-text">Jangan biarkan ia bosan lauk. Masa emas pertumbuhan butuh asupan protein yang konsisten setiap hari.</p>
+                <div class="card-quote">"Makanan monoton adalah penyebab utama GTM." <br>— IDAI</div>
+            </div>
+
+            <div class="problem-card">
+                <div class="card-icon-box"><i class="fas fa-brain card-icon"></i></div>
+                <h3 class="card-title">Bicara Lambat & Sulit Fokus?</h3>
+                <p class="card-text">Otak butuh Zinc & Zat Besi dari daging sapi murni untuk mengaktifkan koneksi sel sarafnya.</p>
+                <div class="card-quote">"Kekurangan Zat Besi hambat kognitif permanen." <br>— Kemenkes RI</div>
+            </div>
+
+            <div class="problem-card">
+                <div class="card-icon-box"><i class="fas fa-heartbeat card-icon"></i></div>
+                <h3 class="card-title">Takut Bahaya MSG?</h3>
+                <p class="card-text">Abon Barokah 100% Tanpa MSG & Pengawet. Aman untuk ginjal anak dan kesehatan jangka panjang.</p>
+                <div class="card-quote">"Pilih produk Clean Label (bebas aditif) untuk anak."</div>
+            </div>
+
+        </div>
+
+        <div class="fact-box">
+            <h3 class="fact-title"><i class="fas fa-microscope"></i> FAKTA MEDIS:</h3>
+            <p>Penelitian global membuktikan bahwa <strong>Protein Hewani (Daging Sapi)</strong> sangat krusial di 1000 Hari Pertama Kehidupan untuk mencegah stunting dan meningkatkan IQ anak.</p>
+        </div>
+
+        <p style="margin-top: 2.5rem; font-weight: 700; font-size: 1.1rem; color: #1f2937;">
+            Solusinya? <span style="background:#fde047; padding:0 5px;">Abon Sapi Barokah.</span> Praktis, Bergizi, & Disukai Anak.
+        </p>
+
+    </div>
+</section>
+
+        <style>
+    /* --- STYLE KHUSUS SECTION 3 (KEUNGGULAN) --- */
+    
+    #value-section {
+        background-color: #fef2f2; /* Merah sangat muda */
+        padding: 4rem 1rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Container Rapi */
+    .value-container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    /* Judul Utama */
+    .val-title {
+        font-family: 'Eczar', serif;
+        font-weight: 800;
+        font-size: 2rem;
+        color: #991b1b; /* Merah Tua */
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    /* List Keunggulan (Layout Horizontal) */
+    .value-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* Item Keunggulan */
+    .value-item {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 15px;
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border-left: 5px solid #c2201a; /* Garis Merah di Kiri */
+        transition: 0.3s;
+    }
+    .value-item:hover {
+        transform: translateX(10px); /* Geser kanan dikit saat di-hover */
+        box-shadow: 0 10px 25px rgba(194, 32, 26, 0.1);
+    }
+
+    /* Ikon */
+    .val-icon {
+        font-size: 2rem;
+        color: #c2201a;
+        background: #fee2e2;
+        padding: 15px;
+        border-radius: 12px;
+        min-width: 60px;
+        text-align: center;
+    }
+
+    /* Teks */
+    .val-text h3 {
+        font-family: 'Poppins', sans-serif; /* Balik ke Sans Serif agar modern */
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #1f2937;
+        margin: 0 0 0.5rem 0;
+    }
+    .val-text p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #4b5563;
+        line-height: 1.5;
+    }
+
+    /* Responsif HP */
+    @media (max-width: 600px) {
+        .val-title { font-size: 1.6rem; }
+        .value-item { flex-direction: column; align-items: center; text-align: center; border-left: none; border-top: 5px solid #c2201a; }
+        .value-item:hover { transform: translateY(-5px); }
+    }
+</style>
+
+<section id="value-section">
+    <div class="value-container">
+        
+        <h2 class="val-title">Mengapa Harus Abon Barokah?</h2>
+
+        <div class="value-list">
+            
+            <div class="value-item">
+                <div class="val-icon"><i class="fas fa-drumstick-bite"></i></div>
+                <div class="val-text">
+                    <h3>100% Daging Sapi Murni (Tanpa Oplosan)</h3>
+                    <p>Banyak abon murah dicampur kacang/bawang agar berat. Kami menjamin murni daging sapi grade A tanpa filler tepung.</p>
                 </div>
             </div>
-        </section>
+
+            <div class="value-item">
+                <div class="val-icon"><i class="fas fa-leaf"></i></div>
+                <div class="val-text">
+                    <h3>Tanpa MSG & Pengawet (Clean Label)</h3>
+                    <p>Aman dikonsumsi balita (MPASI) hingga lansia. Kami mengandalkan rasa gurih alami dari daging dan rempah asli.</p>
+                </div>
+            </div>
+
+            <div class="value-item">
+                <div class="val-icon"><i class="fas fa-mortar-pestle"></i></div>
+                <div class="val-text">
+                    <h3>Tekstur Tumbuk Tradisional</h3>
+                    <p>Bukan digiling mesin sampai hancur. Kami menumbuk daging secara manual agar seratnya tetap utuh dan terasa "daging banget".</p>
+                </div>
+            </div>
+
+            <div class="value-item">
+                <div class="val-icon"><i class="fas fa-check-circle"></i></div>
+                <div class="val-text">
+                    <h3>Jaminan Halal & Thoyyib</h3>
+                    <p>Diproses sesuai syariat Islam dengan standar kebersihan tinggi. Menggunakan minyak kelapa baru (VCO), bukan jelantah.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
         <section id="katalog" class="catalog-section">
     <div class="container">
@@ -525,6 +825,7 @@
 </style>
 </body>
 </html>
+
 
 
 
