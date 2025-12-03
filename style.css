@@ -640,4 +640,85 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     .feature-item { text-align: left; }
     .trust-title { font-size: 1.8rem; }
 }
+/* --- CSS ANIMASI COD (TANPA GAMBAR) --- */
+
+.cod-anim-box {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: #fef2f2; /* Latar merah muda sangat pudar */
+    border-radius: 20px;
+    overflow: hidden; /* Agar truk tidak keluar kotak */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Container Truk */
+.truck-wrapper {
+    position: relative;
+    animation: driving 1s infinite alternate ease-in-out; /* Efek truk genjot */
+}
+
+/* Ikon Truk Besar */
+.truck-icon {
+    font-size: 8rem;
+    color: #c2201a; /* Merah Brand */
+    filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.1));
+    z-index: 10;
+    position: relative;
+}
+
+/* Gelembung Bicara "COD" */
+.cod-bubble {
+    position: absolute;
+    top: -20px;
+    right: -30px;
+    background: #fde047; /* Kuning */
+    color: #991b1b;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    animation: popUp 2s infinite; /* Efek membesar-mengecil */
+    z-index: 20;
+    border: 3px solid white;
+}
+/* Segitiga gelembung */
+.cod-bubble::after {
+    content: ''; position: absolute; bottom: -8px; left: 20px;
+    border-width: 10px 10px 0; border-style: solid;
+    border-color: #fde047 transparent; display: block; width: 0;
+}
+
+/* Efek Angin (Garis-garis di belakang) */
+.wind-line {
+    position: absolute;
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    opacity: 0.6;
+    animation: windMove 0.5s linear infinite;
+}
+.w1 { width: 50px; top: 40%; left: -60px; animation-delay: 0.1s; }
+.w2 { width: 80px; top: 60%; left: -90px; animation-delay: 0.3s; }
+.w3 { width: 30px; top: 20%; left: -40px; animation-delay: 0.2s; }
+
+/* --- KEYFRAMES ANIMASI --- */
+@keyframes driving {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); } /* Truk naik turun dikit */
+}
+@keyframes popUp {
+    0%, 100% { transform: scale(1) rotate(5deg); }
+    50% { transform: scale(1.1) rotate(-5deg); } /* Gelembung goyang */
+}
+@keyframes windMove {
+    0% { transform: translateX(0); opacity: 0.8; }
+    100% { transform: translateX(-50px); opacity: 0; } /* Garis angin bergerak ke belakang */
+}
 
