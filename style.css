@@ -77,3 +77,85 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
 .social-links a { color: #e5e7eb; }
 .social-links a:hover { color: var(--white); }
 .footer-copy { font-size: 0.875rem; border-top: 1px solid #374151; margin-top: 2rem; padding-top: 1.5rem; }
+
+/* --- MULAI STYLE KHUSUS HERO "SWEET" (TIDAK GANGGU YANG LAIN) --- */
+
+/* Import Font Keren (Hanya dipakai di class .sweet-...) */
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@700&family=Poppins:wght@400;600&display=swap');
+
+.hero-sweet-bg {
+    background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%); /* Gradasi Pink Lembut ke Putih */
+    padding: 4rem 0 2rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Font default section ini */
+}
+
+/* Judul Utama yang "Mahal" */
+.sweet-title {
+    font-family: 'Eczar', serif; /* Font Eczar mirip template Basreng */
+    font-weight: 800;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    color: #c2201a; /* Merah Brand Anda */
+    margin-bottom: 0.5rem;
+    animation: sweetPulse 2s infinite ease-in-out; /* Animasi Denyut */
+}
+
+/* Highlight Kuning Stabilo */
+.sweet-highlight {
+    background: #fde047; 
+    color: #000; 
+    padding: 2px 8px; 
+    border-radius: 4px;
+    font-size: 0.7em; /* Sedikit lebih kecil dari judul utama */
+    vertical-align: middle;
+}
+
+/* Teks Deskripsi */
+.sweet-desc {
+    font-size: 1.1rem;
+    color: #374151;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.5;
+}
+
+/* Tombol "Manis" */
+.btn-sweet {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #c2201a;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px; /* Bulat lonjong modern */
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 15px rgba(194, 32, 26, 0.3); /* Bayangan merah */
+    transition: 0.3s;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+.btn-sweet:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(194, 32, 26, 0.4);
+    background: #991b1b;
+}
+
+/* Animasi Denyut */
+@keyframes sweetPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Responsif HP */
+@media (max-width: 768px) {
+    .sweet-title { font-size: 1.8rem; }
+    .sweet-desc { font-size: 0.95rem; padding: 0 1rem; }
+    .btn-sweet { width: 90%; }
+}
+/* --- SELESAI STYLE KHUSUS --- */
