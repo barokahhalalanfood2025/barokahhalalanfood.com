@@ -258,35 +258,37 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     .bold-desc { font-size: 1rem; }
 }
 
-/* --- CSS SECTION 2: VALUES BOLD --- */
+/* --- CSS SECTION 2: VALUES BOLD (PERBAIKAN) --- */
 
 .values-bold-section {
     padding: 4rem 1.5rem 5rem;
-    background-color: #ffffff; /* Putih agar nyambung dengan wave hero */
+    background-color: #ffffff;
     text-align: center;
 }
 
-/* Judul Section dengan Garis Bawah */
+/* Judul Section */
 .val-title-bold {
     font-family: 'Eczar', serif;
     font-size: 2.2rem;
     font-weight: 800;
-    color: #991b1b; /* Merah Gelap */
+    color: #991b1b;
     margin-bottom: 3rem;
     position: relative;
     display: inline-block;
+    text-transform: uppercase; /* Agar Huruf Besar Semua */
 }
+/* Garis Kuning di Bawah Judul */
 .val-title-bold::after {
     content: '';
     display: block;
-    width: 50%; /* Garis setengah lebar judul */
+    width: 60%;
     height: 5px;
     background: #fde047; /* Kuning */
-    margin: 8px auto 0;
+    margin: 10px auto 0;
     border-radius: 5px;
 }
 
-/* Grid Layout */
+/* Grid */
 .val-grid-bold {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -295,54 +297,37 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     margin: 0 auto;
 }
 
-/* Kartu Value */
+/* Kartu */
 .val-card-bold {
     background: #fff;
     padding: 2.5rem 1.5rem;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Bayangan halus */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     border: 1px solid #f3f4f6;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
     position: relative;
     overflow: hidden;
 }
-
-/* Garis Merah di Atas Kartu (Pemanis) */
-.val-card-bold::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 6px;
-    background: #c2201a;
+.val-card-bold::before { /* Garis Merah Atas */
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: #c2201a;
 }
+.val-card-bold:hover { transform: translateY(-10px); }
 
-.val-card-bold:hover {
-    transform: translateY(-10px); /* Efek naik saat di-hover */
-    box-shadow: 0 15px 35px rgba(194, 32, 26, 0.15); /* Bayangan kemerahan */
-}
-
-/* Lingkaran Ikon */
+/* Ikon Box (Lingkaran Kuning) */
 .val-icon-box {
     width: 80px;
     height: 80px;
-    background: #fefce8; /* Kuning sangat muda */
-    border: 2px solid #fde047; /* Border Kuning */
-    color: #c2201a; /* Ikon Merah */
+    background: #fefce8;
+    border: 2px solid #fde047;
+    color: #c2201a;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.5rem;
-    font-size: 2rem;
-    transition: 0.3s;
+    font-size: 2.5rem; /* Ukuran Ikon Diperbesar */
 }
 
-.val-card-bold:hover .val-icon-box {
-    background: #fde047; /* Berubah kuning pekat saat hover */
-    transform: scale(1.1);
-}
-
-/* Teks dalam Kartu */
 .val-head-bold {
     font-family: 'Eczar', serif;
     font-size: 1.4rem;
@@ -356,10 +341,4 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     font-size: 1rem;
     color: #4b5563;
     line-height: 1.6;
-}
-
-/* Responsif HP */
-@media (max-width: 768px) {
-    .val-title-bold { font-size: 1.8rem; }
-    .val-grid-bold { gap: 1.5rem; }
 }
