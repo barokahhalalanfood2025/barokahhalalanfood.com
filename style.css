@@ -505,38 +505,40 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     .wave-divider svg { height: 40px; } /* Gelombang lebih kecil di HP */
 }
 
-/* --- CSS SECTION 4: COD STYLE BASRENG (SOBEKAN KERTAS) --- */
+/* --- CSS SECTION 4 FINAL: YELLOW TORN PAPER STYLE --- */
 
 .cod-fun-section {
     position: relative;
-    background-color: #c2201a; /* Merah Brand */
+    background-color: #ffc107; /* KUNING CERAH (Seperti Template Pisang) */
     padding: 6rem 1.5rem 6rem;
     text-align: center;
-    color: white;
-    /* EFEK SOBEKAN KERTAS DI ATAS */
+    color: #1f2937; /* Teks Hitam agar terbaca di kuning */
+    
+    /* EFEK SOBEKAN KERTAS NATURAL (RANDOM) */
+    /* Pola ini dibuat acak tinggi-rendahnya agar persis sobekan kertas */
     clip-path: polygon(
-        0% 0%, 100% 0%, 100% 100%, 0% 100%, 
-        0% 0%, 2% 20px, 4% 0%, 6% 20px, 8% 0%, 10% 20px, 
-        12% 0%, 14% 20px, 16% 0%, 18% 20px, 20% 0%, 22% 20px, 
-        24% 0%, 26% 20px, 28% 0%, 30% 20px, 32% 0%, 34% 20px, 
-        36% 0%, 38% 20px, 40% 0%, 42% 20px, 44% 0%, 46% 20px, 
-        48% 0%, 50% 20px, 52% 0%, 54% 20px, 56% 0%, 58% 20px, 
-        60% 0%, 62% 20px, 64% 0%, 66% 20px, 68% 0%, 70% 20px, 
-        72% 0%, 74% 20px, 76% 0%, 78% 20px, 80% 0%, 82% 20px, 
-        84% 0%, 86% 20px, 88% 0%, 90% 20px, 92% 0%, 94% 20px, 
-        96% 0%, 98% 20px, 100% 0%
+        0% 40px,
+        3% 0px, 5% 30px, 8% 5px, 12% 35px, 15% 5px, 18% 30px, 
+        22% 0px, 25% 30px, 28% 5px, 32% 35px, 35% 0px, 38% 30px, 
+        42% 5px, 45% 35px, 48% 0px, 52% 30px, 55% 5px, 58% 30px, 
+        62% 0px, 65% 35px, 68% 5px, 72% 30px, 75% 0px, 78% 35px, 
+        82% 5px, 85% 30px, 88% 0px, 92% 35px, 95% 5px, 98% 30px,
+        100% 0px, 
+        100% 100%, 0% 100%
     );
-    margin-top: -40px; /* Tarik ke atas agar menutupi section sebelumnya */
-    z-index: 10;
+    
+    /* Teknik Menumpuk: Tarik ke atas agar menutupi bagian bawah Section 3 */
+    margin-top: -50px; 
+    z-index: 10; 
 }
 
-/* Container Flexbox */
+/* Container */
 .cod-fun-grid {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -549,9 +551,13 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
 .cod-fun-img {
     width: 100%;
     max-width: 450px;
-    /* Efek gambar miring dikit biar santai */
-    transform: rotate(-3deg);
-    filter: drop-shadow(10px 10px 0px rgba(0,0,0,0.2)); /* Bayangan kasar */
+    /* Efek Miring Santai */
+    transform: rotate(-3deg); 
+    filter: drop-shadow(10px 15px 0px rgba(0,0,0,0.1));
+    transition: 0.3s;
+}
+.cod-fun-img:hover {
+    transform: rotate(0deg) scale(1.05);
 }
 
 /* Teks Kanan */
@@ -560,86 +566,76 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     text-align: left;
 }
 
-/* Judul Miring & Blok Warna (Gaya Basreng) */
+/* Judul Miring & Blok Warna */
 .fun-headline {
     font-family: 'Eczar', serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 800;
-    line-height: 1.4;
-    color: white;
+    line-height: 1.2;
+    color: #1f2937; /* Hitam */
     margin-bottom: 1.5rem;
 }
+/* Highlight Merah di atas Kuning */
 .fun-highlight {
-    background: #fde047; /* Kuning */
-    color: #000; /* Teks Hitam */
+    background: #c2201a; /* Merah */
+    color: white; /* Teks Putih */
     padding: 5px 15px;
-    transform: rotate(-2deg); /* Miring kiri */
+    transform: rotate(-2deg);
     display: inline-block;
-    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
 }
 .fun-highlight-2 {
     background: white;
     color: #c2201a;
-    padding: 5px 15px;
-    transform: rotate(2deg); /* Miring kanan */
+    padding: 2px 10px;
+    transform: rotate(1deg);
     display: inline-block;
     margin-top: 5px;
-    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+    border: 2px solid #c2201a;
+    font-size: 0.7em;
 }
 
 /* List Poin */
-.fun-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2rem;
-}
+.fun-list { list-style: none; padding: 0; margin-bottom: 2rem; }
 .fun-list li {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: flex; align-items: center; gap: 10px; color: #374151;
 }
-.fun-list i {
-    color: #fde047; /* Centang Kuning */
-    font-size: 1.4rem;
-}
+.fun-list i { color: #c2201a; font-size: 1.5rem; }
 
-/* Tombol Goyang */
+/* Tombol Merah Goyang */
 .btn-fun {
     display: inline-block;
-    background: #fde047;
-    color: #c2201a;
+    background: #c2201a; /* Tombol Merah */
+    color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
     font-size: 1.3rem;
     padding: 1rem 3rem;
-    border-radius: 10px; /* Kotak rounded dikit, bukan bulat penuh */
+    border-radius: 12px;
     text-decoration: none;
-    box-shadow: 6px 6px 0px #000000; /* Shadow Hitam Kasar */
+    box-shadow: 0 8px 0px #7f1d1d; /* Efek Tombol Timbul */
     transform: rotate(-1deg);
-    animation: wiggle 2s infinite ease-in-out;
+    animation: wiggle 3s infinite ease-in-out;
 }
-.btn-fun:hover {
-    transform: rotate(0deg) scale(1.05);
-    background: #fff;
+.btn-fun:hover { transform: translateY(4px); box-shadow: 0 4px 0px #7f1d1d; background: #b91c1c; }
+
+/* Link Kecil */
+.link-partner-small {
+    display: block; margin-top: 1.5rem; font-size: 0.9rem; color: #4b5563; text-decoration: underline; font-weight: 600;
 }
 
-/* Animasi Wiggle */
-@keyframes wiggle {
-    0%, 100% { transform: rotate(-2deg); }
-    50% { transform: rotate(2deg); }
-}
+@keyframes wiggle { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
 
 /* Responsif HP */
 @media (max-width: 768px) {
-    .cod-fun-section { padding-top: 4rem; margin-top: -20px; }
-    .cod-fun-grid { flex-direction: column-reverse; gap: 1rem; } /* Gambar di atas teks di HP */
+    .cod-fun-section { padding-top: 5rem; margin-top: -40px; }
+    .cod-fun-grid { flex-direction: column-reverse; gap: 2rem; }
     .cod-fun-content { text-align: center; }
-    .cod-fun-img { max-width: 280px; margin: 0 auto; }
+    .cod-fun-img { max-width: 280px; margin: 0 auto; display: block; }
     .fun-list { text-align: left; display: inline-block; }
     .btn-fun { width: 100%; font-size: 1.1rem; }
 }
-
