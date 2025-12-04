@@ -348,24 +348,33 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     color: #4b5563;
     line-height: 1.6;
 }
-
+=======================================================================
 /* --- CSS SECTION 3: KATALOG PREMIUM (WAVE & HIGH CONTRAST) --- */
 
 /* Container Utama Section (Relatif untuk menampung wave) */
 .catalog-premium-section {
     position: relative;
-    /* Background Merah Gradasi */
     background: linear-gradient(180deg, #991b1b 0%, #7f1d1d 100%);
-    padding: 6rem 1.5rem 8rem; /* Padding atas-bawah diperbesar untuk wave */
+    padding: 6rem 1.5rem 8rem; 
     text-align: center;
-    overflow: hidden;
 }
-
 /* Hiasan Pola Bintik */
 .catalog-premium-section::before {
     content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
     background-size: 20px 20px; pointer-events: none;
+}
+/* Gelombang Penutup Bawah */
+.catalog-premium-section::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0;
+    width: 100%;
+    height: 80px; /* Tinggi gelombang */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffc107' fill-opacity='1' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 10;
 }
 
 /* --- DIVIDER GELOMBANG (WAVE) --- */
@@ -505,16 +514,16 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     .wave-divider svg { height: 40px; } /* Gelombang lebih kecil di HP */
 }
 
+===============================================================
 /* --- CSS SECTION 4 FINAL: GRADASI KUNING --- */
 
 .cod-fun-section {
     position: relative;
-    /* Gradasi Kuning: Dari Kuning Sangat Muda (Atas) ke Kuning Emas (Bawah) */
-    background: linear-gradient(180deg, #fefce8 0%, #fde047 100%); 
-    padding: 2rem 1.5rem 6rem; /* Padding atas dikurangi karena gelombang dari atas */
+    background-color: #ffc107; /* Kuning */
+    padding: 2rem 1.5rem 6rem; /* Padding atas kecil saja */
     text-align: center;
-    color: #1f2937; /* Teks Hitam agar kontras */
-    z-index: 1;
+    color: #1f2937;
+    /* TIDAK ADA CLIP-PATH, TIDAK ADA MARGIN NEGATIF */
 }
 
 /* Container */
@@ -586,3 +595,4 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     .cod-fun-img { max-width: 280px; margin: 0 auto; display: block; }
     .btn-fun { width: 100%; font-size: 1.1rem; }
 }
+
