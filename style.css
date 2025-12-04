@@ -348,61 +348,18 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     color: #4b5563;
     line-height: 1.6;
 }
-=======================================================================
-/* --- CSS SECTION 3: KATALOG PREMIUM (WAVE & HIGH CONTRAST) --- */
-
-/* Container Utama Section (Relatif untuk menampung wave) */
+/* =========================================
+   BAGIAN 3: KATALOG PREMIUM (RED GRADIENT)
+   ========================================= */
 .catalog-premium-section {
     position: relative;
-    background: linear-gradient(180deg, #991b1b 0%, #7f1d1d 100%);
-    padding: 6rem 1.5rem 8rem; 
+    background: linear-gradient(180deg, #991b1b 0%, #7f1d1d 100%); /* Merah Mewah */
+    padding: 6rem 1.5rem 10rem; /* Padding bawah besar untuk ruang gelombang */
     text-align: center;
-}
-/* Hiasan Pola Bintik */
-.catalog-premium-section::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
-    background-size: 20px 20px; pointer-events: none;
-}
-/* Gelombang Penutup Bawah */
-.catalog-premium-section::after {
-    content: '';
-    position: absolute;
-    bottom: -1px; left: 0;
-    width: 100%;
-    height: 80px; /* Tinggi gelombang */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffc107' fill-opacity='1' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 10;
+    color: white;
 }
 
-/* --- DIVIDER GELOMBANG (WAVE) --- */
-.wave-divider {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    z-index: 1;
-}
-.wave-top {
-    top: -1px; /* Tempel di atas */
-    transform: rotate(180deg); /* Dibalik agar melengkung ke bawah */
-}
-.wave-bottom {
-    bottom: -1px; /* Tempel di bawah */
-}
-.wave-fill {
-    fill: #ffffff; /* Warna gelombang DISAMAKAN dengan background section atas/bawahnya (Putih) */
-}
-.wave-divider svg {
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 60px; /* Tinggi gelombang */
-}
-
-/* Judul Section */
+/* Judul Section 3 */
 .cat-title-premium {
     font-family: 'Eczar', serif;
     font-size: 2.5rem;
@@ -410,32 +367,25 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     color: #ffffff;
     margin-bottom: 3rem;
     text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    position: relative; z-index: 2;
 }
 .cat-title-premium span {
     color: #fde047;
     font-style: italic;
-    position: relative;
-}
-/* Garis bawah melengkung */
-.cat-title-premium span::after {
-    content: ''; display: block; width: 100%; height: 8px;
-    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0 10 Q 50 20 100 10" stroke="%23fde047" stroke-width="5" fill="none" /></svg>');
-    background-repeat: no-repeat; background-size: 100% 100%;
-    position: absolute; bottom: -15px; left: 0;
+    border-bottom: 3px solid #fde047;
 }
 
-/* Grid Layout */
+/* Grid Kartu Produk */
 .cat-grid-premium {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
     max-width: 1100px;
     margin: 0 auto;
-    position: relative; z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
-/* Kartu Produk */
+/* Style Kartu Produk (Putih) */
 .prod-card-premium {
     background: white;
     border-radius: 20px;
@@ -460,73 +410,69 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
 }
 .prod-card-premium:hover .prod-img-premium { transform: scale(1.1); }
 
-/* --- PERBAIKAN BADGE (KONTRAS TINGGI) --- */
+/* Badge/Label */
 .cat-badge {
-    position: absolute;
-    top: 15px; left: 15px;
-    /* Default Merah Solid & Teks Putih */
-    background: #c2201a;
-    color: white;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    border: 2px solid white; /* Border putih agar makin tegas */
+    position: absolute; top: 15px; left: 15px;
+    background: #c2201a; color: white;
+    padding: 6px 14px; border-radius: 20px;
+    font-size: 0.75rem; font-weight: 800; text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); border: 2px solid white;
 }
-/* Khusus Badge Hijau (Ready Stock) */
-.badge-green {
-    background: #15803d !important; /* Hijau Solid */
-    color: white !important;
-}
+.badge-green { background: #15803d !important; }
 
 /* Info Produk */
 .prod-info-premium {
     padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; text-align: left;
 }
 .prod-title-premium {
-    font-family: 'Eczar', serif; font-size: 1.5rem; font-weight: 700; margin: 0 0 0.5rem 0; color: #1f2937;
+    font-family: 'Eczar', serif; font-size: 1.5rem; font-weight: 700;
+    margin: 0 0 0.5rem 0; color: #1f2937;
 }
 .prod-desc-premium {
-    font-family: 'Poppins', sans-serif; font-size: 0.95rem; color: #6b7280; margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.5;
+    font-family: 'Poppins', sans-serif; font-size: 0.95rem; color: #6b7280;
+    margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.5;
 }
 
-/* Tombol */
+/* Tombol Beli */
 .btn-cat-premium {
-    display: block; width: 100%; padding: 14px; border-radius: 50px; text-align: center; font-weight: 800; font-size: 1rem; text-decoration: none; color: white !important; transition: 0.2s; border: none; text-transform: uppercase; letter-spacing: 0.5px;
+    display: block; width: 100%; padding: 14px; border-radius: 50px;
+    text-align: center; font-weight: 800; font-size: 1rem;
+    text-decoration: none; color: white !important; transition: 0.2s;
+    border: none; text-transform: uppercase; letter-spacing: 0.5px;
 }
-.btn-red-p { background: linear-gradient(90deg, #c2201a 0%, #dc2626 100%); box-shadow: 0 5px 15px rgba(194, 32, 26, 0.3); }
-.btn-red-p:hover { background: #991b1b; transform: translateY(-2px); }
-.btn-green-p { background: linear-gradient(90deg, #14532d 0%, #16a34a 100%); box-shadow: 0 5px 15px rgba(22, 163, 74, 0.3); }
-.btn-green-p:hover { background: #14532d; transform: translateY(-2px); }
+.btn-red-p { background: linear-gradient(90deg, #c2201a 0%, #dc2626 100%); }
+.btn-green-p { background: linear-gradient(90deg, #14532d 0%, #16a34a 100%); }
 .btn-gray-p { background: #e5e7eb; color: #9ca3af !important; cursor: not-allowed; }
 
-/* Info Tambahan */
-.stock-info {
-    margin-top: 12px; font-size: 0.85rem; font-weight: 700; color: #16a34a; display: flex; align-items: center; gap: 6px; justify-content: center; background: #f0fdf4; padding: 5px; border-radius: 8px;
+.btn-red-p:hover, .btn-green-p:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+/* GELOMBANG PENUTUP SECTION 3 (Warna Kuning) */
+.catalog-premium-section::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0;
+    width: 100%;
+    height: 80px; /* Tinggi Gelombang */
+    /* SVG Wave berwarna KUNING (#ffc107) agar nyambung ke section bawah */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffc107' fill-opacity='1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 5;
 }
 
-/* Responsif HP */
-@media (max-width: 768px) {
-    .catalog-premium-section { padding: 5rem 1rem 6rem; }
-    .cat-title-premium { font-size: 2rem; }
-    .wave-divider svg { height: 40px; } /* Gelombang lebih kecil di HP */
-}
 
-===============================================================
-/* --- CSS SECTION 4 FINAL: GRADASI KUNING --- */
-
+/* =========================================
+   BAGIAN 4: COD FUN STYLE (YELLOW BACKGROUND)
+   ========================================= */
 .cod-fun-section {
     position: relative;
-    background-color: #ffc107; /* Kuning */
-    padding: 2rem 1.5rem 6rem; /* Padding atas kecil saja */
+    background-color: #ffc107; /* KUNING CERAH */
+    padding: 2rem 1.5rem 6rem; /* Padding atas kecil karena sudah ada wave dari atas */
     text-align: center;
     color: #1f2937;
-    /* TIDAK ADA CLIP-PATH, TIDAK ADA MARGIN NEGATIF */
 }
 
-/* Container */
+/* Container COD */
 .cod-fun-grid {
     display: flex;
     flex-direction: row;
@@ -535,20 +481,19 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     gap: 3rem;
     max-width: 1000px;
     margin: 0 auto;
-    position: relative; z-index: 2;
 }
 
 /* Gambar Kiri */
 .cod-fun-img-box { flex: 1; position: relative; }
 .cod-fun-img {
     width: 100%; max-width: 450px;
-    transform: rotate(-3deg); filter: drop-shadow(10px 15px 0px rgba(0,0,0,0.05));
+    transform: rotate(-3deg); filter: drop-shadow(10px 15px 0px rgba(0,0,0,0.1));
 }
 
 /* Teks Kanan */
 .cod-fun-content { flex: 1; text-align: left; }
 
-/* Judul */
+/* Judul Miring */
 .fun-headline {
     font-family: 'Eczar', serif; font-size: 2.5rem; font-weight: 800; line-height: 1.2;
     color: #1f2937; margin-bottom: 1.5rem;
@@ -564,7 +509,14 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     border: 2px solid #c2201a; font-size: 0.7em; font-weight: 700;
 }
 
-/* Tombol Merah */
+/* List & Tombol */
+.fun-list { list-style: none; padding: 0; margin-bottom: 2rem; }
+.fun-list li {
+    font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 600;
+    margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: #374151;
+}
+.fun-list i { color: #c2201a; font-size: 1.5rem; }
+
 .btn-fun {
     display: inline-block; background: #c2201a; color: white;
     font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 1.3rem;
@@ -574,25 +526,21 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
 }
 .btn-fun:hover { transform: translateY(4px); box-shadow: 0 4px 0px #7f1d1d; background: #b91c1c; }
 
-/* SVG GELOMBANG BESAR (Menghubungkan Sec 3 ke Sec 4) */
-/* Kita pasang ini di ATAS section 4, tapi warnanya PUTIH (warna Sec 3) */
-.wave-connector {
-    position: absolute;
-    top: 0; left: 0; width: 100%;
-    line-height: 0;
-    transform: rotate(180deg); /* Dibalik agar melengkung ke bawah */
+.link-partner-small {
+    display: block; margin-top: 1.5rem; font-size: 0.9rem; color: #4b5563; text-decoration: underline; font-weight: 600;
 }
-.wave-connector svg {
-    display: block; width: calc(100% + 1.3px); height: 80px; /* Gelombang Besar */
-}
-.wave-fill-white { fill: #ffffff; } /* Warna Putih (sama dengan Section 3) */
+
+/* Animasi */
+@keyframes wiggle { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
 
 /* Responsif HP */
 @media (max-width: 768px) {
-    .cod-fun-section { padding-top: 4rem; }
+    .catalog-premium-section { padding: 5rem 1rem 8rem; }
+    .cat-title-premium { font-size: 2rem; }
+    
     .cod-fun-grid { flex-direction: column-reverse; gap: 2rem; }
     .cod-fun-content { text-align: center; }
     .cod-fun-img { max-width: 280px; margin: 0 auto; display: block; }
+    .fun-list { text-align: left; display: inline-block; }
     .btn-fun { width: 100%; font-size: 1.1rem; }
 }
-
