@@ -505,35 +505,16 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     .wave-divider svg { height: 40px; } /* Gelombang lebih kecil di HP */
 }
 
-/* --- CSS SECTION 4 FINAL: REAL RIPPED PAPER STYLE --- */
+/* --- CSS SECTION 4 FINAL: GRADASI KUNING --- */
 
 .cod-fun-section {
     position: relative;
-    background-color: #ffc107; /* KUNING CERAH (Gaya Pisang Lumer) */
-    padding: 6rem 1.5rem 6rem;
+    /* Gradasi Kuning: Dari Kuning Sangat Muda (Atas) ke Kuning Emas (Bawah) */
+    background: linear-gradient(180deg, #fefce8 0%, #fde047 100%); 
+    padding: 2rem 1.5rem 6rem; /* Padding atas dikurangi karena gelombang dari atas */
     text-align: center;
-    color: #1f2937;
-    margin-top: -2px; /* Hilangkan celah putih */
-}
-
-/* --- EFEK SOBEKAN KERTAS NYATA (SVG) --- */
-/* Ini triknya: Kita tempel gambar SVG sobekan putih di bagian paling atas */
-.cod-fun-section::before {
-    content: '';
-    position: absolute;
-    top: -1px; /* Tempel di garis atas */
-    left: 0;
-    width: 100%;
-    height: 50px; /* Tinggi sobekan */
-    background-color: transparent;
-    
-    /* Gambar Sobekan Kertas Putih (Encoded SVG) */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47,0,47,20,94,20S141,46,188,46s47,20,94,20S329,46,376,46s47,20,94,20S517,46,564,46s47,20,94,20,47-20,94-20,47,20,94,20,47-20,94-20,47,20,94,20,47-20,94-20,47,20,94,20V0Z' fill='%23ffffff'/%3E%3C/svg%3E");
-    
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    z-index: 5;
-    transform: rotate(180deg); /* Balik arah sobekan agar terlihat seperti kertas putus */
+    color: #1f2937; /* Teks Hitam agar kontras */
+    z-index: 1;
 }
 
 /* Container */
@@ -545,109 +526,63 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     gap: 3rem;
     max-width: 1000px;
     margin: 0 auto;
+    position: relative; z-index: 2;
 }
 
-/* Gambar Kiri (Miring Asik) */
-.cod-fun-img-box {
-    flex: 1;
-    position: relative;
-    /* Animasi Mengambang */
-    animation: float 4s ease-in-out infinite; 
-}
+/* Gambar Kiri */
+.cod-fun-img-box { flex: 1; position: relative; }
 .cod-fun-img {
-    width: 100%;
-    max-width: 450px;
-    transform: rotate(-3deg); 
-    filter: drop-shadow(10px 15px 0px rgba(0,0,0,0.1));
+    width: 100%; max-width: 450px;
+    transform: rotate(-3deg); filter: drop-shadow(10px 15px 0px rgba(0,0,0,0.05));
 }
 
 /* Teks Kanan */
-.cod-fun-content {
-    flex: 1;
-    text-align: left;
-}
+.cod-fun-content { flex: 1; text-align: left; }
 
-/* Judul Miring & Blok Warna */
+/* Judul */
 .fun-headline {
-    font-family: 'Eczar', serif;
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.2;
-    color: #1f2937;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 0px rgba(255,255,255,0.5);
+    font-family: 'Eczar', serif; font-size: 2.5rem; font-weight: 800; line-height: 1.2;
+    color: #1f2937; margin-bottom: 1.5rem;
 }
-/* Highlight Merah Background */
 .fun-highlight {
-    background: #c2201a; /* Merah Brand */
-    color: white;
-    padding: 5px 15px;
-    transform: rotate(-2deg);
-    display: inline-block;
-    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+    background: #c2201a; color: white; padding: 5px 15px;
+    transform: rotate(-2deg); display: inline-block;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
 }
-/* Highlight Putih Border Merah */
 .fun-highlight-2 {
-    background: white;
-    color: #c2201a;
-    padding: 3px 12px;
-    transform: rotate(2deg);
-    display: inline-block;
-    margin-top: 10px;
-    border: 3px solid #c2201a;
-    font-size: 0.7em;
-    font-weight: 700;
+    background: white; color: #c2201a; padding: 3px 12px;
+    transform: rotate(2deg); display: inline-block; margin-top: 10px;
+    border: 2px solid #c2201a; font-size: 0.7em; font-weight: 700;
 }
 
-/* List Poin */
-.fun-list { list-style: none; padding: 0; margin-bottom: 2rem; }
-.fun-list li {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    display: flex; align-items: center; gap: 10px; color: #374151;
-}
-.fun-list i { color: #c2201a; font-size: 1.5rem; }
-
-/* Tombol Merah Tebal */
+/* Tombol Merah */
 .btn-fun {
-    display: inline-block;
-    background: #c2201a;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 900;
-    font-size: 1.3rem;
-    padding: 1rem 3rem;
-    border-radius: 15px;
-    text-decoration: none;
-    box-shadow: 0 8px 0px #7f1d1d; /* Efek Tombol Timbul */
-    transform: rotate(-1deg);
-    transition: 0.2s;
-    /* Efek Goyang */
-    animation: wiggle 3s infinite ease-in-out;
+    display: inline-block; background: #c2201a; color: white;
+    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 1.3rem;
+    padding: 1rem 3rem; border-radius: 15px; text-decoration: none;
+    box-shadow: 0 8px 0px #7f1d1d; transform: rotate(-1deg);
+    transition: 0.2s; animation: wiggle 3s infinite ease-in-out;
 }
-.btn-fun:hover { 
-    transform: translateY(4px); 
-    box-shadow: 0 4px 0px #7f1d1d; 
-    background: #b91c1c; 
-}
+.btn-fun:hover { transform: translateY(4px); box-shadow: 0 4px 0px #7f1d1d; background: #b91c1c; }
 
-/* Animasi */
-@keyframes wiggle { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-
-/* Link Kecil */
-.link-partner-small {
-    display: block; margin-top: 1.5rem; font-size: 0.9rem; color: #4b5563; text-decoration: underline; font-weight: 600;
+/* SVG GELOMBANG BESAR (Menghubungkan Sec 3 ke Sec 4) */
+/* Kita pasang ini di ATAS section 4, tapi warnanya PUTIH (warna Sec 3) */
+.wave-connector {
+    position: absolute;
+    top: 0; left: 0; width: 100%;
+    line-height: 0;
+    transform: rotate(180deg); /* Dibalik agar melengkung ke bawah */
 }
+.wave-connector svg {
+    display: block; width: calc(100% + 1.3px); height: 80px; /* Gelombang Besar */
+}
+.wave-fill-white { fill: #ffffff; } /* Warna Putih (sama dengan Section 3) */
 
 /* Responsif HP */
 @media (max-width: 768px) {
-    .cod-fun-section { padding-top: 5rem; }
+    .cod-fun-section { padding-top: 4rem; }
     .cod-fun-grid { flex-direction: column-reverse; gap: 2rem; }
     .cod-fun-content { text-align: center; }
     .cod-fun-img { max-width: 280px; margin: 0 auto; display: block; }
-    .fun-list { text-align: left; display: inline-block; }
     .btn-fun { width: 100%; font-size: 1.1rem; }
 }
