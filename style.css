@@ -500,195 +500,161 @@ footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: cente
     .wave-divider svg { height: 40px; } /* Gelombang lebih kecil di HP */
 }
 
-/* --- CSS SECTION 4 LENGKAP: LAYOUT + ANIMASI TRUK --- */
+/* --- CSS SECTION 4: COD RED BOLD (VERSI STABIL) --- */
 
-.trust-cod-section {
-    padding: 6rem 1.5rem;
-    background-color: #ffffff;
+.cod-section-bold {
+    position: relative;
+    background-color: #c2201a; /* Merah Brand Solid */
+    padding: 4rem 1.5rem 6rem;
     text-align: center;
-    overflow: hidden; /* Penting agar animasi tidak bocor keluar layar */
-}
-
-/* Judul Section */
-.trust-title {
-    font-family: 'Eczar', serif;
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #1f2937;
-    margin-bottom: 3rem;
-    line-height: 1.2;
-}
-.trust-highlight {
-    background: #fde047; /* Kuning Stabilo */
-    color: #000;
-    padding: 2px 10px;
-    transform: rotate(-1deg);
-    display: inline-block;
-}
-
-/* Container Grid */
-.trust-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    align-items: center;
-}
-
-/* --- BAGIAN KIRI: ANIMASI TRUK CSS (Start) --- */
-.proof-box {
-    position: relative;
-    /* Agar truk terlihat fokus di tengah */
-    display: flex;
-    justify-content: center;
-}
-
-.cod-anim-box {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    height: 280px;
-    background: #fef2f2; /* Latar Merah Muda Pudar */
-    border-radius: 30px;
+    color: white;
     overflow: hidden;
+}
+
+/* Judul Utama */
+.cod-title-bold {
+    font-family: 'Eczar', serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.cod-title-bold span {
+    background: #fde047; /* Kuning */
+    color: #c2201a;      /* Teks Merah */
+    padding: 2px 12px;
+    transform: rotate(-2deg);
+    display: inline-block;
+    border-radius: 5px;
+}
+
+/* Container Layout Flexbox (Lebih Aman dari Grid) */
+.cod-flex-container {
     display: flex;
+    flex-direction: row; /* Desktop: Sebelahan */
     align-items: center;
     justify-content: center;
-    border: 4px solid white;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-}
-
-/* Grup Truk */
-.truck-wrapper {
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
     position: relative;
-    /* Animasi Truk Genjot (Naik Turun) */
-    animation: driving 0.8s infinite alternate ease-in-out;
+    z-index: 2;
 }
 
-/* Ikon Truk */
-.truck-icon {
-    font-size: 9rem; /* Ukuran Truk */
-    color: #c2201a;   /* Merah Brand */
-    filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.1));
-    z-index: 10;
-    position: relative;
-    /* Miring sedikit biar ngebut */
-    transform: rotate(-2deg);
-}
-
-/* Gelembung Bicara */
-.cod-bubble {
-    position: absolute;
-    top: -30px;
-    right: -40px;
-    background: #fbbf24; /* Kuning Emas */
-    color: #991b1b;      /* Teks Merah Gelap */
-    padding: 10px 18px;
-    border-radius: 20px;
-    font-weight: 900;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.2;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    animation: popUp 2s infinite; /* Animasi Membesar */
-    z-index: 20;
-    border: 3px solid white;
-    transform-origin: bottom left;
-}
-/* Segitiga Gelembung */
-.cod-bubble::after {
-    content: ''; position: absolute; bottom: -8px; left: 15px;
-    border-width: 12px 12px 0; border-style: solid;
-    border-color: #fbbf24 transparent; display: block; width: 0;
-}
-
-/* Efek Angin (Garis-garis cepat) */
-.wind-line {
-    position: absolute;
-    height: 6px;
-    background: #e5e7eb;
-    border-radius: 10px;
-    opacity: 0.6;
-    animation: windMove 0.4s linear infinite;
-}
-.w1 { width: 60px; top: 40%; left: -80px; animation-delay: 0.1s; }
-.w2 { width: 90px; top: 65%; left: -120px; animation-delay: 0.2s; }
-.w3 { width: 40px; top: 20%; left: -50px; animation-delay: 0.3s; }
-
-/* Keyframes Animasi */
-@keyframes driving {
-    0% { transform: translateY(0) rotate(-2deg); }
-    100% { transform: translateY(-5px) rotate(-2deg); }
-}
-@keyframes popUp {
-    0%, 100% { transform: scale(1) rotate(5deg); }
-    50% { transform: scale(1.1) rotate(-5deg); }
-}
-@keyframes windMove {
-    0% { transform: translateX(0); opacity: 0.8; }
-    100% { transform: translateX(-100px); opacity: 0; }
-}
-/* --- BAGIAN KIRI: ANIMASI TRUK CSS (End) --- */
-
-
-/* --- BAGIAN KANAN: TEKS INFO COD --- */
-.cod-info-box {
-    text-align: left;
-}
-.cod-head {
-    font-family: 'Eczar', serif;
-    font-size: 2rem;
-    color: #c2201a;
-    margin-bottom: 1rem;
-}
-.cod-desc {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    color: #4b5563;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-}
-
-/* List Fitur */
-.cod-features {
+/* Bagian Gambar */
+.cod-img-wrapper {
+    flex: 1; /* Lebar 50% */
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    justify-content: center;
+}
+.cod-img-final {
+    width: 100%;
+    max-width: 400px; /* Batas lebar gambar */
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    animation: float 3s ease-in-out infinite; /* Animasi Naik Turun */
+}
+
+/* Bagian Teks */
+.cod-text-wrapper {
+    flex: 1; /* Lebar 50% */
+    text-align: left;
+    background: rgba(255,255,255,0.1); /* Kotak Transparan */
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.cod-desc-bold {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #fffbeb; /* Putih Gading */
+}
+
+/* List Keunggulan */
+.cod-list-bold {
+    list-style: none;
+    padding: 0;
     margin-bottom: 2rem;
 }
-.feature-item {
+.cod-list-bold li {
     display: flex;
     align-items: center;
-    gap: 15px;
-    background: #f9fafb;
-    padding: 15px;
-    border-radius: 12px;
-    border-left: 5px solid #16a34a; /* Hijau */
-}
-.feat-icon { font-size: 1.5rem; color: #16a34a; }
-.feat-text { font-weight: 700; color: #1f2937; }
-
-/* Tombol Mitra */
-.btn-partner {
-    display: inline-block;
-    padding: 12px 30px;
-    border: 2px solid #1f2937;
-    border-radius: 50px;
-    color: #1f2937;
+    gap: 10px;
     font-weight: 700;
-    text-decoration: none;
-    transition: 0.3s;
-    margin-top: 0.5rem;
+    margin-bottom: 12px;
+    font-size: 1rem;
 }
-.btn-partner:hover { background: #1f2937; color: white; }
+.cod-list-bold i {
+    color: #fde047; /* Ikon Kuning */
+    font-size: 1.3rem;
+}
 
-/* Responsif HP */
+/* Tombol */
+.btn-cod-bold {
+    display: block;
+    width: 100%;
+    background: #fde047; /* Kuning */
+    color: #991b1b;      /* Merah Tua */
+    text-align: center;
+    padding: 1rem;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-decoration: none;
+    box-shadow: 0 5px 0 #b45309; /* Efek 3D */
+    transition: 0.2s;
+}
+.btn-cod-bold:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #b45309;
+}
+
+/* Link Kemitraan */
+.link-partner-white {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+    text-decoration: underline;
+}
+
+/* Divider Gelombang Atas (Putih) */
+.wave-top-white {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+.wave-top-white svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 50px;
+}
+.wave-fill-white { fill: #ffffff; }
+
+/* Animasi */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+/* --- RESPONSIF HP (PENTING!) --- */
 @media (max-width: 768px) {
-    .trust-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .cod-info-box { text-align: center; }
-    .feature-item { text-align: left; } /* List tetap rata kiri biar rapi */
-    .trust-title { font-size: 1.8rem; }
-    .cod-anim-box { height: 220px; } /* Sesuaikan tinggi di HP */
-    .truck-icon { font-size: 7rem; }
+    .cod-flex-container {
+        flex-direction: column; /* Ubah jadi atas-bawah di HP */
+        gap: 2rem;
+    }
+    .cod-text-wrapper {
+        text-align: center; /* Teks rata tengah di HP */
+        padding: 1.5rem;
+    }
+    .cod-list-bold li {
+        justify-content: center; /* List rata tengah */
+    }
+    .cod-title-bold { font-size: 2rem; margin-top: 1rem; }
+    .cod-img-final { max-width: 280px; } /* Gambar lebih kecil di HP */
 }
