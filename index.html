@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     
     <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self' https:; 
-        script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com https://connect.facebook.net https://www.google-analytics.com; 
-        style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; 
-        font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; 
-        img-src 'self' data: https:; 
-        connect-src 'self' https://cloudflareinsights.com https://www.google.com https://www.google-analytics.com https://connect.facebook.net; 
-        frame-src 'self' https://www.google.com http://googleusercontent.com https://www.googletagmanager.com;
-    ">
+    default-src 'self' https:; 
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.google.com https://*.gstatic.com https://static.cloudflareinsights.com https://*.googleadservices.com https://*.doubleclick.net https://connect.facebook.net; 
+    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; 
+    font-src 'self' data: https://cdnjs.cloudflare.com https://fonts.gstatic.com; 
+    img-src 'self' data: https:; 
+    connect-src 'self' https: https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.googleadservices.com https://*.doubleclick.net https://cloudflareinsights.com https://connect.facebook.net; 
+    frame-src 'self' https: https://*.google.com https://*.doubleclick.net https://www.googletagmanager.com;
+">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -76,7 +76,7 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
     
-    <link rel="stylesheet" href="style.css?v=1.011">
+    <link rel="stylesheet" href="style.css?v=1.012">
     
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
@@ -286,7 +286,7 @@
 
         <section class="seo-section" style="background:#f3f4f6; padding: 3rem 0; border-top: 1px solid #e5e7eb;">
     <div class="container">
-        <div style="max-width: 900px; margin: 0 auto; text-align: justify; color: #4b5563;">
+        <div style="max-width: 900px; margin: 0 auto; text-align: justify; color: #1f2937;">
             
             <h2 style="text-align:center; color:#1f2937; margin-bottom:1.5rem; font-size:1.5rem; font-weight:800;">
                 Pusat Produsen Abon Sapi Tumbuk & Pempek Palembang Asli di Malang
@@ -304,7 +304,7 @@
                 Kami membuka peluang usaha bagi Anda yang ingin bergabung menjadi <strong>Agen, Reseller, atau Distributor</strong>. Dapatkan penawaran <strong>Harga Grosir Abon Sapi</strong> langsung dari tangan pertama (Supplier) dengan margin keuntungan maksimal. Kami melayani pembelian partai besar, curah (kiloan), maupun kemasan retail siap jual. Dukungan materi promosi lengkap dan layanan <strong>Bisa COD (Bayar di Tempat)</strong> menjadikan bisnis kuliner ini pilihan tepat untuk ibu rumah tangga maupun pebisnis online.
             </p>
             
-            <div style="margin-top: 2rem; font-size: 0.8rem; color: #9ca3af; text-align: center;">
+            <div style="margin-top: 2rem; font-size: 0.8rem; color: #4b5563; text-align: center;">
                 <em>Tags: Jual Abon Sapi Malang, Grosir Abon Non MSG, Supplier Pempek Frozen, Pabrik Abon Tumbuk, Oleh-oleh Khas Malang, Abon Bayi MPASI.</em>
             </div>
 
@@ -374,7 +374,7 @@
         position: fixed;
         bottom: 25px;
         right: 25px;
-        background-color: #25d366; /* Warna WA */
+        background-color: #166534; /* Warna WA */
         color: #FFF;
         border-radius: 50px;
         text-align: center;
@@ -424,6 +424,7 @@
 </style>
 </body>
 </html>
+
 
 
 
