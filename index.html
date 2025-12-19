@@ -2,26 +2,19 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    
-    <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self' https:; 
-    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.google.com https://*.gstatic.com https://static.cloudflareinsights.com https://*.googleadservices.com https://*.doubleclick.net https://connect.facebook.net; 
-    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; 
-    font-src 'self' data: https://cdnjs.cloudflare.com https://fonts.gstatic.com; 
-    img-src 'self' data: https:; 
-    connect-src 'self' https: https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.googleadservices.com https://*.doubleclick.net https://cloudflareinsights.com https://connect.facebook.net; 
-    frame-src 'self' https: https://*.google.com https://*.doubleclick.net https://www.googletagmanager.com;
-">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="facebook-domain-verification" content="di94yzdinnazm60ywer87215y3dhpf" />
-    <meta name="google-site-verification" content="y2WJu_a-wV_4TpY8tEklitrXmL9IKvaJqnGfuvNUgeQ" />
-
     <title>BAROKAH HALALAN FOOD | Makanan Sehat, Halal & Thoyyib</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://connect.facebook.net">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
     <meta name="description" content="Produsen makanan sehat, halal, dan berkah. Solusi gizi terbaik untuk keluarga Indonesia. Abon Sapi Premium Tanpa MSG dan berbagai produk pilihan lainnya.">
-    
+    <meta name="facebook-domain-verification" content="di94yzdinnazm60ywer87215y3dhpf">
+    <meta name="google-site-verification" content="y2WJu_a-wV_4TpY8tEklitrXmL9IKvaJqnGfuvNUgeQ">
+
     <meta property="og:site_name" content="BAROKAH HALALAN FOOD">
     <meta property="og:title" content="BAROKAH HALALAN FOOD | Makanan Sehat & Halal">
     <meta property="og:description" content="Produsen dan Supplier Abon Sapi Tumbuk Premium dan Pempek Palembang Asli. Jual Eceran, Grosir, dan Kemitraan Reseller.">
@@ -35,6 +28,65 @@
     <meta name="twitter:title" content="BAROKAH HALALAN FOOD | Makanan Sehat & Halal">
     <meta name="twitter:description" content="Produsen dan Supplier Abon Sapi Tumbuk Premium dan Pempek Palembang Asli. Jual Eceran, Grosir, dan Kemitraan Reseller.">
     <meta name="twitter:image" content="https://barokahhalalanfood.com/social-preview.jpg">
+
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self' https:; 
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googletagmanager.com https://*.google-analytics.com https://*.google.com https://*.gstatic.com https://static.cloudflareinsights.com https://*.googleadservices.com https://*.doubleclick.net https://connect.facebook.net; 
+    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; 
+    font-src 'self' data: https://cdnjs.cloudflare.com https://fonts.gstatic.com; 
+    img-src 'self' data: https:; 
+    connect-src 'self' https: https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.googleadservices.com https://*.doubleclick.net https://cloudflareinsights.com https://connect.facebook.net; 
+    frame-src 'self' https: https://*.google.com https://*.doubleclick.net https://www.googletagmanager.com;">
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css?v=1.016">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+    <link rel="apple-touch-icon" href="apple-icon-180x180.png">
+
+    <style>
+        .float-wa {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #166534;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 12px 25px;
+            transition: 0.3s;
+            animation: float-pulse 3s infinite;
+        }
+        .float-wa i { font-size: 28px; }
+        .float-text {
+            font-size: 16px;
+            font-weight: bold;
+            margin-left: 10px;
+            font-family: sans-serif;
+        }
+        .float-wa:hover {
+            background-color: #128c7e;
+            transform: scale(1.05);
+        }
+        @keyframes float-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        @media (max-width: 768px) {
+            /* Opsi mobile style */
+        }
+    </style>
 
     <script type="application/ld+json">
     {
@@ -72,16 +124,9 @@
       ]
     }
     </script>
+</head>
 
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
-    
-    <link rel="stylesheet" href="style.css?v=1.016">
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
-    <link rel="apple-touch-icon" href="apple-icon-180x180.png">
-    
+<body>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             setTimeout(function() {
@@ -90,20 +135,17 @@
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
                 })(window,document,'script','dataLayer','GTM-TBFQQ3LK');
-            }, 3500);
+            }, 3500); 
         });
     </script>
-</head>
-
-<body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBFQQ3LK"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        
+
     <header>
         <div class="container nav-flex">
             <div class="logo">
                 <div style="display:flex; align-items:center; gap:0.5rem;">
-                    <img src="Logo-Barokah.webp" alt="Logo" width="32" height="32">
+                    <img src="Logo-Barokah.webp" alt="Logo Barokah Food" width="32" height="32">
                     <h1>BAROKAH <span>HALALAN FOOD</span></h1>
                 </div>
             </div>
@@ -117,209 +159,206 @@
 
     <main>
         <section class="hero-bold">
-    <div class="bold-wrap">
-        
-        <h1 class="bold-title">
-            KEBAIKAN ALAM,<br>
-            <span class="bold-highlight">KEBERKAHAN HALAL.</span>
-        </h1>
-        
-        <p class="bold-desc">
-            Pusat Jajanan Sehat Keluarga: Abon Sapi Murni, Pempek Asli, & Snack Sehat. 
-            <strong>Tanpa Pengawet & Non MSG.</strong>
-        </p>
-        
-        <div class="bold-badges">
-            <span><i class="fas fa-check"></i> 100% HALAL</span>
-            <span><i class="fas fa-leaf"></i> ALAMI</span>
-            <span><i class="fas fa-star"></i> PREMIUM</span>
-        </div>
+            <div class="bold-wrap">
+                
+                <h1 class="bold-title">
+                    KEBAIKAN ALAM,<br>
+                    <span class="bold-highlight">KEBERKAHAN HALAL.</span>
+                </h1>
+                
+                <p class="bold-desc">
+                    Pusat Jajanan Sehat Keluarga: Abon Sapi Murni, Pempek Asli, & Snack Sehat. 
+                    <strong>Tanpa Pengawet & Non MSG.</strong>
+                </p>
+                
+                <div class="bold-badges">
+                    <span><i class="fas fa-check"></i> 100% HALAL</span>
+                    <span><i class="fas fa-leaf"></i> ALAMI</span>
+                    <span><i class="fas fa-star"></i> PREMIUM</span>
+                </div>
 
-        <div class="bold-img-box">
-            <img src="hero-root.webp" 
-                 alt="Abon Sapi Barokah" 
-                 class="bold-img" 
-                    width="800" 
-                     height="450"
-                 fetchpriority="high">
-        </div>
+                <div class="bold-img-box">
+                    <img src="hero-root.webp" 
+                         alt="Abon Sapi Barokah" 
+                         class="bold-img" 
+                         width="800" 
+                         height="450"
+                         fetchpriority="high">
+                </div>
 
-        <div>
-            <a href="katalog.html" class="btn-bold wiggle-effect">
-                <i class="fas fa-shopping-cart"></i> LIHAT KATALOG
-            </a>
-        </div>
-        
-        <div class="bold-trust">
-            <i class="fas fa-truck-fast"></i> Cek Ongkir Otomatis &nbsp;|&nbsp; 
-            <i class="fas fa-hand-holding-dollar"></i> <strong>BISA COD</strong>
-        </div>
+                <div>
+                    <a href="katalog.html" class="btn-bold wiggle-effect">
+                        <i class="fas fa-shopping-cart"></i> LIHAT KATALOG
+                    </a>
+                </div>
+                
+                <div class="bold-trust">
+                    <i class="fas fa-truck-fast"></i> Cek Ongkir Otomatis  |  
+                    <i class="fas fa-hand-holding-dollar"></i> <strong>BISA COD</strong>
+                </div>
 
-    </div>
-    
-    <div class="wave-bottom">
-        <svg viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill="#ffffff" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        </svg>
-    </div>
-</section>
+            </div>
+            
+            <div class="wave-bottom">
+                <svg viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#ffffff" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+            </div>
+        </section>
 
         <section class="values-bold-section">
-    <div class="container">
-        
-        <h2 class="val-title-bold">MENGAPA HARUS BAROKAH HALALAN FOOD?</h2>
-        
-        <div class="val-grid-bold">
-            
-            <div class="val-card-bold">
-                <div class="val-icon-box">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h3 class="val-head-bold">100% Halal & Thoyyib</h3>
-                <p class="val-desc-bold">
-                    Diproses sesuai syariat Islam dengan standar kebersihan tinggi. Menggunakan bahan baku pilihan grade A.
-                </p>
-            </div>
+            <div class="container">
+                <h2 class="val-title-bold">MENGAPA HARUS BAROKAH HALALAN FOOD?</h2>
+                <div class="val-grid-bold">
+                    <div class="val-card-bold">
+                        <div class="val-icon-box">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="val-head-bold">100% Halal & Thoyyib</h3>
+                        <p class="val-desc-bold">
+                            Diproses sesuai syariat Islam dengan standar kebersihan tinggi. Menggunakan bahan baku pilihan grade A.
+                        </p>
+                    </div>
 
-            <div class="val-card-bold">
-                <div class="val-icon-box">
-                    <i class="fas fa-leaf"></i>
-                </div>
-                <h3 class="val-head-bold">Tanpa MSG & Pengawet</h3>
-                <p class="val-desc-bold">
-                    Aman dikonsumsi balita (MPASI) hingga lansia. Kami mengandalkan rasa gurih alami dari daging asli.
-                </p>
-            </div>
+                    <div class="val-card-bold">
+                        <div class="val-icon-box">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="val-head-bold">Tanpa MSG & Pengawet</h3>
+                        <p class="val-desc-bold">
+                            Aman dikonsumsi balita (MPASI) hingga lansia. Kami mengandalkan rasa gurih alami dari daging asli.
+                        </p>
+                    </div>
 
-            <div class="val-card-bold">
-                <div class="val-icon-box">
-                    <i class="fas fa-star"></i>
+                    <div class="val-card-bold">
+                        <div class="val-icon-box">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="val-head-bold">Kualitas Premium</h3>
+                        <p class="val-desc-bold">
+                            Daging sapi murni tanpa campuran. Digoreng menggunakan minyak kelapa baru (VCO), bukan jelantah.
+                        </p>
+                    </div>
                 </div>
-                <h3 class="val-head-bold">Kualitas Premium</h3>
-                <p class="val-desc-bold">
-                    Daging sapi murni tanpa campuran. Digoreng menggunakan minyak kelapa baru (VCO), bukan jelantah.
-                </p>
             </div>
-
-        </div>
-    </div>
-</section>
+        </section>
       
         <section id="katalog" class="catalog-premium-section">
-    <div class="container">
-        
-        <h2 class="cat-title-premium">Katalog <span>Produk Pilihan</span></h2>
-        
-        <div class="cat-grid-premium">
-            
-            <div class="prod-card-premium">
-                <div class="prod-img-box">
-                    <span class="cat-badge">Best Seller</span>
-                    <img src="kemasan-abon-100gr-sblh.webp" alt="Abon Sapi Barokah" class="prod-img-premium" loading="lazy">
-                </div>
-                <div class="prod-info-premium">
-                    <h3 class="prod-title-premium">Abon Sapi Tumbuk</h3>
-                    <p class="prod-desc-premium">Solusi GTM & Stunting. Tekstur serat daging asli 100%, tanpa tepung.</p>
-                    <a href="katalog.html" class="btn-cat-premium btn-red-p"><i class="fas fa-truck-fast"></i> Cek Ongkir & COD</a>
-                    <div class="stock-info"><i class="fas fa-check-circle"></i> Stok Ready Siap Kirim</div>
-                </div>
-            </div>
-
-            <div class="prod-card-premium">
-                <div class="prod-img-box">
-                    <span class="cat-badge badge-green">Ready Stock</span>
-                    <img src="pempek-palembang.webp" alt="Pempek Palembang" class="prod-img-premium" loading="lazy">
-                </div>
-                <div class="prod-info-premium">
-                    <h3 class="prod-title-premium">Pempek Palembang</h3>
-                    <p class="prod-desc-premium">Ikan Tenggiri segar, Cuko Gula Batok Linggau. Tanpa pemutih. Vacuum Frozen.</p>
-                    <a href="katalog.html" class="btn-cat-premium btn-green-p"><i class="fas fa-shopping-bag"></i> Pesan & Cek Ongkir</a>
-                    <div class="stock-info"><i class="fas fa-snowflake"></i> Bisa Kirim Frozen/PAXEL</div>
-                </div>
-            </div>
-
-            <div class="prod-card-premium">
-                <div class="prod-img-box" style="display:flex; align-items:center; justify-content:center; background:#f3f4f6;">
-                    <i class="fas fa-utensils" style="font-size:3rem; color:#d1d5db;"></i>
-                </div>
-                <div class="prod-info-premium">
-                    <h3 class="prod-title-premium">Kaldu & Snack Sehat</h3>
-                    <p class="prod-desc-premium">Nantikan varian bumbu alami dan cemilan sayur crispy sehat.</p>
-                    <button class="btn-cat-premium btn-gray-p" disabled>Segera Hadir</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="cod-fun-section">
-    <div class="container">
-        <div class="cod-fun-grid">
-            
-            <div class="cod-fun-img-box">
-                <img src="kurir-cod.webp" 
-     alt="Layanan COD" 
-     class="cod-fun-img" 
-     width="280" 
-     height="280">
-            </div>
-
-            <div class="cod-fun-content">
-                <div class="fun-headline">
-                    Takut Ketipu Online?<br>
-                    <span class="fun-highlight">BAYAR COD AJA!</span><br>
-                    <span class="fun-highlight-2">Barang Sampai, Baru Bayar</span>
-                </div>
-
-                <p class="cod-fun-desc">
-                    Tenang, Bun! Kami kirim paketnya dulu. Cek barang di rumah, baru bayar ke kurir. <strong>Aman & Tanpa Risiko!</strong>
-                </p>
-
-                <ul class="fun-list">
-                    <li><i class="fas fa-check-circle"></i> Tanpa Transfer Duluan</li>
-                    <li><i class="fas fa-check-circle"></i> Garansi Paket Aman</li>
-                    <li><i class="fas fa-check-circle"></i> Kurir Ramah & Cepat</li>
-                </ul>
-
-                <a href="katalog.html" class="btn-fun">PESAN COD SEKARANG 👉</a>
+            <div class="container">
                 
-                <a href="https://wa.me/6285725046201?text=Halo%20Barokah%20Food,%20saya%20tertarik%20info%20Kemitraan" target="_blank" class="link-partner-small">
-                    Atau ingin jadi Agen/Reseller? Klik di sini.
-                </a>
-            </div>
+                <h2 class="cat-title-premium">Katalog <span>Produk Pilihan</span></h2>
+                
+                <div class="cat-grid-premium">
+                    
+                    <div class="prod-card-premium">
+                        <div class="prod-img-box">
+                            <span class="cat-badge">Best Seller</span>
+                            <img src="kemasan-abon-100gr-sblh.webp" alt="Abon Sapi Barokah Kemasan 100gr" class="prod-img-premium" loading="lazy" width="300" height="300">
+                        </div>
+                        <div class="prod-info-premium">
+                            <h3 class="prod-title-premium">Abon Sapi Tumbuk</h3>
+                            <p class="prod-desc-premium">Solusi GTM & Stunting. Tekstur serat daging asli 100%, tanpa tepung.</p>
+                            <a href="katalog.html" class="btn-cat-premium btn-red-p"><i class="fas fa-truck-fast"></i> Cek Ongkir & COD</a>
+                            <div class="stock-info"><i class="fas fa-check-circle"></i> Stok Ready Siap Kirim</div>
+                        </div>
+                    </div>
 
-        </div>
-    </div>
-</section>
+                    <div class="prod-card-premium">
+                        <div class="prod-img-box">
+                            <span class="cat-badge badge-green">Ready Stock</span>
+                            <img src="pempek-palembang.webp" alt="Pempek Palembang Asli" class="prod-img-premium" loading="lazy" width="300" height="300">
+                        </div>
+                        <div class="prod-info-premium">
+                            <h3 class="prod-title-premium">Pempek Palembang</h3>
+                            <p class="prod-desc-premium">Ikan Tenggiri segar, Cuko Gula Batok Linggau. Tanpa pemutih. Vacuum Frozen.</p>
+                            <a href="katalog.html" class="btn-cat-premium btn-green-p"><i class="fas fa-shopping-bag"></i> Pesan & Cek Ongkir</a>
+                            <div class="stock-info"><i class="fas fa-snowflake"></i> Bisa Kirim Frozen/PAXEL</div>
+                        </div>
+                    </div>
+
+                    <div class="prod-card-premium">
+                        <div class="prod-img-box" style="display:flex; align-items:center; justify-content:center; background:#f3f4f6;">
+                            <i class="fas fa-utensils" style="font-size:3rem; color:#d1d5db;"></i>
+                        </div>
+                        <div class="prod-info-premium">
+                            <h3 class="prod-title-premium">Kaldu & Snack Sehat</h3>
+                            <p class="prod-desc-premium">Nantikan varian bumbu alami dan cemilan sayur crispy sehat.</p>
+                            <button class="btn-cat-premium btn-gray-p" disabled>Segera Hadir</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cod-fun-section">
+            <div class="container">
+                <div class="cod-fun-grid">
+                    
+                    <div class="cod-fun-img-box">
+                        <img src="kurir-cod.webp" 
+                         alt="Layanan COD Barokah Food" 
+                         class="cod-fun-img" 
+                         width="280" 
+                         height="280"
+                         loading="lazy">
+                    </div>
+
+                    <div class="cod-fun-content">
+                        <div class="fun-headline">
+                            Takut Ketipu Online?<br>
+                            <span class="fun-highlight">BAYAR COD AJA!</span><br>
+                            <span class="fun-highlight-2">Barang Sampai, Baru Bayar</span>
+                        </div>
+
+                        <p class="cod-fun-desc">
+                            Tenang, Bun! Kami kirim paketnya dulu. Cek barang di rumah, baru bayar ke kurir. <strong>Aman & Tanpa Risiko!</strong>
+                        </p>
+
+                        <ul class="fun-list">
+                            <li><i class="fas fa-check-circle"></i> Tanpa Transfer Duluan</li>
+                            <li><i class="fas fa-check-circle"></i> Garansi Paket Aman</li>
+                            <li><i class="fas fa-check-circle"></i> Kurir Ramah & Cepat</li>
+                        </ul>
+
+                        <a href="katalog.html" class="btn-fun">PESAN COD SEKARANG 👉</a>
+                        
+                        <a href="https://wa.me/6285725046201?text=Halo%20Barokah%20Food,%20saya%20tertarik%20info%20Kemitraan" target="_blank" class="link-partner-small">
+                            Atau ingin jadi Agen/Reseller? Klik di sini.
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
         <section class="seo-section" style="background:#f3f4f6; padding: 3rem 0; border-top: 1px solid #e5e7eb;">
-    <div class="container">
-        <div style="max-width: 900px; margin: 0 auto; text-align: justify; color: #1f2937;">
-            
-            <h2 style="text-align:center; color:#1f2937; margin-bottom:1.5rem; font-size:1.5rem; font-weight:800;">
-                Pusat Produsen Abon Sapi Tumbuk & Pempek Palembang Asli di Malang
-            </h2>
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto; text-align: justify; color: #1f2937;">
+                    
+                    <h2 style="text-align:center; color:#1f2937; margin-bottom:1.5rem; font-size:1.5rem; font-weight:800;">
+                        Pusat Produsen Abon Sapi Tumbuk & Pempek Palembang Asli di Malang
+                    </h2>
 
-            <p style="margin-bottom: 1rem;">
-                <strong>Barokah Halalan Food</strong> adalah produsen dan pabrik <strong>Abon Sapi Tumbuk</strong> kualitas premium yang berlokasi di Pujon, Malang. Berbeda dengan abon pasaran yang menggunakan campuran tepung, produk kami menggunakan <strong>100% Daging Sapi Murni</strong> dengan metode tumbuk tradisional, menghasilkan tekstur serat daging yang nyata. Tanpa MSG dan pengawet, Abon Barokah menjadi solusi lauk praktis untuk anak GTM (Gerakan Tutup Mulut) dan membantu pencegahan stunting dengan asupan protein hewani tinggi.
-            </p>
+                    <p style="margin-bottom: 1rem;">
+                        <strong>Barokah Halalan Food</strong> adalah produsen dan pabrik <strong>Abon Sapi Tumbuk</strong> kualitas premium yang berlokasi di Pujon, Malang. Berbeda dengan abon pasaran yang menggunakan campuran tepung, produk kami menggunakan <strong>100% Daging Sapi Murni</strong> dengan metode tumbuk tradisional, menghasilkan tekstur serat daging yang nyata. Tanpa MSG dan pengawet, Abon Barokah menjadi solusi lauk praktis untuk anak GTM (Gerakan Tutup Mulut) dan membantu pencegahan stunting dengan asupan protein hewani tinggi.
+                    </p>
 
-            <p style="margin-bottom: 1rem;">
-                Selain abon, kami juga menghadirkan <strong>Pempek Palembang Asli</strong> dengan bahan dasar Ikan Tenggiri segar pilihan. Dipadukan dengan <strong>Cuko Gula Batok Linggau</strong> yang kental dan pedas nikmat, menjadikan cita rasa otentik Palembang hadir di meja makan Anda. Tersedia dalam kemasan <em>Frozen Food</em> (vakum) yang higienis, siap dikirim ke seluruh Indonesia dengan aman menggunakan ekspedisi kilat (PAXEL/JNE YES).
-            </p>
+                    <p style="margin-bottom: 1rem;">
+                        Selain abon, kami juga menghadirkan <strong>Pempek Palembang Asli</strong> dengan bahan dasar Ikan Tenggiri segar pilihan. Dipadukan dengan <strong>Cuko Gula Batok Linggau</strong> yang kental dan pedas nikmat, menjadikan cita rasa otentik Palembang hadir di meja makan Anda. Tersedia dalam kemasan <em>Frozen Food</em> (vakum) yang higienis, siap dikirim ke seluruh Indonesia dengan aman menggunakan ekspedisi kilat (PAXEL/JNE YES).
+                    </p>
 
-            <p>
-                Kami membuka peluang usaha bagi Anda yang ingin bergabung menjadi <strong>Agen, Reseller, atau Distributor</strong>. Dapatkan penawaran <strong>Harga Grosir Abon Sapi</strong> langsung dari tangan pertama (Supplier) dengan margin keuntungan maksimal. Kami melayani pembelian partai besar, curah (kiloan), maupun kemasan retail siap jual. Dukungan materi promosi lengkap dan layanan <strong>Bisa COD (Bayar di Tempat)</strong> menjadikan bisnis kuliner ini pilihan tepat untuk ibu rumah tangga maupun pebisnis online.
-            </p>
-            
-            <div style="margin-top: 2rem; font-size: 0.8rem; color: #4b5563; text-align: center;">
-                <em>Tags: Jual Abon Sapi Malang, Grosir Abon Non MSG, Supplier Pempek Frozen, Pabrik Abon Tumbuk, Oleh-oleh Khas Malang, Abon Bayi MPASI.</em>
+                    <p>
+                        Kami membuka peluang usaha bagi Anda yang ingin bergabung menjadi <strong>Agen, Reseller, atau Distributor</strong>. Dapatkan penawaran <strong>Harga Grosir Abon Sapi</strong> langsung dari tangan pertama (Supplier) dengan margin keuntungan maksimal. Kami melayani pembelian partai besar, curah (kiloan), maupun kemasan retail siap jual. Dukungan materi promosi lengkap dan layanan <strong>Bisa COD (Bayar di Tempat)</strong> menjadikan bisnis kuliner ini pilihan tepat untuk ibu rumah tangga maupun pebisnis online.
+                    </p>
+                    
+                    <div style="margin-top: 2rem; font-size: 0.8rem; color: #4b5563; text-align: center;">
+                        <em>Tags: Jual Abon Sapi Malang, Grosir Abon Non MSG, Supplier Pempek Frozen, Pabrik Abon Tumbuk, Oleh-oleh Khas Malang, Abon Bayi MPASI.</em>
+                    </div>
+
+                </div>
             </div>
-
-        </div>
-    </div>
-</section>
+        </section>
     </main>
 
     <footer>
@@ -331,21 +370,21 @@
                 <p style="margin-top:0.5rem;">Jl. Brigjend Abd Manan Wijaya Gg. Gereja GKJW, RT.2/RW.2, Gesingan, Pujon Lor, Kec. Pujon, Kabupaten Malang, Jawa Timur 65391</p>
                 
                 <div style="width:100%; height:250px; border-radius:0.5rem; overflow:hidden; margin-top:1rem; margin-bottom:1rem; border:1px solid #374151;">
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.4612736580198!2d112.47118961083048!3d-7.846695192142136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e787d9aef4bb49f%3A0xc8f8ca54fb5fd106!2sBAROKAH%20HALALAN%20FOOD!5e0!3m2!1sid!2sid!4v1764539749125!5m2!1sid!2sid" 
-        width="100%" 
-        height="100%" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Peta Lokasi Barokah Halalan Food">
-    </iframe>
-</div>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.4612736580198!2d112.47118961083048!3d-7.846695192142136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e787d9aef4bb49f%3A0xc8f8ca54fb5fd106!2sBAROKAH%20HALALAN%20FOOD!5e0!3m2!1sid!2sid!4v1764539749125!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Peta Lokasi Barokah Halalan Food">
+                    </iframe>
+                </div>
 
-<a href="https://maps.app.goo.gl/HHAQgUHqvZhXaEfK7" target="_blank" style="display: inline-block; margin-top: 0.5rem; color: #4ade80; text-decoration:underline;">
-    <i class="fas fa-map-marker-alt"></i> Buka di Google Maps Aplikasi
-</a>
+                <a href="https://maps.app.goo.gl/HHAQgUHqvZhXaEfK7" target="_blank" style="display: inline-block; margin-top: 0.5rem; color: #4ade80; text-decoration:underline;">
+                    <i class="fas fa-map-marker-alt"></i> Buka di Google Maps Aplikasi
+                </a>
             </div>
             
             <div style="margin-bottom: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
@@ -373,92 +412,11 @@
             </div>
         </div>
     </footer>
-<a href="https://wa.me/6285725046201?text=Halo%20Admin%20Barokah%20Food,%20saya%20tertarik%20dengan%20produk%20Abon%20dan%20Pempek..." target="_blank" class="float-wa">
-    <i class="fab fa-whatsapp"></i>
-    <span class="float-text">Chat Admin</span>
-</a>
 
-<style>
-    .float-wa {
-        position: fixed;
-        bottom: 25px;
-        right: 25px;
-        background-color: #166534; /* Warna WA */
-        color: #FFF;
-        border-radius: 50px;
-        text-align: center;
-        box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        padding: 12px 25px; /* Jarak dalam agar lonjong */
-        transition: 0.3s;
-        animation: float-pulse 3s infinite;
-    }
+    <a href="https://wa.me/6285725046201?text=Halo%20Admin%20Barokah%20Food,%20saya%20tertarik%20dengan%20produk%20Abon%20dan%20Pempek..." target="_blank" class="float-wa">
+        <i class="fab fa-whatsapp"></i>
+        <span class="float-text">Chat Admin</span>
+    </a>
 
-    .float-wa i {
-        font-size: 28px; /* Ukuran Ikon */
-    }
-
-    .float-text {
-        font-size: 16px; /* Ukuran Teks */
-        font-weight: bold;
-        margin-left: 10px; /* Jarak antara ikon dan teks */
-        font-family: sans-serif;
-    }
-
-    .float-wa:hover {
-        background-color: #128c7e;
-        transform: scale(1.05);
-    }
-    
-    /* Animasi Denyut */
-    @keyframes float-pulse {
-        0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-        70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-    }
-
-    /* KHUSUS HP: Boleh pilih mau tetap ada teks atau jadi bulat saja */
-    @media (max-width: 768px) {
-        /* Jika di HP mau tetap ada tulisannya, biarkan kosong bagian ini. */
-        /* Tapi jika di HP mau diubah jadi LOGO SAJA (biar gak menuhin layar), aktifkan kode di bawah ini: */
-        
-        /* .float-text { display: none; } 
-        .float-wa { padding: 0; width: 55px; height: 55px; }
-        */
-    }
-</style>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
