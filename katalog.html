@@ -64,7 +64,7 @@
         .cat-line { height: 3px; background: linear-gradient(90deg, transparent, #e5e7eb, transparent); width: 80px; border-radius: 50px; }
         .cat-line.solid { background: #d1d5db; width: 60px; height: 3px; }
 
-        /* GRID SYSTEM (Rata Tengah & Equal Height) */
+        /* GRID SYSTEM */
         .grid-products { 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); /* HP: 2 Kolom */
@@ -87,7 +87,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
             border: 1px solid #e5e7eb; 
             display: flex; flex-direction: column; 
-            height: 100%; /* MEMBUAT TINGGI KARTU SAMA */
+            height: 100%; 
             transition: all 0.3s ease-in-out;
             position: relative;
         }
@@ -132,10 +132,11 @@
         .badge-new { background: #ea580c; color: white; }
         
         .prod-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; line-height: 1.3; color: var(--text-dark); }
-        /* Deskripsi dibuat clamp agar tingginya terjaga */
+        /* Deskripsi Clamp (Max 4 baris agar rata) */
         .prod-desc { 
             font-size: 0.85rem; color: #6b7280; margin-bottom: 1rem; line-height: 1.4;
-            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+            display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
+            min-height: 4.2em; /* Menjaga tinggi deskripsi agar tombol sejajar */
         }
         
         .price-box { margin-top: auto; margin-bottom: 1rem; }
@@ -146,7 +147,7 @@
         .btn-wa { 
             display: flex; align-items: center; justify-content: center; gap: 0.5rem;
             width: 100%; padding: 0.7rem; text-align: center; border-radius: 0.5rem; 
-            font-weight: 700; font-size: 0.9rem; background: linear-gradient(to bottom, #25D366, #1da851); color: white; 
+            font-weight: 700; font-size: 0.85rem; background: linear-gradient(to bottom, #25D366, #1da851); color: white; 
             border: 1px solid #1da851; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .btn-wa:hover { filter: brightness(1.1); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
@@ -154,7 +155,7 @@
         .btn-checkout {
             display: flex; align-items: center; justify-content: center; gap: 0.5rem;
             width: 100%; padding: 0.7rem; text-align: center; border-radius: 0.5rem; 
-            font-weight: 700; font-size: 0.9rem; background: linear-gradient(to bottom, #dc2626, #b91c1c); color: white; 
+            font-weight: 700; font-size: 0.85rem; background: linear-gradient(to bottom, #dc2626, #b91c1c); color: white; 
             border: 1px solid #b91c1c; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .btn-checkout:hover { filter: brightness(1.1); }
@@ -220,9 +221,9 @@
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Abon Sapi Tumbuk (100gr)</h3>
-                        <p class="prod-desc">Serat daging murni, Non-MSG.</p>
+                        <p class="prod-desc">Serat daging murni, Non-MSG. <strong>(Tersedia Harga Grosir)</strong></p>
                         <div class="price-box"><span class="price">Rp 35.999</span><span class="price-promo">3pcs: Rp 100rb</span></div>
-                        <a href="https://wa.me/6285725046201?text=Order%20Abon%20Sapi%20100gr" class="btn-wa"><i class="fab fa-whatsapp"></i> Pesan</a>
+                        <a href="https://wa.me/6285725046201?text=Order%20Abon%20Sapi%20100gr" class="btn-wa"><i class="fas fa-truck-fast"></i> Pesan / COD</a>
                     </div>
                 </div>
             </div>
@@ -238,9 +239,9 @@
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Pempek Ikan Tenggiri</h3>
-                        <p class="prod-desc">Asli Ikan Tenggiri + Cuko Linggau.</p>
+                        <p class="prod-desc">Asli Ikan Tenggiri + Cuko Linggau. Frozen Vakum.</p>
                         <div class="price-box"><span class="price">Rp 35.999</span><span class="price-promo">Paket Hemat</span></div>
-                        <a href="https://wa.me/6285725046201?text=Order%20Pempek%20Palembang" class="btn-wa"><i class="fab fa-whatsapp"></i> Pesan</a>
+                        <a href="https://wa.me/6285725046201?text=Order%20Pempek%20Palembang" class="btn-wa"><i class="fas fa-truck-fast"></i> Pesan / COD</a>
                     </div>
                 </div>
             </div>
@@ -268,30 +269,45 @@
                     <div class="prod-info">
                         <h3 class="prod-title">Keripik Ubi Madu (100gr)</h3>
                         <p class="prod-desc">
-                            <strong>Keunggulan:</strong> Stik renyah (Vacuum Fried), warna oranye alami, manis asli ubi madu tanpa gula tambahan. Proses penggorengan suhu rendah menjaga nutrisi.<br>
-                            <strong>Rasa:</strong> Manis, Gurih, Kriuk.
+                            Stik Ubi Madu <em>Vacuum Fried</em>. Warna oranye alami, manis asli tanpa gula tambahan. Renyah & nutrisi terjaga.
                         </p>
                         <div class="price-box">
-                            <span class="price">Rp 19.800</span>
+                            <span class="price">Rp 23.100</span>
                             <span class="price-promo">Best Seller</span>
                         </div>
-                        
                         <a href="https://grosirabonsapi.storelink.id/keripik-ubi-madu-manis-alami-kriukque-100gr" target="_blank" class="btn-checkout">
-                            <i class="fas fa-shopping-cart"></i> Beli Sekarang
+                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
                         </a>
                     </div>
                 </div>
 
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['keripik-wortel-5.jpg'])">
+                    <div class="prod-img-box" onclick="openLightbox([
+                        'images/wortel-fix-1.webp',
+                        'images/wortel-fix-2.webp',
+                        'images/wortel-fix-3.webp',
+                        'images/wortel-fix-4.webp',
+                        'images/wortel-fix-5.webp',
+                        'images/wortel-fix-6.webp',
+                        'images/wortel-fix-7.webp',
+                        'images/wortel-fix-8.webp',
+                        'images/wortel-fix-9.webp'
+                    ], 'Keripik Wortel KriukQue')">
                         <span class="prod-badge badge-new">KriukQue</span>
-                        <img src="keripik-wortel-5.jpg" alt="Keripik Wortel" loading="lazy">
+                        <img src="images/wortel-fix-1.webp" alt="Keripik Wortel KriukQue" loading="lazy">
                     </div>
                     <div class="prod-info">
-                        <h3 class="prod-title">Keripik Wortel</h3>
-                        <p class="prod-desc">Wortel asli digoreng vacuum.</p>
-                        <div class="price-box"><span class="price">Hubungi Admin</span><span class="price-promo">Sehat & Enak</span></div>
-                        <a href="https://wa.me/6285725046201?text=Order%20Keripik%20Wortel" class="btn-wa"><i class="fab fa-whatsapp"></i> Pesan</a>
+                        <h3 class="prod-title">Keripik Wortel (100gr)</h3>
+                        <p class="prod-desc">
+                            Terbuat dari wortel segar pilihan. Diproses dengan <em>Vacuum Frying</em> suhu rendah sehingga warna oranye alami, nutrisi, dan vitamin tetap terjaga. Renyah tanpa rasa langu.
+                        </p>
+                        <div class="price-box">
+                            <span class="price">Rp 24.750</span>
+                            <span class="price-promo">Sehat & Enak</span>
+                        </div>
+                        <a href="https://grosirabonsapi.storelink.id/keripik-wortel-renyah-sehat-kriukque-100gr" target="_blank" class="btn-checkout">
+                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
+                        </a>
                     </div>
                 </div>
 
@@ -302,9 +318,9 @@
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Mix Sayur & Buah</h3>
-                        <p class="prod-desc">Campuran aneka keripik dalam 1 pack.</p>
+                        <p class="prod-desc">Campuran aneka keripik (Ubi, Wortel, Nangka, dll) dalam 1 pack.</p>
                         <div class="price-box"><span class="price">Hubungi Admin</span><span class="price-promo">Paket Komplit</span></div>
-                        <a href="https://wa.me/6285725046201?text=Order%20Mix%20Sayur" class="btn-wa"><i class="fab fa-whatsapp"></i> Pesan</a>
+                        <a href="https://wa.me/6285725046201?text=Order%20Mix%20Sayur" class="btn-wa"><i class="fas fa-truck-fast"></i> Pesan / COD</a>
                     </div>
                 </div>
             </div>
@@ -322,7 +338,7 @@
                         <h3 class="prod-title">Kopi Excelsa & Robusta</h3>
                         <p class="prod-desc">Biji kopi pilihan dari kebun Wonosalam.</p>
                         <div class="price-box"><span class="price">Hubungi Admin</span><span class="price-promo">Bubuk / Biji</span></div>
-                        <a href="https://wa.me/6285725046201?text=Order%20Kopi%20Excelsa" class="btn-wa"><i class="fab fa-whatsapp"></i> Pesan</a>
+                        <a href="https://wa.me/6285725046201?text=Order%20Kopi%20Excelsa" class="btn-wa"><i class="fas fa-truck-fast"></i> Pesan / COD</a>
                     </div>
                 </div>
             </div>
@@ -378,7 +394,6 @@
             currentGallery = images;
             currentIndex = 0;
             
-            // Hide nav buttons if only 1 image
             if(images.length <= 1) {
                 navBtns.style.display = 'none';
             } else {
@@ -395,7 +410,6 @@
 
         function updateImage(defaultCaption) {
             imgElement.src = currentGallery[currentIndex];
-            // Gunakan caption default jika ada, atau tampilkan counter slide
             if(currentGallery.length > 1) {
                 captionElement.innerHTML = defaultCaption + ` (${currentIndex + 1}/${currentGallery.length})`;
             } else {
@@ -407,8 +421,6 @@
             currentIndex += direction;
             if (currentIndex >= currentGallery.length) currentIndex = 0;
             if (currentIndex < 0) currentIndex = currentGallery.length - 1;
-            
-            // Ambil caption lama (tanpa counter) untuk di-reuse
             let currentCap = captionElement.innerHTML.split('(')[0].trim();
             updateImage(currentCap);
         }
