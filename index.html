@@ -83,8 +83,24 @@
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
-        @media (max-width: 768px) {
-            /* Opsi mobile style */
+        
+        /* CSS SEDERHANA UNTUK SLIDER (SISA EDITING CSS NANTI DI FILE STYLE.CSS) */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .hero-slide {
+            display: none; /* Sembunyikan semua slide secara default */
+            width: 100%;
+            animation: fadeEffect 1s; /* Efek transisi halus */
+        }
+        .hero-slide.active {
+            display: block; /* Tampilkan slide yang aktif */
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0.4;}
+            to {opacity: 1;}
         }
     </style>
 
@@ -159,46 +175,137 @@
 
     <main>
         <section class="hero-bold">
-            <div class="bold-wrap">
+            <div class="hero-slider">
                 
-                <h1 class="bold-title">
-                    KEBAIKAN ALAM,<br>
-                    <span class="bold-highlight">KEBERKAHAN HALAL.</span>
-                </h1>
-                
-                <p class="bold-desc">
-                    Pusat Jajanan Sehat Keluarga: Abon Sapi Murni, Pempek Asli, & Snack Sehat. 
-                    <strong>Tanpa Pengawet & Non MSG.</strong>
-                </p>
-                
-                <div class="bold-badges">
-                    <span><i class="fas fa-check"></i> 100% HALAL</span>
-                    <span><i class="fas fa-leaf"></i> ALAMI</span>
-                    <span><i class="fas fa-star"></i> PREMIUM</span>
+                <div class="hero-slide active">
+                    <div class="bold-wrap">
+                        <h1 class="bold-title">
+                            KEBAIKAN ALAM,<br>
+                            <span class="bold-highlight">KEBERKAHAN HALAL.</span>
+                        </h1>
+                        <p class="bold-desc">
+                            Pusat Jajanan Sehat Keluarga: Abon Sapi Murni, Pempek Asli, & Snack Sehat. 
+                            <strong>Tanpa Pengawet & Non MSG.</strong>
+                        </p>
+                        <div class="bold-badges">
+                            <span><i class="fas fa-check"></i> 100% HALAL</span>
+                            <span><i class="fas fa-leaf"></i> ALAMI</span>
+                            <span><i class="fas fa-star"></i> PREMIUM</span>
+                        </div>
+                        <div class="bold-img-box">
+                            <img src="hero-root.webp" alt="Abon Sapi Barokah" class="bold-img" width="800" height="450" fetchpriority="high">
+                        </div>
+                        <div>
+                            <a href="katalog.html" class="btn-bold wiggle-effect">
+                                <i class="fas fa-shopping-cart"></i> LIHAT KATALOG
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bold-img-box">
-                    <img src="hero-root.webp" 
-                         alt="Abon Sapi Barokah" 
-                         class="bold-img" 
-                         width="800" 
-                         height="450"
-                         fetchpriority="high">
+                <div class="hero-slide">
+                    <div class="bold-wrap">
+                        <h1 class="bold-title">
+                            ABON SAPI TUMBUK<br>
+                            <span class="bold-highlight">SOLUSI GTM & STUNTING</span>
+                        </h1>
+                        <p class="bold-desc">
+                            Tekstur serat daging asli 100%, <strong>Tanpa Tepung & Non MSG</strong>. Lauk praktis bergizi tinggi untuk si kecil dan keluarga.
+                        </p>
+                        <div class="bold-badges">
+                            <span><i class="fas fa-child"></i> KIDS FRIENDLY</span>
+                            <span><i class="fas fa-utensils"></i> PRAKTIS</span>
+                        </div>
+                        <div class="bold-img-box">
+                            <img src="images/judul-abon-100gr.webp" alt="Abon Sapi Tumbuk" class="bold-img" width="800" height="450">
+                        </div>
+                        <div>
+                            <a href="katalog.html" class="btn-bold wiggle-effect">
+                                <i class="fas fa-truck-fast"></i> PESAN ABON
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <div>
-                    <a href="katalog.html" class="btn-bold wiggle-effect">
-                        <i class="fas fa-shopping-cart"></i> LIHAT KATALOG
-                    </a>
+                <div class="hero-slide">
+                    <div class="bold-wrap">
+                        <h1 class="bold-title">
+                            PEMPEK ASLI PALEMBANG<br>
+                            <span class="bold-highlight">IKAN TENGGIRI SEGAR</span>
+                        </h1>
+                        <p class="bold-desc">
+                            Dilengkapi Cuko Gula Batok Linggau yang kental dan mantap. <strong>Tanpa Pemutih & Pengawet</strong>. Kemasan Frozen Vakum aman kirim jauh.
+                        </p>
+                        <div class="bold-badges">
+                            <span><i class="fas fa-fish"></i> TENGGIRI ASLI</span>
+                            <span><i class="fas fa-snowflake"></i> FROZEN</span>
+                        </div>
+                        <div class="bold-img-box">
+                            <img src="images/judul-pempek.webp" alt="Pempek Palembang" class="bold-img" width="800" height="450">
+                        </div>
+                        <div>
+                            <a href="katalog.html" class="btn-bold wiggle-effect">
+                                <i class="fas fa-shopping-bag"></i> PESAN PEMPEK
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="bold-trust">
-                    <i class="fas fa-truck-fast"></i> Cek Ongkir Otomatis  |  
-                    <i class="fas fa-hand-holding-dollar"></i> <strong>BISA COD</strong>
+
+                <div class="hero-slide">
+                    <div class="bold-wrap">
+                        <h1 class="bold-title">
+                            KERIPIK SAYUR & BUAH<br>
+                            <span class="bold-highlight">CEMILAN SEHAT KELUARGA</span>
+                        </h1>
+                        <p class="bold-desc">
+                            Brand "Rilldelish" & "KriukQue". Diproses <em>Vacuum Frying</em> suhu rendah. Renyah, enak, dan <strong>Vitamin Tetap Terjaga</strong>.
+                        </p>
+                        <div class="bold-badges">
+                            <span><i class="fas fa-carrot"></i> VEGGIE CHIPS</span>
+                            <span><i class="fas fa-heart"></i> HEALTHY</span>
+                        </div>
+                        <div class="bold-img-box">
+                            <img src="images/judul-keripik.webp" alt="Keripik Sayur Buah" class="bold-img" width="800" height="450">
+                        </div>
+                        <div>
+                            <a href="katalog.html" class="btn-bold wiggle-effect">
+                                <i class="fas fa-cookie-bite"></i> COBAIN SEKARANG
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-slide">
+                    <div class="bold-wrap">
+                        <h1 class="bold-title">
+                            KOPI MURNI NUSANTARA<br>
+                            <span class="bold-highlight">EXCELSA & ROBUSTA</span>
+                        </h1>
+                        <p class="bold-desc">
+                            Asli dari perkebunan Dampit & Pujon. Aroma kuat khas pegunungan. Tersedia Biji Sangrai & Bubuk Murni. <strong>Tanpa Campuran Jagung.</strong>
+                        </p>
+                        <div class="bold-badges">
+                            <span><i class="fas fa-coffee"></i> 100% KOPI</span>
+                            <span><i class="fas fa-mug-hot"></i> AROMATIK</span>
+                        </div>
+                        <div class="bold-img-box">
+                            <img src="images/judul-kopi.webp" alt="Kopi Murni Malang" class="bold-img" width="800" height="450">
+                        </div>
+                        <div>
+                            <a href="katalog.html" class="btn-bold wiggle-effect">
+                                <i class="fas fa-store"></i> BELI KOPI
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
             </div>
             
+            <div class="bold-trust" style="margin-top: 2rem; position: relative; z-index: 5;">
+                <i class="fas fa-truck-fast"></i> Cek Ongkir Otomatis  |  
+                <i class="fas fa-hand-holding-dollar"></i> <strong>BISA COD</strong>
+            </div>
+
             <div class="wave-bottom">
                 <svg viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill="#ffffff" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -242,7 +349,7 @@
                 </div>
             </div>
         </section>
-      
+       
         <section id="katalog" class="catalog-premium-section">
     <div class="container">
         
@@ -459,9 +566,25 @@
         <span class="float-text">Chat Admin</span>
     </a>
 
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("hero-slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+                slides[i].classList.remove('active');
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            
+            slides[slideIndex-1].style.display = "block";  
+            slides[slideIndex-1].classList.add('active');
+            setTimeout(showSlides, 4000); // Ganti gambar setiap 4 detik
+        }
+    </script>
+
 </body>
 </html>
-
-
-
-
