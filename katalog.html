@@ -22,115 +22,242 @@
         @font-face { font-family: 'Font Awesome 6 Brands'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2) format('woff2'); }
         .fa, .fas, .fab { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; }
         .fas { font-family: 'Font Awesome 6 Free'; font-weight: 900; } .fab { font-family: 'Font Awesome 6 Brands'; font-weight: 400; }
-        .fa-whatsapp:before{content:"\f232"} .fa-arrow-right:before{content:"\f061"} .fa-check:before{content:"\f00c"} .fa-tags:before{content:"\f02c"} .fa-home:before{content:"\f015"} .fa-truck-fast:before{content:"\f48b"} .fa-box-open:before{content:"\f49e"} .fa-map-marker-alt:before{content:"\f3c5"} .fa-instagram:before{content:"\f16d"} .fa-facebook:before{content:"\f09a"} .fa-tiktok:before{content:"\e07b"} .fa-youtube:before{content:"\f167"} .fa-store:before{content:"\f54e"}
+        .fa-whatsapp:before{content:"\f232"} .fa-arrow-right:before{content:"\f061"} .fa-check:before{content:"\f00c"} .fa-tags:before{content:"\f02c"} .fa-home:before{content:"\f015"} .fa-truck-fast:before{content:"\f48b"} .fa-box-open:before{content:"\f49e"} .fa-map-marker-alt:before{content:"\f3c5"} .fa-instagram:before{content:"\f16d"} .fa-facebook:before{content:"\f09a"} .fa-tiktok:before{content:"\e07b"} .fa-youtube:before{content:"\f167"} .fa-store:before{content:"\f54e"} .fa-chevron-left:before{content:"\f053"} .fa-chevron-right:before{content:"\f054"} .fa-times:before{content:"\f00d"}
 
         /* GLOBAL */
         :root { --red-600: #dc2626; --red-700: #b91c1c; --green-600: #16a34a; --gray-100: #f3f4f6; --text-dark: #1f2937; --white: #ffffff; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: system-ui, -apple-system, sans-serif; background: var(--gray-100); color: var(--text-dark); line-height: 1.6; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: var(--gray-100); color: var(--text-dark); line-height: 1.6; }
         a { text-decoration: none; transition: 0.3s; }
-        .container { max-width: 1300px; margin: 0 auto; padding: 0 1rem; } /* Container diperlebar dikit untuk 6 kolom */
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 1rem; }
         img { max-width: 100%; height: auto; display: block; }
 
         /* HEADER */
-        header { background: var(--white); padding: 1rem 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 50; }
+        header { background: var(--white); padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 50; }
         .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        .logo h1 { font-size: 1.1rem; font-weight: 800; color: var(--red-600); margin: 0; text-transform: uppercase; }
+        .logo h1 { font-size: 1.1rem; font-weight: 800; color: var(--red-600); margin: 0; text-transform: uppercase; letter-spacing: 0.5px; }
         .btn-back { color: var(--text-dark); font-weight: 600; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
         .btn-back:hover { color: var(--red-600); }
 
         /* HERO & COD INFO */
         .cat-hero { background: white; padding: 2rem 0; text-align: center; margin-bottom: 2rem; border-bottom: 1px solid #e5e7eb; }
         .cat-hero h2 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text-dark); font-weight: 800; }
-        .cod-badge { background: #dcfce7; color: #14532d; padding: 0.5rem 1rem; border-radius: 50px; font-weight: 800; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; border: 1px solid #16a34a; }
+        .cod-badge { background: #dcfce7; color: #14532d; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 800; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; border: 2px solid #16a34a; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
 
-        /* PRICING TABLE (Disimpan tapi dirapikan) */
+        /* PRICING TABLE */
         .pricing-section { margin-bottom: 3rem; }
-        .pricing-box { max-width: 800px; margin: 0 auto; background: white; border-radius: 0.5rem; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .pricing-header { background: var(--text-dark); color: white; padding: 0.8rem; text-align: center; font-weight: bold; }
+        .pricing-box { max-width: 800px; margin: 0 auto; background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #f3f4f6; }
+        .pricing-header { background: var(--text-dark); color: white; padding: 1rem; text-align: center; font-weight: bold; letter-spacing: 0.5px; }
         .pricing-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-        .pricing-table th, .pricing-table td { padding: 0.8rem; text-align: left; border-bottom: 1px solid #f3f4f6; }
-        .discount-badge { background: var(--green-600); color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; }
+        .pricing-table th, .pricing-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #f3f4f6; }
+        .discount-badge { background: var(--green-600); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
 
-        /* --- PRODUCT LAYOUT (CORE UPDATE) --- */
+        /* --- PRODUCT LAYOUT (DESIGN BARU) --- */
         
-        /* 1. Category Separator */
-        .cat-separator { margin: 3rem 0 1.5rem; display: flex; align-items: center; gap: 1rem; }
-        .cat-separator h3 { font-size: 1.5rem; font-weight: 800; color: var(--red-600); white-space: nowrap; margin: 0; }
-        .cat-line { height: 2px; background: #e5e7eb; width: 100%; }
+        /* 1. Category Separator (RATA TENGAH CANTIK) */
+        .cat-separator { 
+            margin: 3.5rem 0 2rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; /* Rata Tengah */
+            gap: 1rem; 
+        }
+        .cat-separator h3 { 
+            font-size: 1.6rem; 
+            font-weight: 800; 
+            color: var(--red-600); 
+            white-space: nowrap; 
+            margin: 0; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        /* Garis Kiri & Kanan */
+        .cat-line { 
+            height: 3px; 
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent); /* Gradasi Halus */
+            width: 80px; /* Panjang garis */
+            border-radius: 50px;
+        }
+        /* Variasi garis agar lebih terlihat */
+        .cat-line.solid { background: #d1d5db; width: 60px; height: 3px; }
 
-        /* 2. Grid System */
+        /* 2. Grid System (RATA TENGAH) */
         .grid-products { 
             display: grid; 
             /* HP: 2 Kolom */
             grid-template-columns: repeat(2, 1fr); 
-            gap: 1rem; 
+            gap: 1.2rem; 
             padding-bottom: 1rem; 
+            max-width: 100%;
         }
 
         /* Desktop: 6 Kolom */
         @media(min-width: 1024px) { 
             .grid-products { 
                 grid-template-columns: repeat(6, 1fr); 
-                /* Jika produk kurang dari 6, rata tengah */
+                /* Agar produk rata tengah jika jumlahnya sedikit */
                 justify-content: center; 
             } 
         }
 
-        /* 3. Product Card */
+        /* 3. Product Card (ELEGAN & BINGKAI) */
         .prod-card { 
-            background: white; border-radius: 0.5rem; overflow: hidden; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: 1px solid #f3f4f6; 
+            background: white; 
+            border-radius: 0.8rem; 
+            overflow: hidden; 
+            /* Efek Bingkai Awal (Subtle) */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+            border: 1px solid #e5e7eb; 
             display: flex; flex-direction: column; height: 100%;
+            transition: all 0.3s ease-in-out;
+            position: relative;
         }
         
-        /* 4. Image 1:1 Ratio Logic */
+        /* HOVER EFEK (MENONJOL) */
+        .prod-card:hover { 
+            transform: translateY(-8px); /* Naik ke atas */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Bayangan dalam */
+            border-color: var(--red-600); /* Bingkai berubah merah */
+        }
+        
+        /* 4. Image Logic (Klik untuk Zoom) */
         .prod-img-box { 
             width: 100%; 
-            /* Rasio 1:1 (Kotak Sempurna) */
             aspect-ratio: 1 / 1; 
             background: #f9fafb; 
             position: relative; 
             overflow: hidden;
+            cursor: pointer; /* Menandakan bisa diklik */
         }
         .prod-img-box img { 
             width: 100%; 
             height: 100%; 
-            object-fit: cover; /* Mencegah gambar gepeng */ 
-            transition: 0.3s;
+            object-fit: cover; 
+            transition: transform 0.5s ease;
         }
-        .prod-card:hover .prod-img-box img { transform: scale(1.05); }
+        .prod-card:hover .prod-img-box img { transform: scale(1.1); }
+        
+        /* Ikon kaca pembesar saat hover gambar */
+        .prod-img-box::after {
+            content: '\f00e'; /* FontAwesome Search Plus */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            opacity: 0;
+        }
+        .prod-img-box:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
 
         /* Card Content */
-        .prod-info { padding: 0.8rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .prod-badge { position: absolute; top: 8px; left: 8px; font-size: 0.7rem; font-weight: bold; padding: 2px 8px; border-radius: 4px; z-index: 10; }
+        .prod-info { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .prod-badge { position: absolute; top: 10px; left: 10px; font-size: 0.65rem; font-weight: 800; padding: 4px 10px; border-radius: 50px; z-index: 10; letter-spacing: 0.5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         .badge-best { background: #dc2626; color: white; }
         .badge-new { background: #ea580c; color: white; }
         
-        .prod-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem; line-height: 1.3; }
-        .prod-desc { font-size: 0.8rem; color: #6b7280; margin-bottom: 0.8rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .prod-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; line-height: 1.3; color: var(--text-dark); }
+        .prod-desc { font-size: 0.85rem; color: #6b7280; margin-bottom: 1rem; line-height: 1.4; }
         
-        .price-box { margin-top: auto; margin-bottom: 0.8rem; }
+        .price-box { margin-top: auto; margin-bottom: 1rem; }
         .price { font-size: 1.1rem; font-weight: 800; color: var(--red-600); display: block; }
-        .price-promo { font-size: 0.75rem; color: #15803d; background: #dcfce7; padding: 2px 5px; border-radius: 4px; display: inline-block; }
+        .price-promo { font-size: 0.75rem; color: #15803d; background: #dcfce7; padding: 3px 8px; border-radius: 4px; display: inline-block; font-weight: 600; margin-top: 3px; }
 
         /* Button WA */
         .btn-wa { 
             display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-            width: 100%; padding: 0.6rem; text-align: center; border-radius: 0.4rem; 
-            font-weight: 700; font-size: 0.9rem; background: #25D366; color: white; 
-            border: 1px solid #20bd5a;
+            width: 100%; padding: 0.7rem; text-align: center; border-radius: 0.5rem; 
+            font-weight: 700; font-size: 0.9rem; background: linear-gradient(to bottom, #25D366, #1da851); color: white; 
+            border: 1px solid #1da851; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .btn-wa:hover { background: #1da851; }
+        .btn-wa:hover { filter: brightness(1.1); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
 
         /* SEO & FOOTER */
-        .seo-content { background: white; padding: 3rem 0; border-top: 1px solid #e5e7eb; margin-top: 3rem; }
+        .seo-content { background: white; padding: 3rem 0; border-top: 1px solid #e5e7eb; margin-top: 4rem; }
         .seo-content h2 { font-size: 1.5rem; color: var(--text-dark); margin-bottom: 1rem; text-align: center; }
         .seo-content p { color: #4b5563; font-size: 0.95rem; margin-bottom: 1rem; text-align: justify; max-width: 900px; margin-left: auto; margin-right: auto; }
         
         footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: center; }
         .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; font-size: 1.5rem; }
         .footer-copy { margin-top: 2rem; border-top: 1px solid #374151; padding-top: 1rem; font-size: 0.85rem; }
+
+        /* --- LIGHTBOX (GALERI GAMBAR) --- */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 0;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+            animation: zoom 0.3s;
+        }
+        @keyframes zoom { from {transform:scale(0)} to {transform:scale(1)} }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 10001;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            transform: translateY(-50%);
+            z-index: 10000;
+        }
+        .nav-btn {
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 50px; height: 50px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        .nav-btn:hover { background: rgba(255,255,255,0.2); }
+        .caption { margin: 10px auto; width: 80%; max-width: 700px; text-align: center; color: #ccc; font-size: 1rem; }
     </style>
 </head>
 <body>
@@ -165,15 +292,16 @@
             </section>
 
             <div class="cat-separator">
+                <div class="cat-line solid"></div>
                 <h3>Abon Sapi</h3>
-                <div class="cat-line"></div>
+                <div class="cat-line solid"></div>
             </div>
 
             <div class="grid-products">
                 <div class="prod-card">
-                    <div class="prod-img-box">
+                    <div class="prod-img-box" onclick="openLightbox(0)">
                         <span class="prod-badge badge-best">BEST SELLER</span>
-                        <img src="kemasan-abon-100gr-sblh.webp" alt="Abon Sapi Tumbuk 100gr" loading="lazy">
+                        <img src="kemasan-abon-100gr-sblh.webp" alt="Abon Sapi Tumbuk 100gr" loading="lazy" class="gallery-img">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Abon Sapi Tumbuk (100gr)</h3>
@@ -189,9 +317,9 @@
                 </div>
 
                 <div class="prod-card">
-                    <div class="prod-img-box">
+                    <div class="prod-img-box" onclick="openLightbox(1)">
                         <span class="prod-badge badge-best">PRAKTIS</span>
-                        <img src="kemasan-abon-10gr-tas.webp" alt="Abon Sachet" loading="lazy">
+                        <img src="kemasan-abon-10gr-tas.webp" alt="Abon Sachet Pack" loading="lazy" class="gallery-img">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Abon Sachet 10gr (Pack)</h3>
@@ -208,15 +336,16 @@
             </div>
 
             <div class="cat-separator">
+                <div class="cat-line solid"></div>
                 <h3>Pempek</h3>
-                <div class="cat-line"></div>
+                <div class="cat-line solid"></div>
             </div>
 
             <div class="grid-products">
                 <div class="prod-card">
-                    <div class="prod-img-box">
+                    <div class="prod-img-box" onclick="openLightbox(2)">
                         <span class="prod-badge badge-best" style="background:#15803d;">FROZEN</span>
-                        <img src="pempek-palembang.webp" alt="Pempek Palembang" loading="lazy">
+                        <img src="pempek-palembang.webp" alt="Pempek Palembang" loading="lazy" class="gallery-img">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Pempek Ikan Tenggiri</h3>
@@ -233,15 +362,16 @@
             </div>
 
             <div class="cat-separator">
-                <h3>Keripik Sayur & Buah</h3>
-                <div class="cat-line"></div>
+                <div class="cat-line solid"></div>
+                <h3>Snack Sehat</h3>
+                <div class="cat-line solid"></div>
             </div>
 
             <div class="grid-products">
                 <div class="prod-card">
-                    <div class="prod-img-box">
+                    <div class="prod-img-box" onclick="openLightbox(3)">
                         <span class="prod-badge badge-new">KriukQue</span>
-                        <img src="keripik-ubi-madu-7.jpg" alt="Keripik Ubi Madu" loading="lazy">
+                        <img src="keripik-ubi-madu-7.jpg" alt="Keripik Ubi Madu" loading="lazy" class="gallery-img">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Keripik Ubi Madu</h3>
@@ -257,9 +387,9 @@
                 </div>
 
                 <div class="prod-card">
-                    <div class="prod-img-box">
+                    <div class="prod-img-box" onclick="openLightbox(4)">
                         <span class="prod-badge badge-new">KriukQue</span>
-                        <img src="keripik-wortel-5.jpg" alt="Keripik Wortel" loading="lazy">
+                        <img src="keripik-wortel-5.jpg" alt="Keripik Wortel" loading="lazy" class="gallery-img">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Keripik Wortel</h3>
@@ -274,9 +404,9 @@
                     </div>
                 </div>
                  <div class="prod-card">
-                    <div class="prod-img-box">
+                    <div class="prod-img-box" onclick="openLightbox(5)">
                         <span class="prod-badge badge-new">KriukQue</span>
-                        <img src="keripik-sayur.webp" alt="Keripik Mix Sayur" loading="lazy">
+                        <img src="keripik-sayur.webp" alt="Keripik Mix Sayur" loading="lazy" class="gallery-img">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Mix Sayur & Buah</h3>
@@ -293,15 +423,16 @@
             </div>
 
             <div class="cat-separator">
+                <div class="cat-line solid"></div>
                 <h3>Kopi Nusantara</h3>
-                <div class="cat-line"></div>
+                <div class="cat-line solid"></div>
             </div>
 
             <div class="grid-products">
                 <div class="prod-card">
-                    <div class="prod-img-box">
+                    <div class="prod-img-box" onclick="openLightbox(6)">
                         <span class="prod-badge badge-new" style="background:#451a03;">PREMIUM</span>
-                        <img src="kopi-barokah.webp" alt="Kopi Excelsa" loading="lazy">
+                        <img src="kopi-barokah.webp" alt="Kopi Excelsa" loading="lazy" class="gallery-img">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Kopi Excelsa & Robusta</h3>
@@ -349,6 +480,67 @@
             </div>
         </div>
     </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-nav">
+            <div class="nav-btn" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></div>
+            <div class="nav-btn" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="caption" id="caption"></div>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.gallery-img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const captionText = document.getElementById('caption');
+
+        // Buka Lightbox
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightbox.style.display = "flex"; // Gunakan Flex agar rata tengah
+            showImage();
+        }
+
+        // Tutup Lightbox
+        function closeLightbox() {
+            lightbox.style.display = "none";
+        }
+
+        // Tampilkan Gambar
+        function showImage() {
+            let img = images[currentImageIndex];
+            lightboxImg.src = img.src;
+            captionText.innerHTML = img.alt; // Menampilkan Alt Text sebagai caption
+        }
+
+        // Ganti Gambar (Next/Prev)
+        function changeImage(n) {
+            currentImageIndex += n;
+            if (currentImageIndex >= images.length) { currentImageIndex = 0; }
+            if (currentImageIndex < 0) { currentImageIndex = images.length - 1; }
+            showImage();
+        }
+
+        // Tutup jika klik area hitam
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard Support
+        document.addEventListener('keydown', function(e) {
+            if(lightbox.style.display === "flex") {
+                if (e.key === "ArrowLeft") changeImage(-1);
+                if (e.key === "ArrowRight") changeImage(1);
+                if (e.key === "Escape") closeLightbox();
+            }
+        });
+    </script>
 
 </body>
 </html>
