@@ -1,486 +1,232 @@
+/* =========================================
+   1. SETUP, FONTS & VARIABLES
+   ========================================= */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
-/* FONT AWESOME MANUAL */
-@font-face { font-family: 'Font Awesome 6 Free'; font-style: normal; font-weight: 900; font-display: swap; src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2) format('woff2'); }
-@font-face { font-family: 'Font Awesome 6 Brands'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2) format('woff2'); }
-.fa, .fas, .fab { -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; }
-.fas { font-family: 'Font Awesome 6 Free'; font-weight: 900; }
-.fab { font-family: 'Font Awesome 6 Brands'; font-weight: 400; }
-/* Ikon */
-.fa-check:before { content: "\f00c"; } .fa-whatsapp:before { content: "\f232"; } .fa-instagram:before { content: "\f16d"; } .fa-facebook:before { content: "\f09a"; } .fa-tiktok:before { content: "\e07b"; } .fa-youtube:before { content: "\f167"; } .fa-store:before { content: "\f54e"; } .fa-arrow-right:before { content: "\f061"; } .fa-leaf:before { content: "\f06c"; } .fa-star:before { content: "\f005"; } .fa-handshake:before { content: "\f2b5"; } .fa-utensils:before { content: "\f2e7"; } .fa-map-marker-alt:before { content: "\f3c5"; }
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@700;800&family=Poppins:wght@400;600;700;900&display=swap');
 
-/* VARIABEL WARNA */
 :root {
-    --primary-red: #c2201a; --dark-red: #991b1b;
-    --primary-green: #14532d; --dark-green: #0f3d20;
-    --text-dark: #111827; --text-gray: #374151;
-    --bg-light: #f9fafb; --white: #ffffff;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    /* Color Palette */
+    --red-primary: #c2201a;
+    --red-dark: #991b1b;
+    --red-darker: #7f1d1d;
+    --green-primary: #15803d;
+    --green-dark: #14532d;
+    --yellow-pale: #fffde7;
+    --yellow-light: #fef08a;
+    --yellow-gold: #fbbf24;
+    --gray-light: #f3f4f6;
+    --gray-dark: #1f2937;
+    --gray-text: #4b5563;
+    --white: #ffffff;
+    
+    /* Effects */
+    --shadow-card: 0 10px 30px rgba(0,0,0,0.08);
+    --shadow-float: 0 20px 50px rgba(0,0,0,0.3);
 }
 
-/* RESET & GLOBAL */
+/* Reset & Base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
-body { font-family: system-ui, -apple-system, sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+body { font-family: 'Poppins', sans-serif; color: var(--gray-dark); line-height: 1.6; background: var(--white); overflow-x: hidden; }
 img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-.text-center { text-align: center; }
-.hidden { display: none; }
 
-/* HEADER */
-header { background: var(--white); padding: 1rem 0; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
-.nav-flex { display: flex; justify-content: space-between; align-items: center; }
-.logo h1 { font-size: 1.25rem; font-weight: 800; color: var(--primary-red); letter-spacing: 0.05em; }
-.logo span { color: var(--primary-green); }
-
-/* HERO */
-.hero { background: linear-gradient(to bottom right, #fff1f2, #f0fdf4); padding: 5rem 0; text-align: center; }
-.hero h2 { font-size: 2.5rem; font-weight: 800; color: var(--text-dark); margin-bottom: 1rem; line-height: 1.2; }
-.hero p { font-size: 1.25rem; color: var(--text-gray); max-width: 40rem; margin: 0 auto 2rem; }
-.btn-main { display: inline-block; background: var(--primary-green); color: var(--white); padding: 0.75rem 2rem; border-radius: 99px; font-weight: 700; font-size: 1.1rem; }
-.btn-main:hover { background: var(--dark-green); transform: translateY(-2px); }
-
-/* VALUES */
-.values-section { padding: 4rem 0; background: var(--white); }
-.section-title { font-size: 2rem; font-weight: 800; margin-bottom: 3rem; text-align: center; color: var(--text-dark); }
-.values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-.value-card { text-align: center; padding: 2rem; border: 1px solid #e5e7eb; border-radius: 1rem; transition: 0.3s; }
-.value-card:hover { border-color: var(--primary-green); box-shadow: var(--shadow); }
-.value-icon { font-size: 2.5rem; color: var(--primary-green); margin-bottom: 1rem; }
-.value-card h3 { font-weight: 700; margin-bottom: 0.5rem; color: var(--text-dark); }
-.value-card p { color: var(--text-gray); }
-
-/* CATALOG */
-.catalog-section { padding: 4rem 0; }
-.catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.product-card { background: var(--white); border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; height: 100%; border: 1px solid #e5e7eb; }
-.product-img { height: 200px; width: 100%; object-fit: cover; background-color: #f1f5f9; }
-.product-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-.product-category { font-size: 0.8rem; text-transform: uppercase; color: var(--text-gray); font-weight: 700; letter-spacing: 0.5px; }
-.product-title { font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0; color: var(--text-dark); }
-.product-desc { font-size: 0.95rem; color: var(--text-gray); margin-bottom: 1.5rem; flex-grow: 1; }
-.btn-product { display: block; text-align: center; background: var(--primary-red); color: var(--white); padding: 0.75rem; border-radius: 0.5rem; font-weight: 600; }
-.btn-product:hover { background: var(--dark-red); }
-.btn-disabled { background: #6b7280; color: #ffffff; cursor: not-allowed; }
-
-/* PARTNERSHIP */
-.partner-section { background: var(--bg-light); padding: 4rem 0; border-top: 1px solid #e5e7eb; }
-.partner-box { background: var(--primary-green); color: var(--white); padding: 3rem; border-radius: 1rem; text-align: center; }
-.partner-box h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem; color: var(--white); }
-.partner-box p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; color: #ffffff; opacity: 0.9; }
-.btn-white { background: var(--white); color: var(--primary-green); padding: 0.75rem 2rem; border-radius: 99px; font-weight: 700; display: inline-block; margin-top: 1.5rem; }
-.btn-white:hover { background: #f0fdf4; color: var(--dark-green); }
-
-/* FOOTER */
-footer { background: #111827; color: #9ca3af; padding: 3rem 0; text-align: center; }
-.social-links { margin: 1.5rem 0; font-size: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; }
-.social-links a { color: #e5e7eb; }
-.social-links a:hover { color: var(--white); }
-.footer-copy { font-size: 0.875rem; border-top: 1px solid #374151; margin-top: 2rem; padding-top: 1.5rem; }
-
-/* --- CSS HERO BOLD V2 (HIGH CONTRAST) --- */
-
-/* Import Font */
-@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@800&family=Poppins:wght@400;600;800&display=swap');
-
-/* Section Container */
-.hero-bold {
-    /* Background Lebih Gelap untuk Kontras Maksimal */
-    background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%); 
-    padding: 5rem 1.5rem 7rem;
-    text-align: center;
-    color: white;
-    position: relative;
+/* =========================================
+   2. UTILITY & COMPONENTS
+   ========================================= */
+/* Wave Separator Fix (KUNCI PERBAIKAN GELOMBANG) */
+.wave-separator, .wave-footer {
+    width: 100%;
+    line-height: 0; /* Hapus gap putih */
     overflow: hidden;
-}
-
-/* Wrapper */
-.bold-wrap {
-    max-width: 800px;
-    margin: 0 auto;
     position: relative;
-    z-index: 10;
-}
-
-/* Judul Utama */
-.bold-title {
-    font-family: 'Eczar', serif;
-    font-weight: 800;
-    font-size: 3rem;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    text-shadow: 3px 3px 0px rgba(0,0,0,0.3); /* Shadow lebih tebal agar teks nonjol */
-    color: #ffffff;
-}
-
-/* Highlight Kuning (Lebih Terang) */
-.bold-highlight {
-    color: #fef08a; /* Kuning Pucat Terang */
-    font-style: italic;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Shadow agar tidak mati di background merah */
-}
-
-/* Deskripsi (Putih Mutlak & Tebal) */
-.bold-desc {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    margin: 0 auto 2rem;
-    color: #ffffff; /* Putih Mutlak */
-    line-height: 1.6;
-    max-width: 650px;
-    font-weight: 500; /* Sedikit ditebalkan */
-}
-
-/* Badges (DIUBAH TOTAL: Solid Putih) */
-.bold-badges {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 2.5rem;
-}
-.bold-badges span {
-    font-family: 'Poppins', sans-serif;
-    background: #ffffff; /* Solid Putih */
-    color: #991b1b; /* Teks Merah Gelap */
-    padding: 8px 18px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 800; /* Font Tebal */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Bayangan agar tombol 'mengapung' */
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-.bold-badges span i {
-    color: #16a34a; /* Ikon Hijau (Halal/Alami) */
-}
-
-/* Box Gambar */
-.bold-img-box {
-    margin: 0 auto;
-    position: relative;
-    display: inline-block;
-}
-/* Efek Glow Putih Terang */
-.bold-img-box::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 95%;
-    height: 95%;
-    background: rgba(255,255,255,0.2);
-    filter: blur(50px);
-    z-index: -1;
-    border-radius: 50%;
-}
-
-.bold-img {
-    width: 100%;
-    max-width: 600px; /* Saya perlebar sedikit agar rasio 16:9 lebih lega */
-    height: auto;     /* PENTING: Agar tinggi menyesuaikan otomatis, tidak gepeng */
-    aspect-ratio: 16/9; /* Mengunci rasio agar sesuai gambar asli Anda */
-    object-fit: contain; /* PENTING: Memastikan gambar tampil UTUH 100% tanpa terpotong */
-    
-    border-radius: 15px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-    transform: rotate(-2deg);
-    border: 4px solid rgba(255,255,255,0.2);
-    background-color: #fff; /* Jaga-jaga jika gambar transparan, dikasih latar putih */
-}
-
-/* Tombol CTA (Kuning Emas Solid) */
-.btn-bold {
-    display: inline-block;
-    background: #fbbf24; /* Kuning Emas (Amber 400) */
-    color: #450a0a; /* Merah Sangat Gelap (Hampir Hitam) */
-    padding: 1.2rem 3rem;
-    border-radius: 50px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 900; /* Extra Bold */
-    font-size: 1.3rem;
-    text-decoration: none;
-    box-shadow: 0 6px 0px #b45309, 0 20px 40px rgba(0,0,0,0.4); /* Efek 3D Kuat */
-    transition: all 0.1s;
-    margin-top: -40px;
-    position: relative;
-    z-index: 20;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 2px solid #fffbeb; /* Border tipis agar makin kontras */
-}
-.btn-bold:hover {
-    background: #fcd34d;
-    transform: translateY(-3px);
-}
-.btn-bold:active {
-    transform: translateY(5px);
-    box-shadow: 0 2px 0px #b45309;
-}
-
-/* Animasi Wiggle */
-@keyframes wiggle {
-    0%, 100% { transform: rotate(-2deg); }
-    50% { transform: rotate(2deg); }
-}
-.wiggle-effect { animation: wiggle 3s infinite ease-in-out; }
-
-/* Info Trust (COD) */
-.bold-trust {
-    margin-top: 2.5rem;
-    color: #fef08a; /* Kuning Pucat */
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    background: rgba(0,0,0,0.2); /* Latar Hitam Transparan */
-    padding: 8px 20px;
-    border-radius: 10px;
-    display: inline-block;
-}
-
-/* Gelombang Bawah */
-.wave-bottom {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    line-height: 0;
-}
-
-/* --- RESPONSIF HP --- */
-@media (max-width: 768px) {
-    .hero-bold { padding: 4rem 1rem 5rem; }
-    .bold-title { font-size: 2.2rem; }
-    .bold-img { max-width: 90%; transform: rotate(0deg); }
-    .btn-bold { width: 100%; font-size: 1.1rem; padding: 1rem; margin-top: 1rem; }
-    .bold-desc { font-size: 1rem; color: #fff; } /* Pastikan putih di HP */
-    .bold-badges { gap: 8px; }
-    .bold-badges span { padding: 6px 12px; font-size: 0.8rem; }
-}
-    .bold-desc { font-size: 1rem; }
-}
-
-/* --- CSS SECTION 2: VALUES BOLD (PERBAIKAN) --- */
-
-.values-bold-section {
-    padding: 4rem 1.5rem 5rem;
-    background-color: #ffffff;
-    text-align: center;
-}
-
-/* Judul Section */
-.val-title-bold {
-    font-family: 'Eczar', serif;
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #991b1b;
-    margin-bottom: 3rem;
-    position: relative;
-    display: inline-block;
-    text-transform: uppercase; /* Agar Huruf Besar Semua */
-}
-/* Garis Kuning di Bawah Judul */
-.val-title-bold::after {
-    content: '';
-    display: block;
-    width: 60%;
-    height: 5px;
-    background: #fde047; /* Kuning */
-    margin: 10px auto 0;
-    border-radius: 5px;
-}
-
-/* Grid */
-.val-grid-bold {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Kartu */
-.val-card-bold {
-    background: #fff;
-    padding: 2.5rem 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    border: 1px solid #f3f4f6;
-    transition: transform 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-.val-card-bold::before { /* Garis Merah Atas */
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: #c2201a;
-}
-.val-card-bold:hover { transform: translateY(-10px); }
-
-/* Ikon Box (Lingkaran Kuning) */
-.val-icon-box {
-    width: 80px;
-    height: 80px;
-    background: #fefce8;
-    border: 2px solid #fde047;
-    color: #c2201a;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    font-size: 2.5rem; /* Ukuran Ikon Diperbesar */
-}
-
-.val-head-bold {
-    font-family: 'Eczar', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 1rem;
-}
-
-.val-desc-bold {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    color: #4b5563;
-    line-height: 1.6;
-}
-/* ============================================================
-   GABUNGAN FINAL: SECTION 3 (KATALOG) & SECTION 4 (COD)
-   ============================================================ */
-
-/* --- 1. SECTION KATALOG (MERAH MEWAH) --- */
-.catalog-premium-section {
-    position: relative;
-    background: linear-gradient(180deg, #991b1b 0%, #7f1d1d 100%); /* Merah Gradasi */
-    padding: 6rem 1.5rem 12rem; /* Padding bawah besar agar tidak ketutup gelombang */
-    text-align: center;
-    color: white;
-    z-index: 2;
-}
-
-/* GELOMBANG PENUTUP (WARNA KUNING MUDA) */
-/* Gelombang ini warnanya #fffde7 agar menyatu dengan atasnya Section 4 */
-.catalog-premium-section::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23fffde7' fill-opacity='1' d='M0,128L48,138.7C96,149,192,171,288,176C384,181,480,171,576,144C672,117,768,75,864,80C960,85,1056,139,1152,160C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
     z-index: 5;
 }
-
-/* Judul Katalog */
-.cat-title-premium {
-    font-family: 'Eczar', serif; font-size: 2.5rem; font-weight: 800;
-    color: #ffffff; margin-bottom: 3rem; text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+.wave-separator svg, .wave-footer svg {
+    display: block;
+    width: 100%;
+    height: auto; /* Tinggi otomatis proporsional */
+    min-height: 50px; /* Minimal tinggi di HP */
 }
-.cat-title-premium span { color: #fde047; font-style: italic; border-bottom: 3px solid #fde047; }
+/* Warna Latar Belakang Wave agar menyatu */
+.wave-separator { background: linear-gradient(180deg, var(--red-dark) 0%, var(--red-darker) 100%); }
+.wave-footer { background: var(--gray-light); margin-bottom: -1px; /* Hack anti garis putih */ }
 
-/* Grid Produk */
-.cat-grid-premium {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem; max-width: 1100px; margin: 0 auto; position: relative; z-index: 2;
+/* Buttons */
+.btn-main, .btn-bold, .btn-cat-premium, .btn-fun {
+    display: inline-block; border-radius: 50px; font-weight: 800; 
+    text-align: center; text-transform: uppercase; cursor: pointer; border: none;
 }
 
-/* Kartu Produk */
+/* =========================================
+   3. HEADER
+   ========================================= */
+header { background: var(--white); padding: 0.8rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; gap: 0.5rem; }
+.logo h1 { font-family: 'Eczar', serif; font-size: 1.2rem; color: var(--red-primary); line-height: 1.2; }
+.logo span { color: var(--green-primary); display: block; font-size: 0.9em; }
+.btn-main { background: var(--green-dark); color: var(--white); padding: 0.5rem 1.2rem; font-size: 0.9rem; }
+.btn-main:hover { background: var(--green-primary); }
+
+/* =========================================
+   4. HERO SECTION (BOLD)
+   ========================================= */
+.hero-bold {
+    background: linear-gradient(135deg, var(--red-dark) 0%, var(--red-darker) 100%);
+    padding: 4rem 1.5rem 6rem; text-align: center; color: var(--white); position: relative;
+}
+.bold-title {
+    font-family: 'Eczar', serif; font-size: clamp(2rem, 5vw, 3.5rem); 
+    line-height: 1.1; margin-bottom: 1rem; text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+}
+.bold-highlight { color: var(--yellow-light); font-style: italic; }
+.bold-desc { font-size: 1.1rem; max-width: 650px; margin: 0 auto 2rem; opacity: 0.95; }
+
+.bold-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 2rem; }
+.bold-badges span {
+    background: var(--white); color: var(--red-dark); padding: 6px 15px; 
+    border-radius: 50px; font-size: 0.85rem; font-weight: 700; box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+.bold-badges i { color: var(--green-primary); margin-right: 5px; }
+
+.bold-img-box { position: relative; margin: 0 auto; display: inline-block; z-index: 1; }
+.bold-img-box::before {
+    content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 80%; height: 80%; background: rgba(255,255,255,0.2); filter: blur(40px); z-index: -1;
+}
+.bold-img {
+    width: 100%; max-width: 550px; border-radius: 15px; 
+    border: 3px solid rgba(255,255,255,0.2); transform: rotate(-2deg);
+}
+
+.btn-bold {
+    background: var(--yellow-gold); color: #450a0a; padding: 1rem 2.5rem; 
+    font-size: 1.1rem; box-shadow: 0 6px 0 #b45309, 0 15px 30px rgba(0,0,0,0.3);
+    margin-top: -30px; position: relative; z-index: 10; border: 2px solid #fffbeb;
+}
+.btn-bold:hover { transform: translateY(-3px); background: #fcd34d; }
+.wiggle-effect { animation: wiggle 3s infinite ease-in-out; }
+
+.bold-trust {
+    margin-top: 2rem; background: rgba(0,0,0,0.25); display: inline-block; 
+    padding: 8px 20px; border-radius: 10px; color: var(--yellow-light); font-size: 0.9rem;
+}
+.wave-bottom { position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; }
+
+/* =========================================
+   5. VALUES SECTION
+   ========================================= */
+.values-bold-section { padding: 4rem 1.5rem; text-align: center; }
+.val-title-bold {
+    font-family: 'Eczar', serif; font-size: 2rem; color: var(--red-dark); 
+    margin-bottom: 3rem; text-transform: uppercase; position: relative; display: inline-block;
+}
+.val-title-bold::after {
+    content: ''; display: block; width: 50%; height: 4px; 
+    background: var(--yellow-gold); margin: 8px auto 0; border-radius: 4px;
+}
+.val-grid-bold { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.val-card-bold {
+    background: var(--white); padding: 2rem; border-radius: 15px; 
+    box-shadow: var(--shadow-card); border-top: 5px solid var(--red-primary);
+    transition: transform 0.3s;
+}
+.val-card-bold:hover { transform: translateY(-5px); }
+.val-icon-box {
+    width: 70px; height: 70px; background: var(--yellow-pale); border: 2px solid var(--yellow-light);
+    color: var(--red-primary); border-radius: 50%; display: flex; align-items: center; 
+    justify-content: center; margin: 0 auto 1rem; font-size: 2rem;
+}
+
+/* =========================================
+   6. CATALOG SECTION
+   ========================================= */
+.catalog-premium-section {
+    background: linear-gradient(180deg, var(--red-dark) 0%, var(--red-darker) 100%);
+    padding: 5rem 1.5rem 2rem; /* Padding bawah dikurangi karena ada Wave Separator */
+    text-align: center; color: var(--white);
+}
+.cat-title-premium { font-family: 'Eczar', serif; font-size: 2.2rem; margin-bottom: 3rem; }
+.cat-title-premium span { color: var(--yellow-light); font-style: italic; border-bottom: 2px solid; }
+
+.cat-grid-premium { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
 .prod-card-premium {
-    background: white; border-radius: 20px; overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3); border: 4px solid rgba(255,255,255,0.1);
-    transition: all 0.3s ease; display: flex; flex-direction: column;
+    background: var(--white); border-radius: 15px; overflow: hidden; 
+    box-shadow: var(--shadow-float); display: flex; flex-direction: column;
 }
-.prod-card-premium:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.4); border-color: #fde047;
-}
-
-/* Elemen Kartu */
-.prod-img-box { height: 250px; overflow: hidden; position: relative; background: #f3f4f6; }
+.prod-img-box { position: relative; height: 220px; overflow: hidden; background: var(--gray-light); }
 .prod-img-premium { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
 .prod-card-premium:hover .prod-img-premium { transform: scale(1.1); }
+
 .cat-badge {
-    position: absolute; top: 15px; left: 15px; background: #c2201a; color: white;
-    padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 800;
-    text-transform: uppercase; box-shadow: 0 4px 10px rgba(0,0,0,0.2); border: 2px solid white;
+    position: absolute; top: 10px; left: 10px; background: var(--red-primary); 
+    color: var(--white); padding: 5px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800;
 }
-.badge-green { background: #15803d !important; }
-.prod-info-premium { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; text-align: left; }
-.prod-title-premium { font-family: 'Eczar', serif; font-size: 1.5rem; font-weight: 700; margin: 0 0 0.5rem 0; color: #1f2937; }
-.prod-desc-premium { font-family: 'Poppins', sans-serif; font-size: 0.95rem; color: #6b7280; margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.5; }
+.badge-green { background: var(--green-primary); }
+.badge-orange { background: #ea580c; }
+.badge-black { background: #451a03; }
 
-/* Tombol Produk */
-.btn-cat-premium {
-    display: block; width: 100%; padding: 14px; border-radius: 50px; text-align: center;
-    font-weight: 800; font-size: 1rem; text-decoration: none; color: white !important;
-    transition: 0.2s; border: none; text-transform: uppercase; letter-spacing: 0.5px;
-}
-.btn-red-p { background: linear-gradient(90deg, #c2201a 0%, #dc2626 100%); }
-.btn-green-p { background: linear-gradient(90deg, #14532d 0%, #16a34a 100%); }
-.btn-gray-p { background: #e5e7eb; color: #9ca3af !important; cursor: not-allowed; }
-.btn-red-p:hover, .btn-green-p:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-.stock-info { margin-top: 12px; font-size: 0.85rem; font-weight: 700; color: #16a34a; display: flex; align-items: center; gap: 6px; justify-content: center; background: #f0fdf4; padding: 5px; border-radius: 8px; }
+.prod-info-premium { padding: 1.5rem; text-align: left; flex-grow: 1; display: flex; flex-direction: column; }
+.prod-title-premium { font-family: 'Eczar', serif; font-size: 1.3rem; color: var(--gray-dark); margin-bottom: 0.5rem; }
+.prod-desc-premium { font-size: 0.9rem; color: var(--gray-text); margin-bottom: 1.5rem; flex-grow: 1; }
 
+.btn-cat-premium { width: 100%; padding: 0.8rem; font-size: 0.9rem; color: var(--white); display: flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-red-p { background: var(--red-primary); }
+.btn-green-p { background: var(--green-primary); }
+.btn-gray-p { background: #e5e7eb; color: #9ca3af; cursor: not-allowed; }
+.stock-info { margin-top: 10px; font-size: 0.8rem; color: var(--green-primary); font-weight: 700; background: #f0fdf4; padding: 5px; text-align: center; border-radius: 6px; }
 
-/* --- 2. SECTION COD (GRADASI KUNING MUDA KE TUA) --- */
+/* =========================================
+   7. COD & FUN SECTION
+   ========================================= */
 .cod-fun-section {
-    position: relative;
-    /* Gradasi: Kuning Sangat Muda (Atas) -> Kuning Emas (Bawah) */
-    background: linear-gradient(180deg, #fffde7 0%, #ffc107 100%);
-    padding: 0 1.5rem 6rem; /* Padding atas 0 agar nempel dengan gelombang */
-    text-align: center;
-    color: #1f2937;
-    z-index: 1;
+    background: linear-gradient(180deg, var(--yellow-pale) 0%, var(--yellow-gold) 100%);
+    padding: 1rem 1.5rem 5rem; /* Padding atas kecil karena nyambung wave */
 }
+.cod-fun-grid { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 3rem; max-width: 900px; margin: 0 auto; }
+.cod-fun-img { width: 100%; max-width: 400px; transform: rotate(-3deg); filter: drop-shadow(10px 10px 0 rgba(0,0,0,0.1)); }
 
-/* Container COD */
-.cod-fun-grid {
-    display: flex; flex-direction: row; align-items: center;
-    justify-content: center; gap: 3rem; max-width: 1000px; margin: 0 auto;
-}
-.cod-fun-img-box { flex: 1; position: relative; }
-.cod-fun-img { width: 100%; max-width: 450px; transform: rotate(-3deg); filter: drop-shadow(10px 15px 0px rgba(0,0,0,0.05)); }
 .cod-fun-content { flex: 1; text-align: left; }
+.fun-headline { font-family: 'Eczar', serif; font-size: 2.2rem; line-height: 1.2; color: var(--gray-dark); margin-bottom: 1rem; }
+.fun-highlight { background: var(--red-primary); color: var(--white); padding: 2px 10px; display: inline-block; transform: rotate(-2deg); }
+.cod-fun-desc { font-size: 1rem; color: var(--gray-text); margin-bottom: 1.5rem; }
 
-/* Teks COD */
-.fun-headline { font-family: 'Eczar', serif; font-size: 2.5rem; font-weight: 800; line-height: 1.2; color: #1f2937; margin-bottom: 1.5rem; }
-.fun-highlight { background: #c2201a; color: white; padding: 5px 15px; transform: rotate(-2deg); display: inline-block; box-shadow: 5px 5px 0px rgba(0,0,0,0.1); }
-.fun-highlight-2 { background: white; color: #c2201a; padding: 3px 12px; transform: rotate(2deg); display: inline-block; margin-top: 10px; border: 2px solid #c2201a; font-size: 0.7em; font-weight: 700; }
-.cod-fun-desc { font-family: 'Poppins', sans-serif; font-size: 1.1rem; color: #374151; margin-bottom: 1.5rem; }
-
-/* List & Tombol COD */
-.fun-list { list-style: none; padding: 0; margin-bottom: 2rem; }
-.fun-list li {
-    font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 600;
-    margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: #374151;
-}
-.fun-list i { color: #c2201a; font-size: 1.5rem; }
+.fun-list li { margin-bottom: 10px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.fun-list i { color: var(--red-primary); }
 
 .btn-fun {
-    display: inline-block; background: #c2201a; color: white;
-    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 1.3rem;
-    padding: 1rem 3rem; border-radius: 15px; text-decoration: none;
-    box-shadow: 0 8px 0px #7f1d1d; transform: rotate(-1deg);
-    transition: 0.2s; animation: wiggle 3s infinite ease-in-out;
+    background: var(--red-primary); color: var(--white); padding: 1rem 2.5rem;
+    font-size: 1.1rem; box-shadow: 0 6px 0 #7f1d1d; transform: rotate(-1deg);
+    transition: 0.2s;
 }
-.btn-fun:hover { transform: translateY(4px); box-shadow: 0 4px 0px #7f1d1d; background: #b91c1c; }
-.link-partner-small { display: block; margin-top: 1.5rem; font-size: 0.9rem; color: #4b5563; text-decoration: underline; font-weight: 600; }
+.btn-fun:hover { transform: translateY(4px); box-shadow: 0 3px 0 #7f1d1d; }
 
+/* =========================================
+   8. SEO & FOOTER
+   ========================================= */
+.seo-section { background: var(--gray-light); padding: 3rem 0 0; }
+.seo-section p { margin-bottom: 1rem; }
+
+footer { background: var(--gray-dark); color: #9ca3af; padding: 3rem 0; text-align: center; }
+.social-links { display: flex; justify-content: center; gap: 1.5rem; margin: 1.5rem 0; font-size: 1.5rem; }
+.social-links a:hover { color: var(--white); }
+.footer-copy { border-top: 1px solid #374151; margin-top: 2rem; padding-top: 1.5rem; font-size: 0.85rem; }
+
+/* =========================================
+   9. ANIMATIONS & MEDIA QUERIES
+   ========================================= */
 @keyframes wiggle { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
 
-/* Responsif HP */
 @media (max-width: 768px) {
-    .catalog-premium-section { padding: 5rem 1rem 10rem; }
-    .cat-title-premium { font-size: 2rem; }
-    .cod-fun-grid { flex-direction: column-reverse; gap: 2rem; }
+    .bold-title { font-size: 2.2rem; }
+    .hero-bold { padding: 4rem 1rem 5rem; }
+    .bold-img { max-width: 90%; transform: rotate(0); }
+    .cod-fun-grid { flex-direction: column-reverse; gap: 2rem; text-align: center; }
     .cod-fun-content { text-align: center; }
-    .cod-fun-img { max-width: 280px; margin: 0 auto; display: block; }
-    .fun-list { text-align: left; display: inline-block; }
-    .btn-fun { width: 100%; font-size: 1.1rem; }
+    .fun-list { display: inline-block; text-align: left; }
+    .btn-fun, .btn-bold { width: 100%; padding: 1rem; }
+    /* Fix Wave Height on Mobile */
+    .wave-separator svg, .wave-footer svg { height: 40px; } 
 }
