@@ -35,25 +35,49 @@ ul { list-style: none; }
 /* =========================================
    2. UTILITY & COMPONENTS
    ========================================= */
-/* Wave Separator Fix (KUNCI PERBAIKAN GELOMBANG) */
-.wave-separator, .wave-footer {
+
+/* WAVE SEPARATOR FIX (REVISI FINAL) */
+.wave-separator {
     width: 100%;
-    line-height: 0; /* Hapus gap putih */
+    /* Menggunakan warna solid yang SAMA PERSIS dengan bagian bawah gradasi Katalog */
+    background-color: var(--red-darker); 
+    line-height: 0; 
     overflow: hidden;
     position: relative;
     z-index: 5;
+    /* Tarik 1px ke atas untuk menutup celah putih rendering browser */
+    margin-top: -1px; 
 }
-.wave-separator svg, .wave-footer svg {
+
+.wave-separator svg {
     display: block;
     width: 100%;
-    height: auto; /* Tinggi otomatis proporsional */
-    min-height: 50px; /* Minimal tinggi di HP */
+    /* Mengunci tinggi gelombang di Desktop agar tidak terlalu besar */
+    height: 100px; 
 }
-/* Warna Latar Belakang Wave agar menyatu */
-.wave-separator { background: linear-gradient(180deg, var(--red-dark) 0%, var(--red-darker) 100%); }
-.wave-footer { background: var(--gray-light); margin-bottom: -1px; /* Hack anti garis putih */ }
 
-/* Buttons */
+.wave-footer {
+    background: var(--gray-light); /* Warna section atasnya (SEO Section) */
+    margin-bottom: -1px;
+    line-height: 0;
+}
+
+.wave-footer svg {
+    display: block;
+    width: 100%;
+    height: 100px; /* Samakan tingginya */
+}
+
+/* RESPONSIF HP */
+@media (max-width: 768px) {
+    .wave-separator svg, 
+    .wave-footer svg {
+         /* Di HP biarkan lebih kecil lagi agar proporsional */
+         height: 50px; 
+    }
+}
+
+/* Buttons (INI JANGAN DIHAPUS) */
 .btn-main, .btn-bold, .btn-cat-premium, .btn-fun {
     display: inline-block; border-radius: 50px; font-weight: 800; 
     text-align: center; text-transform: uppercase; cursor: pointer; border: none;
@@ -230,3 +254,4 @@ footer { background: var(--gray-dark); color: #9ca3af; padding: 3rem 0; text-ali
     /* Fix Wave Height on Mobile */
     .wave-separator svg, .wave-footer svg { height: 40px; } 
 }
+
