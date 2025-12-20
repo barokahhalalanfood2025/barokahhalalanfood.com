@@ -49,8 +49,9 @@
         .pricing-box { max-width: 800px; margin: 0 auto; background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #f3f4f6; }
         .pricing-header { background: var(--text-dark); color: white; padding: 1rem; text-align: center; font-weight: bold; letter-spacing: 0.5px; }
         .pricing-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        .pricing-table th { background-color: #f9fafb; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; color: var(--red-700); }
         .pricing-table th, .pricing-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #f3f4f6; }
-        .discount-badge { background: var(--green-600); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
+        .discount-badge { background: var(--green-600); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
 
         /* --- PRODUCT LAYOUT --- */
         
@@ -210,12 +211,41 @@
         <div class="container">
             <section class="pricing-section">
                 <div class="pricing-box">
-                    <div class="pricing-header"><i class="fas fa-tags"></i> Info Harga Reseller (Grosir)</div>
+                    <div class="pricing-header"><i class="fas fa-tags"></i> Daftar Harga Grosir (Reseller)</div>
                     <table class="pricing-table">
-                        <tr><td><strong>Min. 6 Pack</strong></td><td><span class="discount-badge">Diskon 8%</span></td></tr>
-                        <tr><td><strong>Min. 10 Pack</strong></td><td><span class="discount-badge">Diskon 10%</span></td></tr>
-                        <tr><td><strong>Min. 25 Pack</strong></td><td><span class="discount-badge">Diskon 15%</span></td></tr>
+                        <thead>
+                            <tr>
+                                <th>Tier Reseller</th>
+                                <th>Jumlah Pembelian</th>
+                                <th>Diskon</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tier Bronze</strong></td>
+                                <td>6 Pack</td>
+                                <td><span class="discount-badge">8.1%</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tier Silver</strong></td>
+                                <td>10 Pack</td>
+                                <td><span class="discount-badge">10%</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tier Gold</strong></td>
+                                <td>25 Pack</td>
+                                <td><span class="discount-badge">15%</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tier Platinum</strong></td>
+                                <td>50 Pack</td>
+                                <td><span class="discount-badge">22%</span></td>
+                            </tr>
+                        </tbody>
                     </table>
+                    <div style="font-size:0.8rem; padding:10px; background:#f9fafb; color:#666; text-align:center;">
+                        *Berlaku untuk Pack 100gr ATAU kelipatan 10 Sachet
+                    </div>
                 </div>
             </section>
 
