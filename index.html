@@ -42,7 +42,7 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=1.016">
+    <link rel="stylesheet" href="style.css?v=1.021">
 
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
@@ -84,19 +84,18 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
         
-        /* CSS SEDERHANA UNTUK SLIDER (SISA EDITING CSS NANTI DI FILE STYLE.CSS) */
         .hero-slider {
             position: relative;
             width: 100%;
             overflow: hidden;
         }
         .hero-slide {
-            display: none; /* Sembunyikan semua slide secara default */
+            display: none; 
             width: 100%;
-            animation: fadeEffect 1s; /* Efek transisi halus */
+            animation: fadeEffect 1.5s;
         }
         .hero-slide.active {
-            display: block; /* Tampilkan slide yang aktif */
+            display: block;
         }
         @keyframes fadeEffect {
             from {opacity: 0.4;}
@@ -193,12 +192,19 @@
                             <span><i class="fas fa-star"></i> PREMIUM</span>
                         </div>
                         <div class="bold-img-box">
-                            <img src="images/hero-all.webp" alt="Abon Sapi Barokah" class="bold-img" width="800" height="450" fetchpriority="high">
+                            <img src="images/hero-all.webp" alt="Barokah Halalan Food" class="bold-img" width="800" height="450" fetchpriority="high">
                         </div>
-                        <div>
-                            <a href="katalog.html" class="btn-bold wiggle-effect">
-                                <i class="fas fa-shopping-cart"></i> LIHAT KATALOG
-                            </a>
+                        
+                        <div class="hero-action-container">
+                            <div>
+                                <a href="katalog.html" class="btn-bold wiggle-effect">
+                                    <i class="fas fa-shopping-cart"></i> LIHAT KATALOG
+                                </a>
+                            </div>
+                            <div class="bold-trust">
+                                <i class="fas fa-truck-fast"></i> Cek Ongkir Otomatis  |  
+                                <i class="fas fa-hand-holding-dollar"></i> <strong>BISA COD</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -219,10 +225,17 @@
                         <div class="bold-img-box">
                             <img src="images/hero-abon.webp" alt="Abon Sapi Tumbuk" class="bold-img" width="800" height="450">
                         </div>
-                        <div>
-                            <a href="katalog.html" class="btn-bold wiggle-effect">
-                                <i class="fas fa-truck-fast"></i> PESAN ABON
-                            </a>
+                        
+                        <div class="hero-action-container">
+                            <div>
+                                <a href="katalog.html" class="btn-bold wiggle-effect">
+                                    <i class="fas fa-truck-fast"></i> PESAN ABON
+                                </a>
+                            </div>
+                            <div class="bold-trust">
+                                <i class="fas fa-truck-fast"></i> Cek Ongkir Otomatis  |  
+                                <i class="fas fa-hand-holding-dollar"></i> <strong>BISA COD</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -243,10 +256,17 @@
                         <div class="bold-img-box">
                             <img src="images/hero-pempek.webp" alt="Pempek Palembang" class="bold-img" width="800" height="450">
                         </div>
-                        <div>
-                            <a href="katalog.html" class="btn-bold wiggle-effect">
-                                <i class="fas fa-shopping-bag"></i> PESAN PEMPEK
-                            </a>
+
+                        <div class="hero-action-container">
+                            <div>
+                                <a href="katalog.html" class="btn-bold wiggle-effect">
+                                    <i class="fas fa-shopping-bag"></i> PESAN PEMPEK
+                                </a>
+                            </div>
+                            <div class="bold-trust">
+                                <i class="fas fa-truck-fast"></i> Cek Ongkir Otomatis  |  
+                                <i class="fas fa-hand-holding-dollar"></i> <strong>BISA COD</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -267,10 +287,17 @@
                         <div class="bold-img-box">
                             <img src="images/hero-keripik.webp" alt="Keripik Sayur Buah" class="bold-img" width="800" height="450">
                         </div>
-                        <div>
-                            <a href="katalog.html" class="btn-bold wiggle-effect">
-                                <i class="fas fa-cookie-bite"></i> COBAIN SEKARANG
-                            </a>
+
+                        <div class="hero-action-container">
+                            <div>
+                                <a href="katalog.html" class="btn-bold wiggle-effect">
+                                    <i class="fas fa-cookie-bite"></i> COBAIN SEKARANG
+                                </a>
+                            </div>
+                            <div class="bold-trust">
+                                <i class="fas fa-truck-fast"></i> Cek Ongkir Otomatis  |  
+                                <i class="fas fa-hand-holding-dollar"></i> <strong>BISA COD</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -291,21 +318,23 @@
                         <div class="bold-img-box">
                             <img src="images/hero-kopi.webp" alt="Kopi Murni Malang" class="bold-img" width="800" height="450">
                         </div>
-                        <div>
-                            <a href="katalog.html" class="btn-bold wiggle-effect">
-                                <i class="fas fa-store"></i> BELI KOPI
-                            </a>
+
+                        <div class="hero-action-container">
+                            <div>
+                                <a href="katalog.html" class="btn-bold wiggle-effect">
+                                    <i class="fas fa-store"></i> BELI KOPI
+                                </a>
+                            </div>
+                            <div class="bold-trust">
+                                <i class="fas fa-truck-fast"></i> Cek Ongkir Otomatis  |  
+                                <i class="fas fa-hand-holding-dollar"></i> <strong>BISA COD</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
             
-            <div class="bold-trust" style="margin-top: 2rem; position: relative; z-index: 5;">
-                <i class="fas fa-truck-fast"></i> Cek Ongkir Otomatis  |  
-                <i class="fas fa-hand-holding-dollar"></i> <strong>BISA COD</strong>
-            </div>
-
             <div class="wave-bottom">
                 <svg viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill="#ffffff" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
@@ -582,11 +611,9 @@
             
             slides[slideIndex-1].style.display = "block";  
             slides[slideIndex-1].classList.add('active');
-            setTimeout(showSlides, 4000); // Ganti gambar setiap 4 detik
+            setTimeout(showSlides, 4000); 
         }
     </script>
 
 </body>
 </html>
-
-
