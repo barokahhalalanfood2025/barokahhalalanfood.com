@@ -77,7 +77,7 @@ ul { list-style: none; }
     }
 }
 
-/* Buttons (INI JANGAN DIHAPUS) */
+/* Buttons */
 .btn-main, .btn-bold, .btn-cat-premium, .btn-fun {
     display: inline-block; border-radius: 50px; font-weight: 800; 
     text-align: center; text-transform: uppercase; cursor: pointer; border: none;
@@ -95,12 +95,36 @@ header { background: var(--white); padding: 0.8rem 0; box-shadow: 0 2px 10px rgb
 .btn-main:hover { background: var(--green-primary); }
 
 /* =========================================
-   4. HERO SECTION (BOLD)
+   4. HERO SECTION (SLIDER UPDATE)
    ========================================= */
 .hero-bold {
     background: linear-gradient(135deg, var(--red-dark) 0%, var(--red-darker) 100%);
     padding: 4rem 1.5rem 6rem; text-align: center; color: var(--white); position: relative;
+    /* Min-height agar tidak loncat saat loading */
+    min-height: 600px; 
+    display: flex; flex-direction: column; justify-content: center;
 }
+
+/* Style Slider Container */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Style Per Slide */
+.hero-slide {
+    display: none; /* Default hidden, JS akan mengubah jadi block */
+    animation: fadeEffect 1.5s; /* Animasi fade halus */
+}
+
+/* Keyframes untuk efek Fade */
+@keyframes fadeEffect {
+    from {opacity: 0.4} 
+    to {opacity: 1}
+}
+
 .bold-title {
     font-family: 'Eczar', serif; font-size: clamp(2rem, 5vw, 3.5rem); 
     line-height: 1.1; margin-bottom: 1rem; text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
@@ -123,6 +147,9 @@ header { background: var(--white); padding: 0.8rem 0; box-shadow: 0 2px 10px rgb
 .bold-img {
     width: 100%; max-width: 550px; border-radius: 15px; 
     border: 3px solid rgba(255,255,255,0.2); transform: rotate(-2deg);
+    /* Agar gambar slider selalu rapi */
+    aspect-ratio: 16/9; 
+    object-fit: cover;
 }
 
 .btn-bold {
@@ -169,7 +196,7 @@ header { background: var(--white); padding: 0.8rem 0; box-shadow: 0 2px 10px rgb
    ========================================= */
 .catalog-premium-section {
     background: linear-gradient(180deg, var(--red-dark) 0%, var(--red-darker) 100%);
-    padding: 5rem 1.5rem 2rem; /* Padding bawah dikurangi karena ada Wave Separator */
+    padding: 5rem 1.5rem 2rem; 
     text-align: center; color: var(--white);
 }
 .cat-title-premium { font-family: 'Eczar', serif; font-size: 2.2rem; margin-bottom: 3rem; }
@@ -180,13 +207,27 @@ header { background: var(--white); padding: 0.8rem 0; box-shadow: 0 2px 10px rgb
     background: var(--white); border-radius: 15px; overflow: hidden; 
     box-shadow: var(--shadow-float); display: flex; flex-direction: column;
 }
-.prod-img-box { position: relative; height: 220px; overflow: hidden; background: var(--gray-light); }
-.prod-img-premium { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+
+/* --- UPDATE PENTING: RASIO 1:1 --- */
+.prod-img-box { 
+    position: relative; 
+    width: 100%;
+    /* KUNCI: Membuat kotak jadi persegi sempurna (800x800) */
+    aspect-ratio: 1 / 1; 
+    overflow: hidden; 
+    background: var(--gray-light); 
+}
+.prod-img-premium { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.5s; 
+}
 .prod-card-premium:hover .prod-img-premium { transform: scale(1.1); }
 
 .cat-badge {
     position: absolute; top: 10px; left: 10px; background: var(--red-primary); 
-    color: var(--white); padding: 5px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800;
+    color: var(--white); padding: 5px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; z-index: 2;
 }
 .badge-green { background: var(--green-primary); }
 .badge-orange { background: #ea580c; }
@@ -207,7 +248,7 @@ header { background: var(--white); padding: 0.8rem 0; box-shadow: 0 2px 10px rgb
    ========================================= */
 .cod-fun-section {
     background: linear-gradient(180deg, var(--yellow-pale) 0%, var(--yellow-gold) 100%);
-    padding: 1rem 1.5rem 5rem; /* Padding atas kecil karena nyambung wave */
+    padding: 1rem 1.5rem 5rem; 
 }
 .cod-fun-grid { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 3rem; max-width: 900px; margin: 0 auto; }
 .cod-fun-img { width: 100%; max-width: 400px; transform: rotate(-3deg); filter: drop-shadow(10px 10px 0 rgba(0,0,0,0.1)); }
@@ -245,8 +286,8 @@ footer { background: var(--gray-dark); color: #9ca3af; padding: 3rem 0; text-ali
 
 @media (max-width: 768px) {
     .bold-title { font-size: 2.2rem; }
-    .hero-bold { padding: 4rem 1rem 5rem; }
-    .bold-img { max-width: 90%; transform: rotate(0); }
+    .hero-bold { padding: 4rem 1rem 5rem; min-height: auto; } /* Reset min-height di HP */
+    .bold-img { max-width: 90%; transform: rotate(0); aspect-ratio: auto; } /* Reset rotasi di HP */
     .cod-fun-grid { flex-direction: column-reverse; gap: 2rem; text-align: center; }
     .cod-fun-content { text-align: center; }
     .fun-list { display: inline-block; text-align: left; }
@@ -254,4 +295,3 @@ footer { background: var(--gray-dark); color: #9ca3af; padding: 3rem 0; text-ali
     /* Fix Wave Height on Mobile */
     .wave-separator svg, .wave-footer svg { height: 40px; } 
 }
-
