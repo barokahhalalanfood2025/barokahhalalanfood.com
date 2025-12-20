@@ -2,7 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com; frame-src 'self' http://googleusercontent.com https://www.google.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com; frame-src 'self' http://googleusercontent.com https://www.google.com;">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Katalog Lengkap | Abon, Pempek, Snack KriukQue & Kopi</title>
@@ -11,11 +12,56 @@
     <meta property="og:site_name" content="Barokah Halalan Food">
     <meta property="og:title" content="Katalog Harga Pabrik | Abon, Snack & Kopi">
     <meta property="og:description" content="Daftar harga Grosir & Eceran Abon Sapi, Pempek, Keripik Sayur & Kopi. Bisa COD!">
-    <meta property="og:image" content="https://barokahhalalanfood.com/social-preview.jpg">
+    <meta property="og:image" content="https://barokahhalalanfood.com/images/hero-all.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://barokahhalalanfood.com/katalog.html">
     <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Katalog Produk Barokah Halalan Food">
+    <meta name="twitter:description" content="Pusat Grosir Abon Sapi, Pempek, dan Snack Sehat Malang.">
+    <meta name="twitter:image" content="https://barokahhalalanfood.com/images/hero-all.jpg">
 
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "BAROKAH HALALAN FOOD",
+      "image": "https://barokahhalalanfood.com/images/hero-all.jpg",
+      "description": "Katalog Produk Barokah Halalan Food: Abon Sapi Tumbuk, Pempek Palembang, Keripik Sayur, dan Kopi Nusantara.",
+      "url": "https://barokahhalalanfood.com/katalog.html",
+      "telephone": "+6285725046201",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Brigjend Abd Manan Wijaya Gg. Gereja GKJW, RT.2/RW.2, Gesingan, Pujon Lor",
+        "addressLocality": "Kec. Pujon, Kabupaten Malang",
+        "addressRegion": "Jawa Timur",
+        "postalCode": "65391",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -7.8466774,
+        "longitude": 112.4737437
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+        "opens": "07:00",
+        "closes": "21:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/barokahhalalanfoodmlg",
+        "https://www.facebook.com/Barokahhalalanfoodmlg",
+        "https://www.tiktok.com/@barokah_halalanfood"
+      ]
+    }
+    </script>
+
     <style>
         /* FONT AWESOME */
         @font-face { font-family: 'Font Awesome 6 Free'; font-style: normal; font-weight: 900; font-display: swap; src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2) format('woff2'); }
@@ -54,77 +100,26 @@
         .discount-badge { background: var(--green-600); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
 
         /* --- PRODUCT LAYOUT --- */
-        
-        .cat-separator { 
-            margin: 3.5rem 0 2rem; 
-            display: flex; align-items: center; justify-content: center; gap: 1rem; 
-        }
-        .cat-separator h3 { 
-            font-size: 1.6rem; font-weight: 800; color: var(--red-600); white-space: nowrap; margin: 0; text-transform: uppercase; letter-spacing: 1px;
-        }
+        .cat-separator { margin: 3.5rem 0 2rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
+        .cat-separator h3 { font-size: 1.6rem; font-weight: 800; color: var(--red-600); white-space: nowrap; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
         .cat-line { height: 3px; background: linear-gradient(90deg, transparent, #e5e7eb, transparent); width: 80px; border-radius: 50px; }
         .cat-line.solid { background: #d1d5db; width: 60px; height: 3px; }
 
         /* GRID SYSTEM */
-        .grid-products { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); /* HP: 2 Kolom */
-            gap: 1.2rem; 
-            padding-bottom: 1rem; 
-        }
-
-        @media(min-width: 1024px) { 
-            .grid-products { 
-                grid-template-columns: repeat(6, 1fr); /* Desktop: 6 Kolom */
-                justify-content: center; 
-            } 
-        }
+        .grid-products { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; padding-bottom: 1rem; }
+        @media(min-width: 1024px) { .grid-products { grid-template-columns: repeat(6, 1fr); justify-content: center; } }
 
         /* PRODUCT CARD */
-        .prod-card { 
-            background: white; 
-            border-radius: 0.8rem; 
-            overflow: hidden; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
-            border: 1px solid #e5e7eb; 
-            display: flex; flex-direction: column; 
-            height: fit-content; 
-            min-height: 100%;
-            transition: all 0.3s ease-in-out;
-            position: relative;
-        }
-        
-        .prod-card:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
-            border-color: var(--red-600); 
-        }
+        .prod-card { background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e7eb; display: flex; flex-direction: column; height: fit-content; min-height: 100%; transition: all 0.3s ease-in-out; position: relative; }
+        .prod-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); border-color: var(--red-600); }
         
         /* IMAGE 1:1 */
-        .prod-img-box { 
-            width: 100%; 
-            aspect-ratio: 1 / 1; 
-            background: #f9fafb; 
-            position: relative; 
-            overflow: hidden;
-            cursor: pointer;
-        }
-        .prod-img-box img { 
-            width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
-        }
+        .prod-img-box { width: 100%; aspect-ratio: 1 / 1; background: #f9fafb; position: relative; overflow: hidden; cursor: pointer; }
+        .prod-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
         .prod-card:hover .prod-img-box img { transform: scale(1.1); }
         
         /* Zoom Icon */
-        .prod-img-box::after {
-            content: '\f00e'; 
-            font-family: 'Font Awesome 6 Free'; font-weight: 900;
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            background: rgba(0,0,0,0.5); color: white;
-            width: 50px; height: 50px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; transition: 0.3s; opacity: 0;
-        }
+        .prod-img-box::after { content: '\f00e'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); background: rgba(0,0,0,0.5); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: 0.3s; opacity: 0; }
         .prod-img-box:hover::after { transform: translate(-50%, -50%) scale(1); opacity: 1; }
 
         /* CONTENT */
@@ -136,17 +131,9 @@
         .prod-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; line-height: 1.3; color: var(--text-dark); }
         
         /* EXPANDABLE DESC */
-        .prod-desc { 
-            font-size: 0.85rem; color: #6b7280; margin-bottom: 0.5rem; line-height: 1.4;
-            display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
-            transition: all 0.3s ease;
-        }
+        .prod-desc { font-size: 0.85rem; color: #6b7280; margin-bottom: 0.5rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; transition: all 0.3s ease; }
         .prod-desc.expand { -webkit-line-clamp: unset; overflow: visible; }
-        .read-more-btn {
-            font-size: 0.75rem; color: #16a34a; font-weight: 700; cursor: pointer;
-            margin-bottom: 1rem; display: inline-flex; align-items: center; gap: 0.3rem;
-            transition: 0.3s;
-        }
+        .read-more-btn { font-size: 0.75rem; color: #16a34a; font-weight: 700; cursor: pointer; margin-bottom: 1rem; display: inline-flex; align-items: center; gap: 0.3rem; transition: 0.3s; }
         .read-more-btn:hover { color: #14532d; text-decoration: underline; }
         
         .price-box { margin-top: auto; margin-bottom: 1rem; }
@@ -154,20 +141,10 @@
         .price-promo { font-size: 0.75rem; color: #15803d; background: #dcfce7; padding: 3px 8px; border-radius: 4px; display: inline-block; font-weight: 600; margin-top: 3px; }
 
         /* BUTTONS */
-        .btn-wa { 
-            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-            width: 100%; padding: 0.7rem; text-align: center; border-radius: 0.5rem; 
-            font-weight: 700; font-size: 0.85rem; background: linear-gradient(to bottom, #25D366, #1da851); color: white; 
-            border: 1px solid #1da851; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+        .btn-wa { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.7rem; text-align: center; border-radius: 0.5rem; font-weight: 700; font-size: 0.85rem; background: linear-gradient(to bottom, #25D366, #1da851); color: white; border: 1px solid #1da851; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .btn-wa:hover { filter: brightness(1.1); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
         
-        .btn-checkout {
-            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-            width: 100%; padding: 0.7rem; text-align: center; border-radius: 0.5rem; 
-            font-weight: 700; font-size: 0.85rem; background: linear-gradient(to bottom, #dc2626, #b91c1c); color: white; 
-            border: 1px solid #b91c1c; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+        .btn-checkout { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.7rem; text-align: center; border-radius: 0.5rem; font-weight: 700; font-size: 0.85rem; background: linear-gradient(to bottom, #dc2626, #b91c1c); color: white; border: 1px solid #b91c1c; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .btn-checkout:hover { filter: brightness(1.1); }
 
         /* SEO & FOOTER */
