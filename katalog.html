@@ -22,7 +22,7 @@
         @font-face { font-family: 'Font Awesome 6 Brands'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2) format('woff2'); }
         .fa, .fas, .fab { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; }
         .fas { font-family: 'Font Awesome 6 Free'; font-weight: 900; } .fab { font-family: 'Font Awesome 6 Brands'; font-weight: 400; }
-        .fa-whatsapp:before{content:"\f232"} .fa-arrow-right:before{content:"\f061"} .fa-check:before{content:"\f00c"} .fa-tags:before{content:"\f02c"} .fa-home:before{content:"\f015"} .fa-truck-fast:before{content:"\f48b"} .fa-box-open:before{content:"\f49e"} .fa-map-marker-alt:before{content:"\f3c5"} .fa-instagram:before{content:"\f16d"} .fa-facebook:before{content:"\f09a"} .fa-tiktok:before{content:"\e07b"} .fa-youtube:before{content:"\f167"} .fa-store:before{content:"\f54e"} .fa-chevron-left:before{content:"\f053"} .fa-chevron-right:before{content:"\f054"} .fa-times:before{content:"\f00d"} .fa-shopping-cart:before{content:"\f07a"}
+        .fa-whatsapp:before{content:"\f232"} .fa-arrow-right:before{content:"\f061"} .fa-check:before{content:"\f00c"} .fa-tags:before{content:"\f02c"} .fa-home:before{content:"\f015"} .fa-truck-fast:before{content:"\f48b"} .fa-box-open:before{content:"\f49e"} .fa-map-marker-alt:before{content:"\f3c5"} .fa-instagram:before{content:"\f16d"} .fa-facebook:before{content:"\f09a"} .fa-tiktok:before{content:"\e07b"} .fa-youtube:before{content:"\f167"} .fa-store:before{content:"\f54e"} .fa-chevron-left:before{content:"\f053"} .fa-chevron-right:before{content:"\f054"} .fa-times:before{content:"\f00d"} .fa-shopping-cart:before{content:"\f07a"} .fa-chevron-down:before{content:"\f078"}
 
         /* GLOBAL */
         :root { --red-600: #dc2626; --red-700: #b91c1c; --green-600: #16a34a; --gray-100: #f3f4f6; --text-dark: #1f2937; --white: #ffffff; }
@@ -87,13 +87,14 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
             border: 1px solid #e5e7eb; 
             display: flex; flex-direction: column; 
-            height: 100%; 
+            height: fit-content; /* Ubah agar bisa memanjang saat teks dibuka */
+            min-height: 100%;
             transition: all 0.3s ease-in-out;
             position: relative;
         }
         
         .prod-card:hover { 
-            transform: translateY(-8px); 
+            transform: translateY(-5px); 
             box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
             border-color: var(--red-600); 
         }
@@ -132,13 +133,31 @@
         .badge-new { background: #ea580c; color: white; }
         
         .prod-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; line-height: 1.3; color: var(--text-dark); }
-        /* Deskripsi Clamp (Max 4 baris agar rata) */
+        
+        /* --- DESKRIPSI EXPANDABLE (UPDATE) --- */
         .prod-desc { 
-            font-size: 0.85rem; color: #6b7280; margin-bottom: 1rem; line-height: 1.4;
+            font-size: 0.85rem; color: #6b7280; margin-bottom: 0.5rem; line-height: 1.4;
+            /* Default: Terpotong 3-4 baris */
             display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
-            min-height: 4.2em; /* Menjaga tinggi deskripsi agar tombol sejajar */
+            transition: all 0.3s ease;
         }
         
+        /* Class saat dibuka */
+        .prod-desc.expand {
+            -webkit-line-clamp: unset; /* Lepas batasan */
+            overflow: visible;
+        }
+
+        /* Tombol Baca Selengkapnya */
+        .read-more-btn {
+            font-size: 0.75rem; color: #16a34a; font-weight: 700; cursor: pointer;
+            margin-bottom: 1rem; display: inline-flex; align-items: center; gap: 0.3rem;
+            transition: 0.3s;
+        }
+        .read-more-btn:hover { color: #14532d; text-decoration: underline; }
+        
+        /* ------------------------------------- */
+
         .price-box { margin-top: auto; margin-bottom: 1rem; }
         .price { font-size: 1.1rem; font-weight: 800; color: var(--red-600); display: block; }
         .price-promo { font-size: 0.75rem; color: #15803d; background: #dcfce7; padding: 3px 8px; border-radius: 4px; display: inline-block; font-weight: 600; margin-top: 3px; }
@@ -269,8 +288,14 @@
                     <div class="prod-info">
                         <h3 class="prod-title">Keripik Ubi Madu (100gr)</h3>
                         <p class="prod-desc">
-                            Stik Ubi Madu <em>Vacuum Fried</em>. Warna oranye alami, manis asli tanpa gula tambahan. Renyah & nutrisi terjaga.
+                            Stik Ubi Madu <em>Vacuum Fried</em>. Warna oranye alami, manis asli tanpa gula tambahan. Renyah & nutrisi terjaga.<br><br>
+                            <strong>Keunggulan:</strong><br>
+                            - 100% Ubi Madu Asli<br>
+                            - Tanpa Pemanis Buatan<br>
+                            - Rendah Minyak
                         </p>
+                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
+                        
                         <div class="price-box">
                             <span class="price">Rp 23.100</span>
                             <span class="price-promo">Best Seller</span>
@@ -299,8 +324,14 @@
                     <div class="prod-info">
                         <h3 class="prod-title">Keripik Wortel (100gr)</h3>
                         <p class="prod-desc">
-                            Wortel segar diproses <em>Vacuum Frying</em>. Warna oranye alami, tidak langu, renyah, dan kaya vitamin. Cocok untuk anak susah makan sayur.
+                            Wortel segar diproses <em>Vacuum Frying</em>. Warna oranye alami, tidak langu, renyah, dan kaya vitamin. Cocok untuk anak susah makan sayur.<br><br>
+                            <strong>Kenapa Keripik Wortel?</strong><br>
+                            - Sumber Vitamin A<br>
+                            - Rasa Manis Alami Wortel<br>
+                            - Tanpa MSG & Pengawet
                         </p>
+                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
+
                         <div class="price-box">
                             <span class="price">Rp 24.750</span>
                             <span class="price-promo">Sehat & Enak</span>
@@ -329,8 +360,14 @@
                     <div class="prod-info">
                         <h3 class="prod-title">Keripik Bawang Putih (100gr)</h3>
                         <p class="prod-desc">
-                            Bawang putih tunggal/kating utuh. Digoreng vakum sehingga <strong>tidak pahit</strong>, renyah, dan tidak berminyak. Camilan peningkat imun tubuh.
+                            Bawang putih tunggal/kating utuh. Digoreng vakum sehingga <strong>tidak pahit</strong>, renyah, dan tidak berminyak. Camilan peningkat imun tubuh.<br><br>
+                            <strong>Manfaat:</strong><br>
+                            - Antioksidan Tinggi<br>
+                            - Menjaga Kesehatan Jantung<br>
+                            - Enak & Tidak Getir
                         </p>
+                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
+
                         <div class="price-box">
                             <span class="price">Rp 52.800</span>
                             <span class="price-promo">Premium Snack</span>
@@ -366,7 +403,8 @@
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Kopi Excelsa & Robusta</h3>
-                        <p class="prod-desc">Biji kopi pilihan dari kebun Wonosalam.</p>
+                        <p class="prod-desc">Biji kopi pilihan dari kebun Wonosalam.<br>Tersedia:<br>- Biji Sangrai (Roasted Beans)<br>- Bubuk Halus/Kasar</p>
+                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
                         <div class="price-box"><span class="price">Hubungi Admin</span><span class="price-promo">Bubuk / Biji</span></div>
                         <a href="https://wa.me/6285725046201?text=Order%20Kopi%20Excelsa" class="btn-wa"><i class="fas fa-truck-fast"></i> Pesan / COD</a>
                     </div>
@@ -413,6 +451,7 @@
     </div>
 
     <script>
+        // --- LOGIC LIGHTBOX ---
         let currentGallery = [];
         let currentIndex = 0;
         const lightbox = document.getElementById('lightbox');
@@ -423,20 +462,13 @@
         function openLightbox(images, captionText = '') {
             currentGallery = images;
             currentIndex = 0;
-            
-            if(images.length <= 1) {
-                navBtns.style.display = 'none';
-            } else {
-                navBtns.style.display = 'flex';
-            }
-
+            if(images.length <= 1) { navBtns.style.display = 'none'; } 
+            else { navBtns.style.display = 'flex'; }
             lightbox.style.display = "flex";
             updateImage(captionText);
         }
 
-        function closeLightbox() {
-            lightbox.style.display = "none";
-        }
+        function closeLightbox() { lightbox.style.display = "none"; }
 
         function updateImage(defaultCaption) {
             imgElement.src = currentGallery[currentIndex];
@@ -466,6 +498,18 @@
                 if (e.key === "Escape") closeLightbox();
             }
         });
+
+        // --- LOGIC BACA SELENGKAPNYA ---
+        function toggleDesc(btn) {
+            let desc = btn.previousElementSibling; // Mengambil elemen <p> sebelumnya
+            desc.classList.toggle('expand');
+            
+            if (desc.classList.contains('expand')) {
+                btn.innerHTML = 'Tutup <i class="fas fa-chevron-up"></i>';
+            } else {
+                btn.innerHTML = 'Baca Selengkapnya';
+            }
+        }
     </script>
 
 </body>
