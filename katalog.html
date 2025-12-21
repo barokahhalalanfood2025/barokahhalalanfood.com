@@ -97,7 +97,9 @@
         .pricing-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
         .pricing-table th { background-color: #f9fafb; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; color: var(--red-700); }
         .pricing-table th, .pricing-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #f3f4f6; }
-        .discount-badge { background: var(--green-600); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+        
+        /* FIX DISKON BADGE: Background digelapkan (#14532d) agar tulisan putih terbaca */
+        .discount-badge { background: #14532d; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
 
         /* --- PRODUCT LAYOUT --- */
         .cat-separator { margin: 3.5rem 0 2rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
@@ -125,15 +127,22 @@
         /* CONTENT */
         .prod-info { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column; }
         .prod-badge { position: absolute; top: 10px; left: 10px; font-size: 0.65rem; font-weight: 800; padding: 4px 10px; border-radius: 50px; z-index: 10; letter-spacing: 0.5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        
+        /* BADGE COLORS (FIXED CONTRAST) */
         .badge-best { background: #dc2626; color: white; }
-        .badge-new { background: #ea580c; color: white; }
+        /* FIX BADGE NEW: Warna teks digelapkan (#431407) */
+        .badge-new { background: #ea580c; color: #431407; }
         
         .prod-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; line-height: 1.3; color: var(--text-dark); }
         
-        /* EXPANDABLE DESC */
-        .prod-desc { font-size: 0.85rem; color: #6b7280; margin-bottom: 0.5rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; transition: all 0.3s ease; }
+        /* EXPANDABLE DESC (FIXED COLOR) */
+        /* Warna teks digelapkan (#374151) */
+        .prod-desc { font-size: 0.85rem; color: #374151; margin-bottom: 0.5rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; transition: all 0.3s ease; }
         .prod-desc.expand { -webkit-line-clamp: unset; overflow: visible; }
-        .read-more-btn { font-size: 0.75rem; color: #16a34a; font-weight: 700; cursor: pointer; margin-bottom: 1rem; display: inline-flex; align-items: center; gap: 0.3rem; transition: 0.3s; }
+        
+        /* READ MORE BTN (FIXED COLOR) */
+        /* Warna link digelapkan (#15803d) */
+        .read-more-btn { font-size: 0.75rem; color: #15803d; font-weight: 700; cursor: pointer; margin-bottom: 1rem; display: inline-flex; align-items: center; gap: 0.3rem; transition: 0.3s; }
         .read-more-btn:hover { color: #14532d; text-decoration: underline; }
         
         .price-box { margin-top: auto; margin-bottom: 1rem; }
