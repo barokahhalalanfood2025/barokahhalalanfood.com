@@ -203,7 +203,10 @@ header { background: var(--white); padding: 0.8rem 0; box-shadow: 0 2px 10px rgb
     color: var(--white); padding: 5px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; z-index: 2;
 }
 .badge-green { background: var(--green-primary); }
-.badge-orange { background: #ea580c; }
+.badge-orange { 
+    background: #ea580c; 
+    color: #431407; /* Tulisan jadi Cokelat Gelap agar kontras tinggi */
+}
 .badge-black { background: #451a03; }
 .prod-info-premium { padding: 1.5rem; text-align: left; flex-grow: 1; display: flex; flex-direction: column; }
 .prod-title-premium { font-family: 'Eczar', serif; font-size: 1.3rem; color: var(--gray-dark); margin-bottom: 0.5rem; }
@@ -272,4 +275,5 @@ footer { background: var(--gray-dark); color: #9ca3af; padding: 3rem 0; text-ali
     .btn-fun { width: 100%; padding: 1rem; }
     .wave-separator svg, .wave-footer svg { height: 40px; } 
 }
+
 
