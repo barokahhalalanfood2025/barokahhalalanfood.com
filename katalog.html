@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com; frame-src 'self' http://googleusercontent.com https://www.google.com;">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Katalog Lengkap | Abon, Pempek, Snack KriukQue & Kopi</title>
@@ -12,7 +11,7 @@
     <meta property="og:site_name" content="Barokah Halalan Food">
     <meta property="og:title" content="Katalog Harga Pabrik | Abon, Snack & Kopi">
     <meta property="og:description" content="Daftar harga Grosir & Eceran Abon Sapi, Pempek, Keripik Sayur & Kopi. Bisa COD!">
-    <meta property="og:image" content="https://barokahhalalanfood.com/images/hero-all.jpg">
+    <meta property="og:image" content="https://barokahhalalanfood.com/social-preview.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://barokahhalalanfood.com/katalog.html">
@@ -21,7 +20,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Katalog Produk Barokah Halalan Food">
     <meta name="twitter:description" content="Pusat Grosir Abon Sapi, Pempek, dan Snack Sehat Malang.">
-    <meta name="twitter:image" content="https://barokahhalalanfood.com/images/hero-all.jpg">
+    <meta name="twitter:image" content="https://barokahhalalanfood.com/social-preview.jpg">
 
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     
@@ -30,7 +29,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "BAROKAH HALALAN FOOD",
-      "image": "https://barokahhalalanfood.com/images/hero-all.jpg",
+      "image": "https://barokahhalalanfood.com/social-preview.jpg",
       "description": "Katalog Produk Barokah Halalan Food: Abon Sapi Tumbuk, Pempek Palembang, Keripik Sayur, dan Kopi Nusantara.",
       "url": "https://barokahhalalanfood.com/katalog.html",
       "telephone": "+6285725046201",
@@ -98,7 +97,6 @@
         .pricing-table th { background-color: #f9fafb; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; color: var(--red-700); }
         .pricing-table th, .pricing-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #f3f4f6; }
         
-        /* FIX DISKON BADGE: Background digelapkan (#14532d) agar tulisan putih terbaca */
         .discount-badge { background: #14532d; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
 
         /* --- PRODUCT LAYOUT --- */
@@ -128,27 +126,17 @@
         .prod-info { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column; }
         .prod-badge { position: absolute; top: 10px; left: 10px; font-size: 0.65rem; font-weight: 800; padding: 4px 10px; border-radius: 50px; z-index: 10; letter-spacing: 0.5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         
-        /* BADGE COLORS (FIXED CONTRAST) */
+        /* BADGE COLORS */
         .badge-best { background: #dc2626; color: white; }
-        /* FIX BADGE NEW: Warna teks digelapkan (#431407) */
-        .badge-new { 
-    background: #ea580c; 
-    color: #000000; /* Hitam Pekat = Kontras Maksimal */
-}
-        .badge-dark { 
-    background: #451a03; 
-    color: #ffffff; /* Wajib Putih */
-}
+        .badge-new { background: #ea580c; color: #000000; } /* Teks HITAM */
+        .badge-dark { background: #451a03; color: #ffffff; } /* Teks PUTIH */
         
         .prod-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; line-height: 1.3; color: var(--text-dark); }
         
-        /* EXPANDABLE DESC (FIXED COLOR) */
-        /* Warna teks digelapkan (#374151) */
+        /* EXPANDABLE DESC */
         .prod-desc { font-size: 0.85rem; color: #374151; margin-bottom: 0.5rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; transition: all 0.3s ease; }
         .prod-desc.expand { -webkit-line-clamp: unset; overflow: visible; }
         
-        /* READ MORE BTN (FIXED COLOR) */
-        /* Warna link digelapkan (#15803d) */
         .read-more-btn { font-size: 0.75rem; color: #15803d; font-weight: 700; cursor: pointer; margin-bottom: 1rem; display: inline-flex; align-items: center; gap: 0.3rem; transition: 0.3s; }
         .read-more-btn:hover { color: #14532d; text-decoration: underline; }
         
@@ -187,7 +175,7 @@
     <header>
         <div class="container nav-flex">
             <a href="index.html" class="btn-back"><i class="fas fa-home"></i> Home</a>
-            <div class="logo"><h1>BAROKAH HALALAN FOOD</h1></div>
+            <div class="logo"><h1>BAROKAH FOOD</h1></div>
         </div>
     </header>
 
@@ -249,13 +237,13 @@
                 <div class="prod-card">
                     <div class="prod-img-box" onclick="openLightbox(['kemasan-abon-100gr-sblh.webp'])">
                         <span class="prod-badge badge-best">BEST SELLER</span>
-                        <img src="images/kemasan-abon-100gr.webp" alt="Abon Sapi Tumbuk 100gr" loading="lazy">
+                        <img src="kemasan-abon-100gr-sblh.webp" alt="Abon Sapi Tumbuk 100gr" loading="lazy">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Abon Sapi Tumbuk (100gr)</h3>
                         <p class="prod-desc">Serat daging murni, Non-MSG. <strong>(Tersedia Harga Grosir)</strong></p>
                         <div class="price-box"><span class="price">Rp 35.999</span><span class="price-promo">3pcs: Rp 100rb</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/abon-sapi-tumbuk-premium-barokah-100gr" target="_blank" class="btn-checkout">
+                        <a href="https://grosirabonsapi.storelink.id/abon-sapi-tumbuk-premium-barokah-100gr" target="_blank" class="btn-checkout" aria-label="Beli Abon Sapi Tumbuk 100gr">
                             <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
                         </a>
                     </div>
@@ -264,7 +252,7 @@
                 <div class="prod-card">
                     <div class="prod-img-box" onclick="openLightbox(['kemasan-abon-10gr-tas.webp'])">
                         <span class="prod-badge badge-best">PRAKTIS</span>
-                        <img src="images/kemasan-abon-10gr.webp" alt="Abon Sachet Pack" loading="lazy">
+                        <img src="kemasan-abon-10gr-tas.webp" alt="Abon Sachet Pack" loading="lazy">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Abon Sachet 10gr (Pack)</h3>
@@ -273,7 +261,7 @@
                             <span class="price">Rp 37.900</span>
                             <span class="price-promo">Per Pack isi 10</span>
                         </div>
-                        <a href="https://grosirabonsapi.storelink.id/abon-sapi-tumbuk-sachet-10gr-barokah" target="_blank" class="btn-checkout">
+                        <a href="https://grosirabonsapi.storelink.id/abon-sapi-tumbuk-sachet-10gr-barokah" target="_blank" class="btn-checkout" aria-label="Beli Abon Sachet 10gr">
                             <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
                         </a>
                     </div>
@@ -287,13 +275,13 @@
                 <div class="prod-card">
                     <div class="prod-img-box" onclick="openLightbox(['pempek-palembang.webp'])">
                         <span class="prod-badge badge-best" style="background:#15803d;">FROZEN</span>
-                        <img src="images/pempek-palembang.webp" alt="Pempek Palembang" loading="lazy">
+                        <img src="pempek-palembang.webp" alt="Pempek Palembang" loading="lazy">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Pempek Ikan Tenggiri</h3>
                         <p class="prod-desc">Asli Ikan Tenggiri + Cuko Linggau. Frozen Vakum.</p>
                         <div class="price-box"><span class="price">Rp 35.999</span><span class="price-promo">Paket Hemat</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/pempek-palembang-asli-ikan-tenggiri-paket-campur-isi-10-pcs-180gr-plus-2bks-cuko-kental" target="_blank" class="btn-checkout">
+                        <a href="https://grosirabonsapi.storelink.id/pempek-palembang-asli-ikan-tenggiri-paket-campur-isi-10-pcs-180gr-plus-2bks-cuko-kental" target="_blank" class="btn-checkout" aria-label="Beli Pempek Palembang">
                             <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
                         </a>
                     </div>
@@ -322,7 +310,9 @@
                         </p>
                         <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
                         <div class="price-box"><span class="price">Rp 23.100</span><span class="price-promo">Best Seller</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/keripik-ubi-madu-manis-alami-kriukque-100gr" target="_blank" class="btn-checkout"><i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)</a>
+                        <a href="https://grosirabonsapi.storelink.id/keripik-ubi-madu-manis-alami-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Ubi Madu">
+                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
+                        </a>
                     </div>
                 </div>
 
@@ -343,7 +333,9 @@
                         </p>
                         <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
                         <div class="price-box"><span class="price">Rp 24.750</span><span class="price-promo">Sehat & Enak</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/keripik-wortel-renyah-sehat-kriukque-100gr" target="_blank" class="btn-checkout"><i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)</a>
+                        <a href="https://grosirabonsapi.storelink.id/keripik-wortel-renyah-sehat-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Wortel">
+                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
+                        </a>
                     </div>
                 </div>
 
@@ -364,7 +356,33 @@
                         </p>
                         <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
                         <div class="price-box"><span class="price">Rp 52.800</span><span class="price-promo">Premium Snack</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/keripik-bawang-putih-utuh-premium-kriukque-100gr" target="_blank" class="btn-checkout"><i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)</a>
+                        <a href="https://grosirabonsapi.storelink.id/keripik-bawang-putih-utuh-premium-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Bawang Putih">
+                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
+                        </a>
+                    </div>
+                </div>
+
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox([
+                        'images/ubi-ungu-fix-1.webp', 'images/ubi-ungu-fix-2.webp', 'images/ubi-ungu-fix-3.webp', 
+                        'images/ubi-ungu-fix-4.webp', 'images/ubi-ungu-fix-5.webp', 'images/ubi-ungu-fix-6.webp', 
+                        'images/ubi-ungu-fix-7.webp', 'images/ubi-ungu-fix-8.webp', 'images/ubi-ungu-fix-9.webp',
+                        'images/ubi-ungu-fix-10.webp'
+                    ], 'Keripik Ubi Ungu KriukQue')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/ubi-ungu-fix-1.webp" alt="Keripik Ubi Ungu KriukQue" loading="lazy">
+                    </div>
+                    <div class="prod-info">
+                        <h3 class="prod-title">Keripik Ubi Ungu (100gr)</h3>
+                        <p class="prod-desc">
+                            Ubi ungu pilihan diproses dengan <em>Vacuum Frying</em>. Warna ungu alami, renyah, dan kaya antioksidan (antosianin). Rasa manis alami yang khas.<br><br>
+                            <strong>Keunggulan:</strong> Pewarna alami, tinggi serat, tanpa pemanis buatan.
+                        </p>
+                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
+                        <div class="price-box"><span class="price">Rp 23.700</span><span class="price-promo">Kaya Antioksidan</span></div>
+                        <a href="https://grosirabonsapi.storelink.id/keripik-ubi-ungu-vacuum-frying-premium-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Ubi Ungu">
+                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
+                        </a>
                     </div>
                 </div>
 
@@ -386,7 +404,9 @@
                         </p>
                         <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
                         <div class="price-box"><span class="price">Rp 22.275</span><span class="price-promo">Paket Komplit</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/keripik-akar-manis-mix-wortel-ubi-kriukque-100gr" target="_blank" class="btn-checkout"><i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)</a>
+                        <a href="https://grosirabonsapi.storelink.id/keripik-akar-manis-mix-wortel-ubi-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Akar Manis">
+                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
+                        </a>
                     </div>
                 </div>
             </div>
@@ -467,7 +487,7 @@
     <footer>
         <div class="container">
             <div style="margin-bottom:2rem;">
-                <img src="Logo-Barokah.webp" alt="Logo Barokah Halalan Food" width="80" height="80" style="display:block; margin: 0 auto 1rem auto;">
+                <img src="Logo-Barokah.webp" alt="Logo Barokah Food" width="80" height="80" style="display:block; margin: 0 auto 1rem auto;">
                 
                 <h2 style="color:white; font-weight:800; font-size:1.5rem;">BAROKAH HALALAN FOOD</h2>
                 <p style="margin-top:0.5rem;">Jl. Brigjend Abd Manan Wijaya Gg. Gereja GKJW, RT.2/RW.2, Gesingan, Pujon Lor, Kec. Pujon, Kabupaten Malang, Jawa Timur 65391</p>
@@ -517,7 +537,7 @@
     </footer>
 
     <div id="lightbox" class="lightbox">
-        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <span class="lightbox-close" onclick="closeLightbox()">×</span>
         <div class="lightbox-nav">
             <div class="nav-btn" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></div>
             <div class="nav-btn" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></div>
