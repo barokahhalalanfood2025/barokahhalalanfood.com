@@ -96,7 +96,6 @@
         .pricing-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
         .pricing-table th { background-color: #f9fafb; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; color: var(--red-700); }
         .pricing-table th, .pricing-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #f3f4f6; }
-        
         .discount-badge { background: #14532d; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
 
         /* --- PRODUCT LAYOUT --- */
@@ -128,8 +127,8 @@
         
         /* BADGE COLORS */
         .badge-best { background: #dc2626; color: white; }
-        .badge-new { background: #ea580c; color: #000000; } /* Teks HITAM */
-        .badge-dark { background: #451a03; color: #ffffff; } /* Teks PUTIH */
+        .badge-new { background: #ea580c; color: #000000; } /* Hitam */
+        .badge-dark { background: #451a03; color: #ffffff; } /* Putih */
         
         .prod-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; line-height: 1.3; color: var(--text-dark); }
         
@@ -150,6 +149,19 @@
         
         .btn-checkout { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.7rem; text-align: center; border-radius: 0.5rem; font-weight: 700; font-size: 0.85rem; background: linear-gradient(to bottom, #dc2626, #b91c1c); color: white; border: 1px solid #b91c1c; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .btn-checkout:hover { filter: brightness(1.1); }
+
+        /* FLOATING WA BUTTON (NEW) */
+        .float-wa {
+            position: fixed; bottom: 25px; right: 25px;
+            background-color: #25D366; color: white;
+            padding: 12px 20px; border-radius: 50px;
+            font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: flex; align-items: center; gap: 8px; z-index: 9999;
+            text-decoration: none; transition: 0.3s;
+            font-family: sans-serif;
+        }
+        .float-wa:hover { background-color: #1da851; transform: scale(1.05); }
+        .float-wa i { font-size: 1.5rem; }
 
         /* SEO & FOOTER */
         .seo-content { background: white; padding: 3rem 0; border-top: 1px solid #e5e7eb; margin-top: 4rem; }
@@ -309,7 +321,7 @@
                             <strong>Keunggulan:</strong> 100% Ubi Madu Asli, Tanpa Pemanis Buatan.
                         </p>
                         <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
-                        <div class="price-box"><span class="price">Rp 19.800</span><span class="price-promo">Best Seller</span></div>
+                        <div class="price-box"><span class="price">Rp 23.100</span><span class="price-promo">Best Seller</span></div>
                         <a href="https://grosirabonsapi.storelink.id/keripik-ubi-madu-manis-alami-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Ubi Madu">
                             <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
                         </a>
@@ -364,6 +376,30 @@
 
                 <div class="prod-card">
                     <div class="prod-img-box" onclick="openLightbox([
+                        'images/bombay-fix-1.webp', 'images/bombay-fix-2.webp', 'images/bombay-fix-3.webp', 
+                        'images/bombay-fix-4.webp', 'images/bombay-fix-5.webp', 'images/bombay-fix-6.webp', 
+                        'images/bombay-fix-7.webp', 'images/bombay-fix-8.webp', 'images/bombay-fix-9.webp',
+                        'images/bombay-fix-10.webp'
+                    ], 'Keripik Bombay KriukQue')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/bombay-fix-1.webp" alt="Keripik Bombay KriukQue" loading="lazy">
+                    </div>
+                    <div class="prod-info">
+                        <h3 class="prod-title">Keripik Bombay (100gr)</h3>
+                        <p class="prod-desc">
+                            Bawang Bombay segar utuh. Digoreng vakum (Vacuum Frying) suhu rendah. Renyah, gurih alami, tidak berminyak. Camilan unik kaya rasa.<br><br>
+                            <strong>Keunggulan:</strong> Rasa manis-gurih asli bawang, tanpa pengawet.
+                        </p>
+                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
+                        <div class="price-box"><span class="price">Rp 24.750</span><span class="price-promo">Unik & Enak</span></div>
+                        <a href="https://grosirabonsapi.storelink.id/keripik-bombay-renyah-sehat-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Bombay">
+                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
+                        </a>
+                    </div>
+                </div>
+
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox([
                         'images/ubi-ungu-fix-1.webp', 'images/ubi-ungu-fix-2.webp', 'images/ubi-ungu-fix-3.webp', 
                         'images/ubi-ungu-fix-4.webp', 'images/ubi-ungu-fix-5.webp', 'images/ubi-ungu-fix-6.webp', 
                         'images/ubi-ungu-fix-7.webp', 'images/ubi-ungu-fix-8.webp', 'images/ubi-ungu-fix-9.webp',
@@ -379,7 +415,7 @@
                             <strong>Keunggulan:</strong> Pewarna alami, tinggi serat, tanpa pemanis buatan.
                         </p>
                         <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
-                        <div class="price-box"><span class="price">Rp 19.800</span><span class="price-promo">Kaya Antioksidan</span></div>
+                        <div class="price-box"><span class="price">Rp 23.700</span><span class="price-promo">Kaya Antioksidan</span></div>
                         <a href="https://grosirabonsapi.storelink.id/keripik-ubi-ungu-vacuum-frying-premium-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Ubi Ungu">
                             <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
                         </a>
@@ -559,6 +595,11 @@
             </div>
         </div>
     </footer>
+
+    <a href="https://wa.me/6285725046201?text=Halo%20Admin%2C%20saya%20liat%20dari%20Katalog%20Website%2C%20mau%20tanya..." target="_blank" class="float-wa">
+        <i class="fab fa-whatsapp"></i>
+        <span>Hubungi Admin</span>
+    </a>
 
     <div id="lightbox" class="lightbox">
         <span class="lightbox-close" onclick="closeLightbox()">×</span>
