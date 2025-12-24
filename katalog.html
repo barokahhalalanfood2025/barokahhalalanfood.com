@@ -62,14 +62,12 @@
     </script>
 
     <style>
-        /* FONT AWESOME */
-        @font-face { font-family: 'Font Awesome 6 Free'; font-style: normal; font-weight: 900; font-display: swap; src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2) format('woff2'); }
-        @font-face { font-family: 'Font Awesome 6 Brands'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2) format('woff2'); }
-        .fa, .fas, .fab { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; }
+        /* FONT AWESOME & GLOBAL STYLES */
+        @font-face { font-family: 'Font Awesome 6 Free'; font-style: normal; font-weight: 900; src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2) format('woff2'); }
+        @font-face { font-family: 'Font Awesome 6 Brands'; font-style: normal; font-weight: 400; src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2) format('woff2'); }
+        .fa, .fas, .fab { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; }
         .fas { font-family: 'Font Awesome 6 Free'; font-weight: 900; } .fab { font-family: 'Font Awesome 6 Brands'; font-weight: 400; }
-        .fa-whatsapp:before{content:"\f232"} .fa-arrow-right:before{content:"\f061"} .fa-check:before{content:"\f00c"} .fa-tags:before{content:"\f02c"} .fa-home:before{content:"\f015"} .fa-truck-fast:before{content:"\f48b"} .fa-box-open:before{content:"\f49e"} .fa-map-marker-alt:before{content:"\f3c5"} .fa-instagram:before{content:"\f16d"} .fa-facebook:before{content:"\f09a"} .fa-tiktok:before{content:"\e07b"} .fa-youtube:before{content:"\f167"} .fa-store:before{content:"\f54e"} .fa-chevron-left:before{content:"\f053"} .fa-chevron-right:before{content:"\f054"} .fa-times:before{content:"\f00d"} .fa-shopping-cart:before{content:"\f07a"} .fa-chevron-down:before{content:"\f078"}
-
-        /* GLOBAL */
+        
         :root { --red-600: #dc2626; --red-700: #b91c1c; --green-600: #16a34a; --gray-100: #f3f4f6; --text-dark: #1f2937; --white: #ffffff; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: var(--gray-100); color: var(--text-dark); line-height: 1.6; }
@@ -77,14 +75,12 @@
         .container { max-width: 1300px; margin: 0 auto; padding: 0 1rem; }
         img { max-width: 100%; height: auto; display: block; }
 
-        /* HEADER */
+        /* HEADER & HERO */
         header { background: var(--white); padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 50; }
         .nav-flex { display: flex; justify-content: space-between; align-items: center; }
         .logo h1 { font-size: 1.1rem; font-weight: 800; color: var(--red-600); margin: 0; text-transform: uppercase; letter-spacing: 0.5px; }
         .btn-back { color: var(--text-dark); font-weight: 600; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
         .btn-back:hover { color: var(--red-600); }
-
-        /* HERO & COD */
         .cat-hero { background: white; padding: 2rem 0; text-align: center; margin-bottom: 2rem; border-bottom: 1px solid #e5e7eb; }
         .cat-hero h2 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text-dark); font-weight: 800; }
         .cod-badge { background: #dcfce7; color: #14532d; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 800; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; border: 2px solid #16a34a; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
@@ -98,41 +94,38 @@
         .pricing-table th, .pricing-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #f3f4f6; }
         .discount-badge { background: #14532d; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
 
-        /* --- PRODUCT LAYOUT --- */
+        /* PRODUCT LAYOUT */
         .cat-separator { margin: 3.5rem 0 2rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
         .cat-separator h3 { font-size: 1.6rem; font-weight: 800; color: var(--red-600); white-space: nowrap; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
         .cat-line { height: 3px; background: linear-gradient(90deg, transparent, #e5e7eb, transparent); width: 80px; border-radius: 50px; }
         .cat-line.solid { background: #d1d5db; width: 60px; height: 3px; }
 
-        /* GRID SYSTEM */
         .grid-products { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; padding-bottom: 1rem; }
         @media(min-width: 1024px) { .grid-products { grid-template-columns: repeat(6, 1fr); justify-content: center; } }
 
         /* PRODUCT CARD */
         .prod-card { background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e7eb; display: flex; flex-direction: column; height: fit-content; min-height: 100%; transition: all 0.3s ease-in-out; position: relative; }
         .prod-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); border-color: var(--red-600); }
-        
-        /* IMAGE 1:1 */
-        .prod-img-box { width: 100%; aspect-ratio: 1 / 1; background: #f9fafb; position: relative; overflow: hidden; cursor: pointer; }
+        .prod-img-box { width: 100%; aspect-ratio: 1 / 1; background: #f9fafb; position: relative; overflow: hidden; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        /* Placeholder styling if image missing */
         .prod-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .prod-card:hover .prod-img-box img { transform: scale(1.1); }
+        .prod-img-box img[src=""] { display: none; } 
+        .prod-img-box i.fa-image { font-size: 3rem; color: #d1d5db; } /* Fallback icon */
         
-        /* Zoom Icon */
+        .prod-card:hover .prod-img-box img { transform: scale(1.1); }
         .prod-img-box::after { content: '\f00e'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); background: rgba(0,0,0,0.5); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: 0.3s; opacity: 0; }
         .prod-img-box:hover::after { transform: translate(-50%, -50%) scale(1); opacity: 1; }
 
-        /* CONTENT */
         .prod-info { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column; }
         .prod-badge { position: absolute; top: 10px; left: 10px; font-size: 0.65rem; font-weight: 800; padding: 4px 10px; border-radius: 50px; z-index: 10; letter-spacing: 0.5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         
-        /* BADGE COLORS */
+        /* COLORS & BADGES */
         .badge-best { background: #dc2626; color: white; }
-        .badge-new { background: #ea580c; color: #000000; } /* Hitam */
-        .badge-dark { background: #451a03; color: #ffffff; } /* Putih */
+        .badge-new { background: #ea580c; color: #000000; } /* Text Hitam */
+        .badge-dark { background: #451a03; color: #ffffff; } /* Text Putih */
+        .badge-green { background: #16a34a; color: white; }
         
         .prod-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; line-height: 1.3; color: var(--text-dark); }
-        
-        /* EXPANDABLE DESC */
         .prod-desc { font-size: 0.85rem; color: #374151; margin-bottom: 0.5rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; transition: all 0.3s ease; }
         .prod-desc.expand { -webkit-line-clamp: unset; overflow: visible; }
         
@@ -143,27 +136,15 @@
         .price { font-size: 1.1rem; font-weight: 800; color: var(--red-600); display: block; }
         .price-promo { font-size: 0.75rem; color: #15803d; background: #dcfce7; padding: 3px 8px; border-radius: 4px; display: inline-block; font-weight: 600; margin-top: 3px; }
 
-        /* BUTTONS */
-        .btn-wa { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.7rem; text-align: center; border-radius: 0.5rem; font-weight: 700; font-size: 0.85rem; background: linear-gradient(to bottom, #25D366, #1da851); color: white; border: 1px solid #1da851; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .btn-wa:hover { filter: brightness(1.1); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        
         .btn-checkout { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.7rem; text-align: center; border-radius: 0.5rem; font-weight: 700; font-size: 0.85rem; background: linear-gradient(to bottom, #dc2626, #b91c1c); color: white; border: 1px solid #b91c1c; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .btn-checkout:hover { filter: brightness(1.1); }
 
-        /* FLOATING WA BUTTON (NEW) */
-        .float-wa {
-            position: fixed; bottom: 25px; right: 25px;
-            background-color: #25D366; color: white;
-            padding: 12px 20px; border-radius: 50px;
-            font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            display: flex; align-items: center; gap: 8px; z-index: 9999;
-            text-decoration: none; transition: 0.3s;
-            font-family: sans-serif;
-        }
+        /* FLOATING WA */
+        .float-wa { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: white; padding: 12px 20px; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 8px; z-index: 9999; text-decoration: none; transition: 0.3s; font-family: sans-serif; }
         .float-wa:hover { background-color: #1da851; transform: scale(1.05); }
         .float-wa i { font-size: 1.5rem; }
 
-        /* SEO & FOOTER */
+        /* FOOTER & SEO */
         .seo-content { background: white; padding: 3rem 0; border-top: 1px solid #e5e7eb; margin-top: 4rem; }
         .seo-content h2 { font-size: 1.5rem; color: var(--text-dark); margin-bottom: 1rem; text-align: center; }
         .seo-content p { color: #4b5563; font-size: 0.95rem; margin-bottom: 1rem; text-align: justify; max-width: 900px; margin-left: auto; margin-right: auto; }
@@ -174,7 +155,6 @@
         /* LIGHTBOX */
         .lightbox { display: none; position: fixed; z-index: 9999; padding-top: 0; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.95); justify-content: center; align-items: center; flex-direction: column; }
         .lightbox-content { margin: auto; display: block; width: auto; max-width: 90%; max-height: 80vh; object-fit: contain; border-radius: 5px; box-shadow: 0 0 20px rgba(255,255,255,0.1); animation: zoom 0.3s; }
-        @keyframes zoom { from {transform:scale(0.8); opacity: 0;} to {transform:scale(1); opacity: 1;} }
         .lightbox-close { position: absolute; top: 20px; right: 30px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10001; }
         .lightbox-nav { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; padding: 0 20px; transform: translateY(-50%); z-index: 10000; }
         .nav-btn { color: white; font-size: 25px; cursor: pointer; background: rgba(255,255,255,0.2); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: 0.3s; backdrop-filter: blur(5px); }
@@ -187,7 +167,7 @@
     <header>
         <div class="container nav-flex">
             <a href="index.html" class="btn-back"><i class="fas fa-home"></i> Home</a>
-            <div class="logo"><h1>BAROKAH FOOD</h1></div>
+            <div class="logo"><h1>BAROKAH HALALAN FOOD</h1></div>
         </div>
     </header>
 
@@ -195,9 +175,7 @@
         <section class="cat-hero">
             <div class="container">
                 <h2>Katalog Produk & Harga</h2>
-                <div class="cod-badge">
-                    <i class="fas fa-truck-fast"></i> BISA BAYAR DI TEMPAT (COD)
-                </div>
+                <div class="cod-badge"><i class="fas fa-truck-fast"></i> BISA BAYAR DI TEMPAT (COD)</div>
             </div>
         </section>
 
@@ -206,328 +184,216 @@
                 <div class="pricing-box">
                     <div class="pricing-header"><i class="fas fa-tags"></i> Daftar Harga Grosir (Reseller)</div>
                     <table class="pricing-table">
-                        <thead>
-                            <tr>
-                                <th>Tier Reseller</th>
-                                <th>Jumlah Pembelian</th>
-                                <th>Diskon</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th>Tier Reseller</th><th>Jumlah Pembelian</th><th>Diskon</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td><strong>Tier Bronze</strong></td>
-                                <td>6 Pack</td>
-                                <td><span class="discount-badge">8.1%</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tier Silver</strong></td>
-                                <td>10 Pack</td>
-                                <td><span class="discount-badge">10%</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tier Gold</strong></td>
-                                <td>25 Pack</td>
-                                <td><span class="discount-badge">15%</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tier Platinum</strong></td>
-                                <td>50 Pack</td>
-                                <td><span class="discount-badge">22%</span></td>
-                            </tr>
+                            <tr><td><strong>Tier Bronze</strong></td><td>6 Pack</td><td><span class="discount-badge">8.1%</span></td></tr>
+                            <tr><td><strong>Tier Silver</strong></td><td>10 Pack</td><td><span class="discount-badge">10%</span></td></tr>
+                            <tr><td><strong>Tier Gold</strong></td><td>25 Pack</td><td><span class="discount-badge">15%</span></td></tr>
+                            <tr><td><strong>Tier Platinum</strong></td><td>50 Pack</td><td><span class="discount-badge">22%</span></td></tr>
                         </tbody>
                     </table>
-                    <div style="font-size:0.8rem; padding:10px; background:#f9fafb; color:#666; text-align:center;">
-                        *Berlaku untuk Pack 100gr ATAU kelipatan 10 Sachet
-                    </div>
+                    <div style="font-size:0.8rem; padding:10px; background:#f9fafb; color:#666; text-align:center;">*Berlaku untuk Pack 100gr ATAU kelipatan 10 Sachet</div>
                 </div>
             </section>
 
-            <div class="cat-separator">
-                <div class="cat-line solid"></div><h3>Abon Sapi</h3><div class="cat-line solid"></div>
-            </div>
+            <div class="cat-separator"><div class="cat-line solid"></div><h3>Abon & Pempek</h3><div class="cat-line solid"></div></div>
             <div class="grid-products">
                 <div class="prod-card">
                     <div class="prod-img-box" onclick="openLightbox(['kemasan-abon-100gr-sblh.webp'])">
                         <span class="prod-badge badge-best">BEST SELLER</span>
-                        <img src="kemasan-abon-100gr-sblh.webp" alt="Abon Sapi Tumbuk 100gr" loading="lazy">
+                        <img src="kemasan-abon-100gr-sblh.webp" alt="Abon Sapi" loading="lazy">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Abon Sapi Tumbuk (100gr)</h3>
-                        <p class="prod-desc">Serat daging murni, Non-MSG. <strong>(Tersedia Harga Grosir)</strong></p>
-                        <div class="price-box"><span class="price">Rp 35.999</span><span class="price-promo">3pcs: Rp 100rb</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/abon-sapi-tumbuk-premium-barokah-100gr" target="_blank" class="btn-checkout" aria-label="Beli Abon Sapi Tumbuk 100gr">
-                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
-                        </a>
+                        <p class="prod-desc">Serat daging murni, Non-MSG.</p>
+                        <div class="price-box"><span class="price" id="price-abon-100">Loading...</span></div>
+                        <a href="https://grosirabonsapi.storelink.id/abon-sapi-tumbuk-premium-barokah-100gr" target="_blank" class="btn-checkout" aria-label="Beli Abon 100gr"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a>
                     </div>
                 </div>
-
                 <div class="prod-card">
                     <div class="prod-img-box" onclick="openLightbox(['kemasan-abon-10gr-tas.webp'])">
                         <span class="prod-badge badge-best">PRAKTIS</span>
-                        <img src="kemasan-abon-10gr-tas.webp" alt="Abon Sachet Pack" loading="lazy">
+                        <img src="kemasan-abon-10gr-tas.webp" alt="Abon Sachet" loading="lazy">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Abon Sachet 10gr (Pack)</h3>
                         <p class="prod-desc">Isi 10 Sachet. Praktis sekali makan.</p>
-                        <div class="price-box">
-                            <span class="price">Rp 37.900</span>
-                            <span class="price-promo">Per Pack isi 10</span>
-                        </div>
-                        <a href="https://grosirabonsapi.storelink.id/abon-sapi-tumbuk-sachet-10gr-barokah" target="_blank" class="btn-checkout" aria-label="Beli Abon Sachet 10gr">
-                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
-                        </a>
+                        <div class="price-box"><span class="price" id="price-abon-sachet">Loading...</span></div>
+                        <a href="https://grosirabonsapi.storelink.id/abon-sapi-tumbuk-sachet-10gr-barokah" target="_blank" class="btn-checkout" aria-label="Beli Abon Sachet"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a>
                     </div>
                 </div>
-            </div>
-
-            <div class="cat-separator">
-                <div class="cat-line solid"></div><h3>Pempek</h3><div class="cat-line solid"></div>
-            </div>
-            <div class="grid-products">
                 <div class="prod-card">
                     <div class="prod-img-box" onclick="openLightbox(['pempek-palembang.webp'])">
                         <span class="prod-badge badge-best" style="background:#15803d;">FROZEN</span>
-                        <img src="pempek-palembang.webp" alt="Pempek Palembang" loading="lazy">
+                        <img src="pempek-palembang.webp" alt="Pempek" loading="lazy">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Pempek Ikan Tenggiri</h3>
-                        <p class="prod-desc">Asli Ikan Tenggiri + Cuko Linggau. Frozen Vakum.</p>
-                        <div class="price-box"><span class="price">Rp 35.999</span><span class="price-promo">Paket Hemat</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/pempek-palembang-asli-ikan-tenggiri-paket-campur-isi-10-pcs-180gr-plus-2bks-cuko-kental" target="_blank" class="btn-checkout" aria-label="Beli Pempek Palembang">
-                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
-                        </a>
+                        <p class="prod-desc">Asli Ikan Tenggiri + Cuko Linggau.</p>
+                        <div class="price-box"><span class="price" id="price-pempek">Loading...</span></div>
+                        <a href="https://grosirabonsapi.storelink.id/pempek-palembang-asli-ikan-tenggiri-paket-campur-isi-10-pcs-180gr-plus-2bks-cuko-kental" target="_blank" class="btn-checkout" aria-label="Beli Pempek"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a>
                     </div>
                 </div>
             </div>
 
-            <div class="cat-separator">
-                <div class="cat-line solid"></div><h3>Snack Sehat</h3><div class="cat-line solid"></div>
-            </div>
+            <div class="cat-separator"><div class="cat-line solid"></div><h3>Keripik Sayur Asli</h3><div class="cat-line solid"></div></div>
             <div class="grid-products">
-                
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox([
-                        'images/ubi-madu-fix-1.webp', 'images/ubi-madu-fix-2.webp', 'images/ubi-madu-fix-3.webp', 
-                        'images/ubi-madu-fix-4.webp', 'images/ubi-madu-fix-5.webp', 'images/ubi-madu-fix-6.webp', 
-                        'images/ubi-madu-fix-7.webp', 'images/ubi-madu-fix-8.webp', 'images/ubi-madu-fix-9.webp'
-                    ], 'Keripik Ubi Madu KriukQue')">
-                        <span class="prod-badge badge-new">KriukQue</span>
-                        <img src="images/ubi-madu-fix-1.webp" alt="Keripik Ubi Madu KriukQue" loading="lazy">
-                    </div>
-                    <div class="prod-info">
-                        <h3 class="prod-title">Keripik Ubi Madu (100gr)</h3>
-                        <p class="prod-desc">
-                            Stik Ubi Madu <em>Vacuum Fried</em>. Warna oranye alami, manis asli tanpa gula tambahan. Renyah & nutrisi terjaga.<br><br>
-                            <strong>Keunggulan:</strong> 100% Ubi Madu Asli, Tanpa Pemanis Buatan.
-                        </p>
-                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
-                        <div class="price-box"><span class="price">Rp 23.100</span><span class="price-promo">Best Seller</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/keripik-ubi-madu-manis-alami-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Ubi Madu">
-                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
-                        </a>
-                    </div>
+                    <div class="prod-img-box" onclick="openLightbox(['images/bawang-merah-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/bawang-merah-fix-1.webp" alt="Bawang Merah" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Bawang Merah</h3><p class="prod-desc">Bawang merah utuh, renyah & harum.</p><div class="price-box"><span class="price" id="price-bawang-merah">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
-
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox([
-                        'images/wortel-fix-1.webp', 'images/wortel-fix-2.webp', 'images/wortel-fix-3.webp', 
-                        'images/wortel-fix-4.webp', 'images/wortel-fix-5.webp', 'images/wortel-fix-6.webp', 
-                        'images/wortel-fix-7.webp', 'images/wortel-fix-8.webp', 'images/wortel-fix-9.webp'
-                    ], 'Keripik Wortel KriukQue')">
-                        <span class="prod-badge badge-new">KriukQue</span>
-                        <img src="images/wortel-fix-1.webp" alt="Keripik Wortel KriukQue" loading="lazy">
-                    </div>
-                    <div class="prod-info">
-                        <h3 class="prod-title">Keripik Wortel (100gr)</h3>
-                        <p class="prod-desc">
-                            Wortel segar diproses <em>Vacuum Frying</em>. Warna oranye alami, tidak langu, renyah, dan kaya vitamin. Cocok untuk anak susah makan sayur.<br><br>
-                            <strong>Manfaat:</strong> Sumber Vitamin A, Tanpa MSG.
-                        </p>
-                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
-                        <div class="price-box"><span class="price">Rp 24.750</span><span class="price-promo">Sehat & Enak</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/keripik-wortel-renyah-sehat-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Wortel">
-                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
-                        </a>
-                    </div>
+                    <div class="prod-img-box" onclick="openLightbox(['images/bawang-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/bawang-fix-1.webp" alt="Bawang Putih" loading="lazy"></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Bawang Putih</h3><p class="prod-desc">Kating utuh, tidak pahit, antioksidan tinggi.</p><div class="price-box"><span class="price" id="price-bawang-putih">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-bawang-putih-utuh-premium-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
-
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox([
-                        'images/bawang-fix-1.webp', 'images/bawang-fix-2.webp', 'images/bawang-fix-3.webp', 
-                        'images/bawang-fix-4.webp', 'images/bawang-fix-5.webp', 'images/bawang-fix-6.webp', 
-                        'images/bawang-fix-7.webp', 'images/bawang-fix-8.webp', 'images/bawang-fix-9.webp'
-                    ], 'Keripik Bawang Putih KriukQue')">
-                        <span class="prod-badge badge-new">KriukQue</span>
-                        <img src="images/bawang-fix-1.webp" alt="Keripik Bawang Putih" loading="lazy">
-                    </div>
-                    <div class="prod-info">
-                        <h3 class="prod-title">Keripik Bawang Putih (100gr)</h3>
-                        <p class="prod-desc">
-                            Bawang putih tunggal/kating utuh. Digoreng vakum sehingga <strong>tidak pahit</strong>, renyah, dan tidak berminyak. Camilan peningkat imun tubuh.<br><br>
-                            <strong>Manfaat:</strong> Antioksidan Tinggi, Jaga Jantung.
-                        </p>
-                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
-                        <div class="price-box"><span class="price">Rp 52.800</span><span class="price-promo">Premium Snack</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/keripik-bawang-putih-utuh-premium-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Bawang Putih">
-                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
-                        </a>
-                    </div>
+                    <div class="prod-img-box" onclick="openLightbox(['images/buncis-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/buncis-fix-1.webp" alt="Buncis" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Buncis</h3><p class="prod-desc">Hijau alami, renyah, kaya serat.</p><div class="price-box"><span class="price" id="price-buncis">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
-
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox([
-                        'images/bombay-fix-1.webp', 'images/bombay-fix-2.webp', 'images/bombay-fix-3.webp', 
-                        'images/bombay-fix-4.webp', 'images/bombay-fix-5.webp', 'images/bombay-fix-6.webp', 
-                        'images/bombay-fix-7.webp', 'images/bombay-fix-8.webp', 'images/bombay-fix-9.webp',
-                        'images/bombay-fix-10.webp'
-                    ], 'Keripik Bombay KriukQue')">
-                        <span class="prod-badge badge-new">KriukQue</span>
-                        <img src="images/bombay-fix-1.webp" alt="Keripik Bombay KriukQue" loading="lazy">
-                    </div>
-                    <div class="prod-info">
-                        <h3 class="prod-title">Keripik Bombay (100gr)</h3>
-                        <p class="prod-desc">
-                            Bawang Bombay segar utuh. Digoreng vakum (Vacuum Frying) suhu rendah. Renyah, gurih alami, tidak berminyak. Camilan unik kaya rasa.<br><br>
-                            <strong>Keunggulan:</strong> Rasa manis-gurih asli bawang, tanpa pengawet.
-                        </p>
-                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
-                        <div class="price-box"><span class="price">Rp 24.750</span><span class="price-promo">Unik & Enak</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/keripik-bombay-renyah-sehat-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Bombay">
-                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
-                        </a>
-                    </div>
+                    <div class="prod-img-box" onclick="openLightbox(['images/jagung-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/jagung-fix-1.webp" alt="Jagung Manis" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Jagung Manis</h3><p class="prod-desc">Manis alami jagung asli, bukan perasa.</p><div class="price-box"><span class="price" id="price-jagung">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
-
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox([
-                        'images/ubi-ungu-fix-1.webp', 'images/ubi-ungu-fix-2.webp', 'images/ubi-ungu-fix-3.webp', 
-                        'images/ubi-ungu-fix-4.webp', 'images/ubi-ungu-fix-5.webp', 'images/ubi-ungu-fix-6.webp', 
-                        'images/ubi-ungu-fix-7.webp', 'images/ubi-ungu-fix-8.webp', 'images/ubi-ungu-fix-9.webp',
-                        'images/ubi-ungu-fix-10.webp'
-                    ], 'Keripik Ubi Ungu KriukQue')">
-                        <span class="prod-badge badge-new">KriukQue</span>
-                        <img src="images/ubi-ungu-fix-1.webp" alt="Keripik Ubi Ungu KriukQue" loading="lazy">
-                    </div>
-                    <div class="prod-info">
-                        <h3 class="prod-title">Keripik Ubi Ungu (100gr)</h3>
-                        <p class="prod-desc">
-                            Ubi ungu pilihan diproses dengan <em>Vacuum Frying</em>. Warna ungu alami, renyah, dan kaya antioksidan (antosianin). Rasa manis alami yang khas.<br><br>
-                            <strong>Keunggulan:</strong> Pewarna alami, tinggi serat, tanpa pemanis buatan.
-                        </p>
-                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
-                        <div class="price-box"><span class="price">Rp 23.700</span><span class="price-promo">Kaya Antioksidan</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/keripik-ubi-ungu-vacuum-frying-premium-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Ubi Ungu">
-                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
-                        </a>
-                    </div>
+                    <div class="prod-img-box" onclick="openLightbox(['images/kentang-krispi-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/kentang-krispi-fix-1.webp" alt="Kentang Krispi" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Kentang Krispi Mustofa</h3><p class="prod-desc">Potongan stik kecil renyah.</p><div class="price-box"><span class="price" id="price-kentang-krispi">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
-
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox([
-                        'images/brokoli-fix-1.webp', 'images/brokoli-fix-2.webp', 'images/brokoli-fix-3.webp', 
-                        'images/brokoli-fix-4.webp', 'images/brokoli-fix-5.webp', 'images/brokoli-fix-6.webp', 
-                        'images/brokoli-fix-7.webp', 'images/brokoli-fix-8.webp', 'images/brokoli-fix-9.webp',
-                        'images/brokoli-fix-10.webp'
-                    ], 'Keripik Brokoli KriukQue')">
-                        <span class="prod-badge badge-new">KriukQue</span>
-                        <img src="images/brokoli-fix-1.webp" alt="Keripik Brokoli KriukQue" loading="lazy">
-                    </div>
-                    <div class="prod-info">
-                        <h3 class="prod-title">Keripik Brokoli (100gr)</h3>
-                        <p class="prod-desc">
-                            Brokoli segar utuh diproses <em>Vacuum Frying</em>. Warna hijau alami terjaga, tekstur renyah, dan tidak berminyak. Solusi praktis makan sayur hijau.<br><br>
-                            <strong>Keunggulan:</strong> Tinggi Serat & Vitamin C, Rasa Gurih Alami.
-                        </p>
-                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
-                        <div class="price-box"><span class="price">Rp 23.100</span><span class="price-promo">Sayur Krispi</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/keripik-brokoli-renyah-sehat-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Brokoli">
-                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
-                        </a>
-                    </div>
+                    <div class="prod-img-box" onclick="openLightbox(['images/kentang-wedges-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/kentang-wedges-fix-1.webp" alt="Kentang Wedges" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Kentang Wedges</h3><p class="prod-desc">Potongan tebal, empuk di dalam.</p><div class="price-box"><span class="price" id="price-kentang-wedges">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
-
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox([
-                        'images/mix-akar-fix-1.webp', 'images/mix-akar-fix-2.webp', 'images/mix-akar-fix-3.webp', 
-                        'images/mix-akar-fix-4.webp', 'images/mix-akar-fix-5.webp', 'images/mix-akar-fix-6.webp', 
-                        'images/mix-akar-fix-7.webp', 'images/mix-akar-fix-8.webp', 'images/mix-akar-fix-9.webp',
-                        'images/mix-akar-fix-10.webp'
-                    ], 'Keripik Akar Manis (Mix)')">
+                    <div class="prod-img-box" onclick="openLightbox(['images/labu-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/labu-fix-1.webp" alt="Labu Madu" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Labu Madu</h3><p class="prod-desc">Manis legit khas labu.</p><div class="price-box"><span class="price" id="price-labu">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/okra-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/okra-fix-1.webp" alt="Okra" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Okra</h3><p class="prod-desc">Sayur sehat, tekstur unik.</p><div class="price-box"><span class="price" id="price-okra">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/ubi-madu-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/ubi-madu-fix-1.webp" alt="Ubi Madu" loading="lazy"></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Ubi Madu</h3><p class="prod-desc">Stik ubi manis alami.</p><div class="price-box"><span class="price" id="price-ubi-madu">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-ubi-madu-manis-alami-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/ubi-ungu-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/ubi-ungu-fix-1.webp" alt="Ubi Ungu" loading="lazy"></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Ubi Ungu</h3><p class="prod-desc">Kaya antioksidan, warna alami.</p><div class="price-box"><span class="price" id="price-ubi-ungu">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-ubi-ungu-vacuum-frying-premium-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/wortel-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/wortel-fix-1.webp" alt="Wortel" loading="lazy"></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Wortel</h3><p class="prod-desc">Tidak langu, anak-anak suka.</p><div class="price-box"><span class="price" id="price-wortel">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-wortel-renyah-sehat-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+            </div>
+
+            <div class="cat-separator"><div class="cat-line solid"></div><h3>Keripik Sayur Bertepung (Crispy)</h3><div class="cat-line solid"></div></div>
+            <div class="grid-products">
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/bombay-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/bombay-fix-1.webp" alt="Bombay" loading="lazy"></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Bombay</h3><p class="prod-desc">Manis gurih alami bawang.</p><div class="price-box"><span class="price" id="price-bombay">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-bombay-renyah-sehat-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/brokoli-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/brokoli-fix-1.webp" alt="Brokoli" loading="lazy"></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Brokoli</h3><p class="prod-desc">Sayur hijau krispi.</p><div class="price-box"><span class="price" id="price-brokoli">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-brokoli-renyah-sehat-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/cabe-besar-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/cabe-besar-fix-1.webp" alt="Cabe Besar" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Cabe Besar</h3><p class="prod-desc">Pedas unik krispi.</p><div class="price-box"><span class="price" id="price-cabe-besar">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/cabe-rawit-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/cabe-rawit-fix-1.webp" alt="Cabe Rawit" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Cabe Rawit</h3><p class="prod-desc">Pedas nampol!</p><div class="price-box"><span class="price" id="price-cabe-rawit">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/gedebog-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/gedebog-fix-1.webp" alt="Gedebog" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Gedebog Pisang</h3><p class="prod-desc">Gurih renyah.</p><div class="price-box"><span class="price" id="price-gedebog">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/jamur-kuping-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/jamur-kuping-fix-1.webp" alt="Jamur Kuping" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Jamur Kuping</h3><p class="prod-desc">Tekstur kenyal jadi krispi.</p><div class="price-box"><span class="price" id="price-jamur-kuping">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/jamur-tiram-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/jamur-tiram-fix-1.webp" alt="Jamur Tiram" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Jamur Tiram</h3><p class="prod-desc">Gurih original jamur.</p><div class="price-box"><span class="price" id="price-jamur-tiram">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/paprika-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/paprika-fix-1.webp" alt="Paprika" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Paprika</h3><p class="prod-desc">Aroma khas paprika.</p><div class="price-box"><span class="price" id="price-paprika">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+            </div>
+
+            <div class="cat-separator"><div class="cat-line solid"></div><h3>Keripik Buah Asli</h3><div class="cat-line solid"></div></div>
+            <div class="grid-products">
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/apel-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/apel-fix-1.webp" alt="Apel" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Apel Malang</h3><p class="prod-desc">Manis asam segar.</p><div class="price-box"><span class="price" id="price-apel">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/naga-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/naga-fix-1.webp" alt="Buah Naga" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Buah Naga</h3><p class="prod-desc">Warna merah alami.</p><div class="price-box"><span class="price" id="price-naga">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/mangga-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/mangga-fix-1.webp" alt="Mangga" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Mangga</h3><p class="prod-desc">Wangi harum mangga asli.</p><div class="price-box"><span class="price" id="price-mangga">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/nangka-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/nangka-fix-1.webp" alt="Nangka" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Nangka</h3><p class="prod-desc">Manis legit tanpa gula.</p><div class="price-box"><span class="price" id="price-nangka">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/pisang-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/pisang-fix-1.webp" alt="Pisang" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Pisang</h3><p class="prod-desc">Pisang matang manis.</p><div class="price-box"><span class="price" id="price-pisang">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/salak-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/salak-fix-1.webp" alt="Salak" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Salak</h3><p class="prod-desc">Renyah masir.</p><div class="price-box"><span class="price" id="price-salak">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/strawberry-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/strawberry-fix-1.webp" alt="Strawberry" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Strawberry</h3><p class="prod-desc">Whole fruit, asam manis.</p><div class="price-box"><span class="price" id="price-strawberry">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                </div>
+            </div>
+
+            <div class="cat-separator"><div class="cat-line solid"></div><h3>Produk Mix</h3><div class="cat-line solid"></div></div>
+            <div class="grid-products">
+                <div class="prod-card">
+                    <div class="prod-img-box" onclick="openLightbox(['images/mix-akar-fix-1.webp'])">
                         <span class="prod-badge badge-new">KriukQue</span>
-                        <img src="images/mix-akar-fix-1.webp" alt="Keripik Akar Manis" loading="lazy">
+                        <img src="images/mix-akar-fix-1.webp" alt="Mix Akar Manis" loading="lazy">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Keripik Akar Manis (Mix)</h3>
-                        <p class="prod-desc">
-                            Kombinasi sempurna antara manis alami <strong>Ubi Madu</strong> dan kesegaran <strong>Wortel</strong> dalam bentuk stik. Diproses suhu rendah (vacuum) sehingga renyah maksimal.<br><br>
-                            <strong>Keunggulan:</strong> 2 Varian Rasa dalam 1 kemasan. Kaya serat & vitamin.
-                        </p>
-                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
-                        <div class="price-box"><span class="price">Rp 22.275</span><span class="price-promo">Paket Komplit</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/keripik-akar-manis-mix-wortel-ubi-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Keripik Akar Manis">
-                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
-                        </a>
+                        <p class="prod-desc">Mix Ubi Madu & Wortel. 2 Rasa 1 Kemasan.</p>
+                        <div class="price-box"><span class="price" id="price-akar-manis">Loading...</span></div>
+                        <a href="https://grosirabonsapi.storelink.id/keripik-akar-manis-mix-wortel-ubi-kriukque-100gr" target="_blank" class="btn-checkout" aria-label="Beli Mix Akar Manis"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a>
                     </div>
                 </div>
             </div>
 
-            <div class="cat-separator">
-                <div class="cat-line solid"></div><h3>Kopi Nusantara</h3><div class="cat-line solid"></div>
-            </div>
+            <div class="cat-separator"><div class="cat-line solid"></div><h3>Kopi Nusantara</h3><div class="cat-line solid"></div></div>
             <div class="grid-products">
-                
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox([
-                        'images/exelsa-fix-1.webp', 'images/exelsa-fix-2.webp', 'images/exelsa-fix-3.webp', 
-                        'images/exelsa-fix-4.webp', 'images/exelsa-fix-5.webp', 'images/exelsa-fix-6.webp', 
-                        'images/exelsa-fix-7.webp', 'images/exelsa-fix-8.webp', 'images/exelsa-fix-9.webp',
-                        'images/exelsa-fix-10.webp'
-                    ], 'Kopi Excelsa Wonosalam')">
+                    <div class="prod-img-box" onclick="openLightbox(['images/exelsa-fix-1.webp'])">
                         <span class="prod-badge badge-dark">PREMIUM</span>
-                        <img src="images/exelsa-fix-1.webp" alt="Kopi Excelsa Wonosalam" loading="lazy">
+                        <img src="images/exelsa-fix-1.webp" alt="Kopi Excelsa" loading="lazy">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Kopi Excelsa Wonosalam (100gr)</h3>
-                        <p class="prod-desc">
-                            Kopi murni varietas Excelsa dari pegunungan Wonosalam. Karakter rasa unik dengan <em>hint</em> nangka/tart (fruity) yang kuat. Disangrai manual untuk menjaga kualitas aroma.<br><br>
-                            <strong>Spesifikasi:</strong><br>
-                            - 100% Biji Kopi Petik Merah<br>
-                            - Bubuk Murni Tanpa Campuran
-                        </p>
-                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
-                        <div class="price-box"><span class="price">Rp 29.700</span><span class="price-promo">Kopi Murni</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/kopi-excelsa-asli-wonosalam-bubuk-murni-kopique-100gr" target="_blank" class="btn-checkout" aria-label="Beli Kopi Excelsa Wonosalam">
-                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
-                        </a>
+                        <p class="prod-desc">Aroma Nangka/Fruity kuat. Bubuk Murni.</p>
+                        <div class="price-box"><span class="price" id="price-kopi-excelsa">Loading...</span></div>
+                        <a href="https://grosirabonsapi.storelink.id/kopi-excelsa-asli-wonosalam-bubuk-murni-kopique-100gr" target="_blank" class="btn-checkout" aria-label="Beli Kopi Excelsa"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a>
                     </div>
                 </div>
-
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox([
-                        'images/robusta-fix-1.webp', 'images/robusta-fix-2.webp', 'images/robusta-fix-3.webp', 
-                        'images/robusta-fix-4.webp', 'images/robusta-fix-5.webp', 'images/robusta-fix-6.webp', 
-                        'images/robusta-fix-7.webp', 'images/robusta-fix-8.webp', 'images/robusta-fix-9.webp',
-                        'images/robusta-fix-10.webp'
-                    ], 'Kopi Robusta Wonosalam')">
+                    <div class="prod-img-box" onclick="openLightbox(['images/robusta-fix-1.webp'])">
                         <span class="prod-badge badge-dark">BOLD</span>
-                        <img src="images/robusta-fix-1.webp" alt="Kopi Robusta Wonosalam" loading="lazy">
+                        <img src="images/robusta-fix-1.webp" alt="Kopi Robusta" loading="lazy">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Kopi Robusta Wonosalam (100gr)</h3>
-                        <p class="prod-desc">
-                            Kopi Robusta murni dari dataran tinggi Wonosalam. Memiliki karakter <strong>Body Tebal (Bold)</strong> dan rasa pahit yang mantap dengan <em>aftertaste</em> cokelat/kacang. Cocok untuk penyuka kopi strong atau bahan dasar Es Kopi Susu.<br><br>
-                            <strong>Spesifikasi:</strong><br>
-                            - 100% Biji Petik Merah<br>
-                            - Medium-Dark Roast
-                        </p>
-                        <span class="read-more-btn" onclick="toggleDesc(this)">Baca Selengkapnya</span>
-                        <div class="price-box"><span class="price">Rp 26.400</span><span class="price-promo">Strong & Bold</span></div>
-                        <a href="https://grosirabonsapi.storelink.id/kopi-robusta-murni-wonosalam-strong-bold-kopique-100gr" target="_blank" class="btn-checkout" aria-label="Beli Kopi Robusta Wonosalam">
-                            <i class="fas fa-shopping-cart"></i> Beli Sekarang (Bisa COD)
-                        </a>
+                        <p class="prod-desc">Pahit mantap, Body Tebal.</p>
+                        <div class="price-box"><span class="price" id="price-kopi-robusta">Loading...</span></div>
+                        <a href="https://grosirabonsapi.storelink.id/kopi-robusta-murni-wonosalam-strong-bold-kopique-100gr" target="_blank" class="btn-checkout" aria-label="Beli Kopi Robusta"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a>
                     </div>
                 </div>
-
             </div>
 
         </div>
@@ -541,65 +407,34 @@
                 <p>Kami melayani pengiriman ke seluruh Indonesia dengan sistem <strong>Bisa COD (Bayar di Tempat)</strong>. Terbuka peluang usaha untuk Agen dan Reseller dengan harga grosir langsung dari pabrik.</p>
             </div>
         </section>
-
     </main>
 
     <footer>
         <div class="container">
             <div style="margin-bottom:2rem;">
                 <img src="Logo-Barokah.webp" alt="Logo Barokah Food" width="80" height="80" style="display:block; margin: 0 auto 1rem auto;">
-                
                 <h2 style="color:white; font-weight:800; font-size:1.5rem;">BAROKAH HALALAN FOOD</h2>
                 <p style="margin-top:0.5rem;">Jl. Brigjend Abd Manan Wijaya Gg. Gereja GKJW, RT.2/RW.2, Gesingan, Pujon Lor, Kec. Pujon, Kabupaten Malang, Jawa Timur 65391</p>
-                
                 <div style="width:100%; height:250px; border-radius:0.5rem; overflow:hidden; margin-top:1rem; margin-bottom:1rem; border:1px solid #374151;">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.4612736580198!2d112.47118961083048!3d-7.846695192142136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e787d9aef4bb49f%3A0xc8f8ca54fb5fd106!2sBAROKAH%20HALALAN%20FOOD%20%7C%20Grosir%20Makanan%20Instan!5e0!3m2!1sid!2sid!4v1766254538565!5m2!1sid!2sid" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Peta Lokasi Barokah Halalan Food">
-                    </iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.4612736580198!2d112.47118961083048!3d-7.846695192142136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e787d9aef4bb49f%3A0xc8f8ca54fb5fd106!2sBAROKAH%20HALALAN%20FOOD%20%7C%20Grosir%20Makanan%20Instan!5e0!3m2!1sid!2sid!4v1766254538565!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta Lokasi Barokah Halalan Food"></iframe>
                 </div>
-
-                <a href="https://maps.app.goo.gl/KvNViiNtuF37mpMP9" target="_blank" style="display: inline-block; margin-top: 0.5rem; color: #4ade80; text-decoration:underline;">
-                    <i class="fas fa-map-marker-alt"></i> Buka di Google Maps Aplikasi
-                </a>
+                <a href="https://maps.app.goo.gl/KvNViiNtuF37mpMP9" target="_blank" style="display: inline-block; margin-top: 0.5rem; color: #4ade80; text-decoration:underline;"><i class="fas fa-map-marker-alt"></i> Buka di Google Maps Aplikasi</a>
             </div>
-            
             <div style="margin-bottom: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <a href="https://tokopedia.com/barokah-halalan-food" target="_blank" style="text-decoration:none; color: white; border: 1px solid #4b5563; padding: 0.5rem 1.5rem; border-radius: 0.5rem; transition: 0.3s; display:flex; align-items:center; gap:0.5rem;">
-                    <i class="fas fa-store" style="color: #4ade80;"></i> Tokopedia
-                </a>
-                <a href="https://shopee.co.id/baariklanaashop2025" target="_blank" style="text-decoration:none; color: white; border: 1px solid #4b5563; padding: 0.5rem 1.5rem; border-radius: 0.5rem; transition: 0.3s; display:flex; align-items:center; gap:0.5rem;">
-                    <i class="fas fa-store" style="color: #fb923c;"></i> Shopee
-                </a>
+                <a href="https://tokopedia.com/barokah-halalan-food" target="_blank" style="text-decoration:none; color: white; border: 1px solid #4b5563; padding: 0.5rem 1.5rem; border-radius: 0.5rem; transition: 0.3s; display:flex; align-items:center; gap:0.5rem;"><i class="fas fa-store" style="color: #4ade80;"></i> Tokopedia</a>
+                <a href="https://shopee.co.id/baariklanaashop2025" target="_blank" style="text-decoration:none; color: white; border: 1px solid #4b5563; padding: 0.5rem 1.5rem; border-radius: 0.5rem; transition: 0.3s; display:flex; align-items:center; gap:0.5rem;"><i class="fas fa-store" style="color: #fb923c;"></i> Shopee</a>
             </div>
-
             <div class="social-links">
                 <a href="https://www.instagram.com/barokahhalalanfoodmlg" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/Barokahhalalanfoodmlg" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com/@barokah_halalanfood" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                 <a href="https://www.youtube.com/@Barokah_halalanfood" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
-
-           <div class="footer-copy">
-                © 2025 BAROKAH HALALAN FOOD. Hak Cipta Dilindungi.
-                <div style="margin-top:0.5rem;">
-                    <a href="kebijakan-privasi.html" target="_blank" style="margin-right:1rem; color:#9ca3af; text-decoration:none;">Kebijakan Privasi</a> 
-                    <a href="#" style="color:#9ca3af; text-decoration:none;">Syarat & Ketentuan</a>
-                </div>
-            </div>
+           <div class="footer-copy">© 2025 BAROKAH HALALAN FOOD. Hak Cipta Dilindungi.<div style="margin-top:0.5rem;"><a href="kebijakan-privasi.html" target="_blank" style="margin-right:1rem; color:#9ca3af; text-decoration:none;">Kebijakan Privasi</a> <a href="#" style="color:#9ca3af; text-decoration:none;">Syarat & Ketentuan</a></div></div>
         </div>
     </footer>
 
-    <a href="https://wa.me/6285725046201?text=Halo%20Admin%2C%20saya%20liat%20dari%20Katalog%20Website%2C%20mau%20tanya..." target="_blank" class="float-wa">
-        <i class="fab fa-whatsapp"></i>
-        <span>Hubungi Admin</span>
-    </a>
+    <a href="https://wa.me/6285725046201?text=Halo%20Admin%2C%20saya%20liat%20dari%20Katalog%20Website%2C%20mau%20tanya..." target="_blank" class="float-wa"><i class="fab fa-whatsapp"></i><span>Hubungi Admin</span></a>
 
     <div id="lightbox" class="lightbox">
         <span class="lightbox-close" onclick="closeLightbox()">×</span>
@@ -612,7 +447,7 @@
     </div>
 
     <script>
-        // LIGHTBOX LOGIC
+        // --- 1. LIGHTBOX LOGIC ---
         let currentGallery = [];
         let currentIndex = 0;
         const lightbox = document.getElementById('lightbox');
@@ -623,35 +458,22 @@
         function openLightbox(images, captionText = '') {
             currentGallery = images;
             currentIndex = 0;
-            if(images.length <= 1) { navBtns.style.display = 'none'; } 
-            else { navBtns.style.display = 'flex'; }
+            if(images.length <= 1) { navBtns.style.display = 'none'; } else { navBtns.style.display = 'flex'; }
             lightbox.style.display = "flex";
             updateImage(captionText);
         }
-
         function closeLightbox() { lightbox.style.display = "none"; }
-
         function updateImage(defaultCaption) {
             imgElement.src = currentGallery[currentIndex];
-            if(currentGallery.length > 1) {
-                captionElement.innerHTML = defaultCaption + ` (${currentIndex + 1}/${currentGallery.length})`;
-            } else {
-                captionElement.innerHTML = defaultCaption;
-            }
+            captionElement.innerHTML = currentGallery.length > 1 ? defaultCaption + ` (${currentIndex + 1}/${currentGallery.length})` : defaultCaption;
         }
-
         function changeImage(direction) {
             currentIndex += direction;
             if (currentIndex >= currentGallery.length) currentIndex = 0;
             if (currentIndex < 0) currentIndex = currentGallery.length - 1;
-            let currentCap = captionElement.innerHTML.split('(')[0].trim();
-            updateImage(currentCap);
+            updateImage(""); 
         }
-
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) closeLightbox();
-        });
-
+        lightbox.addEventListener('click', function(e) { if (e.target === lightbox) closeLightbox(); });
         document.addEventListener('keydown', function(e) {
             if(lightbox.style.display === "flex") {
                 if (e.key === "ArrowLeft") changeImage(-1);
@@ -660,16 +482,116 @@
             }
         });
 
-        // BACA SELENGKAPNYA LOGIC
-        function toggleDesc(btn) {
-            let desc = btn.previousElementSibling; 
-            desc.classList.toggle('expand');
-            if (desc.classList.contains('expand')) {
-                btn.innerHTML = 'Tutup <i class="fas fa-chevron-up"></i>';
-            } else {
-                btn.innerHTML = 'Baca Selengkapnya';
+        // --- 2. SISTEM HARGA OTOMATIS (Tanpa Pembulatan) ---
+        // Ganti Harga Modal di sini jika ada perubahan
+        const dbHarga = {
+            // Keripik Sayur Asli
+            wortel: 130000,
+            ubi_ungu: 100000,
+            ubi_madu: 100000,
+            okra: 250000,
+            jagung: 120000,
+            labu: 120000,
+            kentang_krispi: 150000,
+            kentang_wedges: 160000,
+            bawang_merah: 300000,
+            bawang_putih: 270000,
+            buncis: 150000,
+            
+            // Keripik Sayur Bertepung
+            gedebog: 9000,
+            jamur_tiram: 110000,
+            jamur_kuping: 120000,
+            brokoli: 150000,
+            bombay: 140000,
+            paprika: 140000,
+            cabe_besar: 140000,
+            cabe_rawit: 140000,
+            
+            // Buah
+            nangka: 105000,
+            apel: 125000,
+            salak: 140000,
+            pisang: 90000,
+            strawberry: 500000,
+            naga: 220000,
+            mangga: 140000,
+
+            // Mix
+            mix_akar: 115000, // Asumsi rata2
+
+            // Kopi
+            excelsa: 160000,
+            robusta: 140000
+        };
+
+        function formatRupiah(angka) {
+            return "Rp " + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        function hitung(modalPerKg) {
+            if(!modalPerKg || modalPerKg === 0) return 0; // Cek jika data kosong
+            
+            // Rumus: (Harga/10 + 2000) + 65%
+            let modalPer100g = modalPerKg / 10;
+            let plusOverhead = modalPer100g + 2000;
+            let hargaJual = plusOverhead * 1.65; // Ditambah 65%
+            
+            return hargaJual; // TANPA PEMBULATAN (Sesuai Request)
+        }
+
+        function updatePrices() {
+            // Harga Tetap (Fixed)
+            document.getElementById('price-abon-100').innerText = "Rp 35.999";
+            document.getElementById('price-abon-sachet').innerText = "Rp 37.900";
+            document.getElementById('price-pempek').innerText = "Rp 35.999";
+
+            // Mapping ID HTML ke Database
+            const mapID = {
+                'price-wortel': dbHarga.wortel,
+                'price-ubi-ungu': dbHarga.ubi_ungu,
+                'price-ubi-madu': dbHarga.ubi_madu,
+                'price-okra': dbHarga.okra,
+                'price-jagung': dbHarga.jagung,
+                'price-labu': dbHarga.labu,
+                'price-kentang-krispi': dbHarga.kentang_krispi,
+                'price-kentang-wedges': dbHarga.kentang_wedges,
+                'price-bawang-merah': dbHarga.bawang_merah,
+                'price-bawang-putih': dbHarga.bawang_putih,
+                'price-buncis': dbHarga.buncis,
+                
+                'price-gedebog': dbHarga.gedebog,
+                'price-jamur-tiram': dbHarga.jamur_tiram,
+                'price-jamur-kuping': dbHarga.jamur_kuping,
+                'price-brokoli': dbHarga.brokoli,
+                'price-bombay': dbHarga.bombay,
+                'price-paprika': dbHarga.paprika,
+                'price-cabe-besar': dbHarga.cabe_besar,
+                'price-cabe-rawit': dbHarga.cabe_rawit,
+                
+                'price-nangka': dbHarga.nangka,
+                'price-apel': dbHarga.apel,
+                'price-salak': dbHarga.salak,
+                'price-pisang': dbHarga.pisang,
+                'price-strawberry': dbHarga.strawberry,
+                'price-naga': dbHarga.naga,
+                'price-mangga': dbHarga.mangga,
+                
+                'price-akar-manis': dbHarga.mix_akar,
+                'price-kopi-excelsa': dbHarga.excelsa,
+                'price-kopi-robusta': dbHarga.robusta
+            };
+
+            for (const [id, modal] of Object.entries(mapID)) {
+                const el = document.getElementById(id);
+                if(el) {
+                    const price = hitung(modal);
+                    el.innerText = price > 0 ? formatRupiah(price) : "Hubungi Admin";
+                }
             }
         }
+
+        document.addEventListener("DOMContentLoaded", updatePrices);
     </script>
 
 </body>
