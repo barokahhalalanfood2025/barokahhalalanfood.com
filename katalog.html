@@ -62,7 +62,7 @@
     </script>
 
     <style>
-        /* FONT AWESOME & GLOBAL STYLES */
+        /* --- 1. GLOBAL & FONT --- */
         @font-face { font-family: 'Font Awesome 6 Free'; font-style: normal; font-weight: 900; src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2) format('woff2'); }
         @font-face { font-family: 'Font Awesome 6 Brands'; font-style: normal; font-weight: 400; src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2) format('woff2'); }
         .fa, .fas, .fab { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; }
@@ -75,7 +75,7 @@
         .container { max-width: 1300px; margin: 0 auto; padding: 0 1rem; }
         img { max-width: 100%; height: auto; display: block; }
 
-        /* HEADER & HERO */
+        /* --- 2. HEADER & HERO --- */
         header { background: var(--white); padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 50; }
         .nav-flex { display: flex; justify-content: space-between; align-items: center; }
         .logo h1 { font-size: 1.1rem; font-weight: 800; color: var(--red-600); margin: 0; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -85,8 +85,8 @@
         .cat-hero h2 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text-dark); font-weight: 800; }
         .cod-badge { background: #dcfce7; color: #14532d; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 800; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; border: 2px solid #16a34a; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
 
-        /* PRICING TABLE */
-        .pricing-section { margin-bottom: 3rem; }
+        /* --- 3. PRICING TABLE --- */
+        .pricing-section { margin-bottom: 2rem; }
         .pricing-box { max-width: 800px; margin: 0 auto; background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #f3f4f6; }
         .pricing-header { background: var(--text-dark); color: white; padding: 1rem; text-align: center; font-weight: bold; letter-spacing: 0.5px; }
         .pricing-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
@@ -94,7 +94,26 @@
         .pricing-table th, .pricing-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #f3f4f6; }
         .discount-badge { background: #14532d; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
 
-        /* PRODUCT LAYOUT */
+        /* --- 4. CALCULATOR STYLE (NEW) --- */
+        .calc-section { margin-bottom: 3rem; }
+        .calc-box { max-width: 600px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border: 1px solid #e5e7eb; overflow: hidden; }
+        .calc-header { background: #16a34a; color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 1.1rem; }
+        .calc-body { padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #374151; font-size: 0.9rem; }
+        
+        select, input[type="number"] { width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem; }
+        .input-group { display: flex; align-items: center; gap: 10px; }
+        .input-addon { background: #f3f4f6; padding: 10px 15px; border: 1px solid #d1d5db; border-radius: 6px; color: #4b5563; font-weight: 600; }
+        
+        .res-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.95rem; }
+        .res-total { background: #f0fdf4; padding: 15px; border-radius: 8px; border: 1px solid #bbf7d0; display: flex; justify-content: space-between; align-items: center; font-weight: 900; font-size: 1.2rem; color: #166534; margin-top: 15px; }
+        .res-save { text-align: center; margin-top: 10px; font-size: 0.9rem; color: #dc2626; font-weight: bold; }
+        
+        .btn-calc-wa { display: block; margin-top: 15px; background: #25D366; color: white; text-align: center; padding: 12px; border-radius: 6px; font-weight: bold; text-decoration: none; transition: 0.3s; }
+        .btn-calc-wa:hover { background: #1da851; }
+
+        /* --- 5. PRODUCT LAYOUT --- */
         .cat-separator { margin: 3.5rem 0 2rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
         .cat-separator h3 { font-size: 1.6rem; font-weight: 800; color: var(--red-600); white-space: nowrap; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
         .cat-line { height: 3px; background: linear-gradient(90deg, transparent, #e5e7eb, transparent); width: 80px; border-radius: 50px; }
@@ -103,16 +122,14 @@
         .grid-products { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; padding-bottom: 1rem; }
         @media(min-width: 1024px) { .grid-products { grid-template-columns: repeat(6, 1fr); justify-content: center; } }
 
-        /* PRODUCT CARD */
+        /* --- 6. PRODUCT CARD --- */
         .prod-card { background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e7eb; display: flex; flex-direction: column; height: fit-content; min-height: 100%; transition: all 0.3s ease-in-out; position: relative; }
         .prod-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); border-color: var(--red-600); }
         .prod-img-box { width: 100%; aspect-ratio: 1 / 1; background: #f9fafb; position: relative; overflow: hidden; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .prod-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        /* Style untuk gambar error/belum upload */
         .prod-img-box img[src=""] { display: none; } 
         
         .prod-card:hover .prod-img-box img { transform: scale(1.1); }
-        /* Icon kaca pembesar */
         .prod-img-box::after { content: '\f00e'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); background: rgba(0,0,0,0.5); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: 0.3s; opacity: 0; }
         .prod-img-box:hover::after { transform: translate(-50%, -50%) scale(1); opacity: 1; }
 
@@ -139,12 +156,12 @@
         .btn-checkout { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.7rem; text-align: center; border-radius: 0.5rem; font-weight: 700; font-size: 0.85rem; background: linear-gradient(to bottom, #dc2626, #b91c1c); color: white; border: 1px solid #b91c1c; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .btn-checkout:hover { filter: brightness(1.1); }
 
-        /* FLOATING WA */
+        /* --- 7. FLOATING WA --- */
         .float-wa { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: white; padding: 12px 20px; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 8px; z-index: 9999; text-decoration: none; transition: 0.3s; font-family: sans-serif; }
         .float-wa:hover { background-color: #1da851; transform: scale(1.05); }
         .float-wa i { font-size: 1.5rem; }
 
-        /* FOOTER & SEO */
+        /* --- 8. FOOTER & SEO --- */
         .seo-content { background: white; padding: 3rem 0; border-top: 1px solid #e5e7eb; margin-top: 4rem; }
         .seo-content h2 { font-size: 1.5rem; color: var(--text-dark); margin-bottom: 1rem; text-align: center; }
         .seo-content p { color: #4b5563; font-size: 0.95rem; margin-bottom: 1rem; text-align: justify; max-width: 900px; margin-left: auto; margin-right: auto; }
@@ -152,7 +169,7 @@
         .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; font-size: 1.5rem; }
         .footer-copy { margin-top: 2rem; border-top: 1px solid #374151; padding-top: 1rem; font-size: 0.85rem; }
 
-        /* LIGHTBOX */
+        /* --- 9. LIGHTBOX --- */
         .lightbox { display: none; position: fixed; z-index: 9999; padding-top: 0; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.95); justify-content: center; align-items: center; flex-direction: column; }
         .lightbox-content { margin: auto; display: block; width: auto; max-width: 90%; max-height: 80vh; object-fit: contain; border-radius: 5px; box-shadow: 0 0 20px rgba(255,255,255,0.1); animation: zoom 0.3s; }
         .lightbox-close { position: absolute; top: 20px; right: 30px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10001; }
@@ -161,25 +178,6 @@
         .nav-btn:hover { background: rgba(255,255,255,0.4); }
         .nav-btn.disabled { opacity: 0.2; cursor: not-allowed; } /* Style untuk tombol mati */
         .caption { margin-top: 15px; text-align: center; color: #ccc; font-size: 1rem; font-weight: 600; }
-
-        /* Style Khusus Kalkulator */
-    .calc-section { margin-bottom: 3rem; }
-    .calc-box { max-width: 600px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border: 1px solid #e5e7eb; overflow: hidden; }
-    .calc-header { background: #1f2937; color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 1.1rem; }
-    .calc-body { padding: 20px; }
-    .form-group { margin-bottom: 15px; }
-    .form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #374151; font-size: 0.9rem; }
-    
-    select, input[type="number"] { width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem; }
-    .input-group { display: flex; align-items: center; gap: 10px; }
-    .input-addon { background: #f3f4f6; padding: 10px 15px; border: 1px solid #d1d5db; border-radius: 6px; color: #4b5563; font-weight: 600; }
-    
-    .res-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.95rem; }
-    .res-total { background: #f0fdf4; padding: 15px; border-radius: 8px; border: 1px solid #bbf7d0; display: flex; justify-content: space-between; align-items: center; font-weight: 900; font-size: 1.2rem; color: #166534; margin-top: 15px; }
-    .res-save { text-align: center; margin-top: 10px; font-size: 0.9rem; color: #dc2626; font-weight: bold; }
-    
-    .btn-calc-wa { display: block; margin-top: 15px; background: #25D366; color: white; text-align: center; padding: 12px; border-radius: 6px; font-weight: bold; text-decoration: none; transition: 0.3s; }
-    .btn-calc-wa:hover { background: #1da851; }
     </style>
 </head>
 <body>
