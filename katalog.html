@@ -149,7 +149,7 @@
         /* --- 4. CALCULATOR STYLE (NEW) --- */
         .calc-section { margin-bottom: 3rem; }
         .calc-box { max-width: 600px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border: 1px solid #e5e7eb; overflow: hidden; }
-        .calc-header { background: #16a34a; color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 1.1rem; }
+        .calc-header { background: #14532d; color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 1.1rem; }
         .calc-body { padding: 20px; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #374151; font-size: 0.9rem; }
@@ -209,7 +209,7 @@
         .btn-checkout:hover { filter: brightness(1.1); }
 
         /* --- 7. FLOATING WA --- */
-        .float-wa { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: white; padding: 12px 20px; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 8px; z-index: 9999; text-decoration: none; transition: 0.3s; font-family: sans-serif; }
+        .float-wa { position: fixed; bottom: 25px; right: 25px; background-color: #15803d; color: white; padding: 12px 20px; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 8px; z-index: 9999; text-decoration: none; transition: 0.3s; font-family: sans-serif; }
         .float-wa:hover { background-color: #1da851; transform: scale(1.05); }
         .float-wa i { font-size: 1.5rem; }
 
@@ -272,14 +272,15 @@
                         <div class="calc-body">
             
                     <div class="form-group">
-                        <label>Pilih Produk:</label>
-                        <select id="calc-product" onchange="hitungSimulasi()">
-                        <option value="">-- Pilih Produk --</option>
-                        </select>
-                    </div>
-
-                <div class="form-group">
-                        <label>Mau beli berapa Pack? (1 Kg = 10 Pack)</label>
+                <label for="calc-product">Pilih Produk:</label>
+                
+                <select id="calc-product" onchange="hitungSimulasi()">
+                    <option value="">-- Pilih Produk --</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="calc-qty">Mau beli berapa Pack? (1 Kg = 10 Pack)</label>
                 <div class="input-group">
                     <input type="number" id="calc-qty" placeholder="Contoh: 10" min="1" oninput="hitungSimulasi()">
                     <span class="input-addon">Pack</span>
@@ -954,6 +955,35 @@
     }
 
     document.addEventListener("DOMContentLoaded", updatePrices);
+        
+        // --- 4. FIX ACCESSIBILITY OTOMATIS ---
+    // Fungsi ini akan berjalan otomatis untuk memperbaiki label tombol dan gambar error
+    function fixAccessibility() {
+        // A. Fix Tombol "Beli Sekarang" agar unik
+        const buttons = document.querySelectorAll('.btn-checkout');
+        buttons.forEach(btn => {
+            // Cari judul produk di dalam kartu yang sama
+            const card = btn.closest('.prod-card');
+            if (card) {
+                const title = card.querySelector('.prod-title').innerText;
+                // Ubah aria-label jadi spesifik, misal: "Beli Keripik Wortel"
+                btn.setAttribute('aria-label', 'Beli ' + title);
+            }
+        });
+
+        // B. Sembunyikan Gambar yang Error (404) agar tidak merusak tampilan
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.onerror = function() {
+                this.style.display = 'none'; // Hilangkan gambar jika file tidak ditemukan
+                // Opsional: Ganti dengan gambar placeholder
+                // this.src = 'images/placeholder.webp'; 
+            };
+        });
+    }
+
+    // Jalankan fungsi fix ini setelah halaman dimuat
+    document.addEventListener("DOMContentLoaded", fixAccessibility);
 </script>
 </body>
 </html>
