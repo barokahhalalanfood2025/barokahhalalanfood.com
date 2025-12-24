@@ -107,12 +107,12 @@
         .prod-card { background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e7eb; display: flex; flex-direction: column; height: fit-content; min-height: 100%; transition: all 0.3s ease-in-out; position: relative; }
         .prod-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); border-color: var(--red-600); }
         .prod-img-box { width: 100%; aspect-ratio: 1 / 1; background: #f9fafb; position: relative; overflow: hidden; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-        /* Placeholder styling if image missing */
         .prod-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        /* Style untuk gambar error/belum upload */
         .prod-img-box img[src=""] { display: none; } 
-        .prod-img-box i.fa-image { font-size: 3rem; color: #d1d5db; } /* Fallback icon */
         
         .prod-card:hover .prod-img-box img { transform: scale(1.1); }
+        /* Icon kaca pembesar */
         .prod-img-box::after { content: '\f00e'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); background: rgba(0,0,0,0.5); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: 0.3s; opacity: 0; }
         .prod-img-box:hover::after { transform: translate(-50%, -50%) scale(1); opacity: 1; }
 
@@ -121,8 +121,8 @@
         
         /* COLORS & BADGES */
         .badge-best { background: #dc2626; color: white; }
-        .badge-new { background: #ea580c; color: #000000; } /* Text Hitam */
-        .badge-dark { background: #451a03; color: #ffffff; } /* Text Putih */
+        .badge-new { background: #ea580c; color: #000000; } 
+        .badge-dark { background: #451a03; color: #ffffff; } 
         .badge-green { background: #16a34a; color: white; }
         
         .prod-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; line-height: 1.3; color: var(--text-dark); }
@@ -159,6 +159,7 @@
         .lightbox-nav { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; padding: 0 20px; transform: translateY(-50%); z-index: 10000; }
         .nav-btn { color: white; font-size: 25px; cursor: pointer; background: rgba(255,255,255,0.2); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: 0.3s; backdrop-filter: blur(5px); }
         .nav-btn:hover { background: rgba(255,255,255,0.4); }
+        .nav-btn.disabled { opacity: 0.2; cursor: not-allowed; } /* Style untuk tombol mati */
         .caption { margin-top: 15px; text-align: center; color: #ccc; font-size: 1rem; font-weight: 600; }
     </style>
 </head>
@@ -167,7 +168,7 @@
     <header>
         <div class="container nav-flex">
             <a href="index.html" class="btn-back"><i class="fas fa-home"></i> Home</a>
-            <div class="logo"><h1>BAROKAH HALALAN FOOD</h1></div>
+            <div class="logo"><h1>BAROKAH FOOD</h1></div>
         </div>
     </header>
 
@@ -199,7 +200,7 @@
             <div class="cat-separator"><div class="cat-line solid"></div><h3>Abon & Pempek</h3><div class="cat-line solid"></div></div>
             <div class="grid-products">
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['kemasan-abon-100gr-sblh.webp'])">
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('kemasan-abon-100gr-sblh')">
                         <span class="prod-badge badge-best">BEST SELLER</span>
                         <img src="kemasan-abon-100gr-sblh.webp" alt="Abon Sapi" loading="lazy">
                     </div>
@@ -211,7 +212,7 @@
                     </div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['kemasan-abon-10gr-tas.webp'])">
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('kemasan-abon-10gr-tas')">
                         <span class="prod-badge badge-best">PRAKTIS</span>
                         <img src="kemasan-abon-10gr-tas.webp" alt="Abon Sachet" loading="lazy">
                     </div>
@@ -223,7 +224,7 @@
                     </div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['pempek-palembang.webp'])">
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('pempek-palembang')">
                         <span class="prod-badge badge-best" style="background:#15803d;">FROZEN</span>
                         <img src="pempek-palembang.webp" alt="Pempek" loading="lazy">
                     </div>
@@ -236,128 +237,206 @@
                 </div>
             </div>
 
-            <div class="cat-separator"><div class="cat-line solid"></div><h3>Keripik Sayur Asli</h3><div class="cat-line solid"></div></div>
+            <div class="cat-separator"><div class="cat-line solid"></div><h3>Keripik Sayur Asli (Tanpa Tepung)</h3><div class="cat-line solid"></div></div>
             <div class="grid-products">
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/bawang-merah-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/bawang-merah-fix-1.webp" alt="Bawang Merah" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Bawang Merah</h3><p class="prod-desc">Bawang merah utuh, renyah & harum.</p><div class="price-box"><span class="price" id="price-bawang-merah">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/bawang-merah')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/bawang-merah-fix-1.webp" alt="Bawang Merah" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Bawang Merah</h3><div class="price-box"><span class="price" id="price-bawang-merah">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Bawang%20Merah" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/bawang-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/bawang-fix-1.webp" alt="Bawang Putih" loading="lazy"></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Bawang Putih</h3><p class="prod-desc">Kating utuh, tidak pahit, antioksidan tinggi.</p><div class="price-box"><span class="price" id="price-bawang-putih">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-bawang-putih-utuh-premium-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/bawang')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/bawang-fix-1.webp" alt="Bawang Putih" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Bawang Putih</h3><div class="price-box"><span class="price" id="price-bawang-putih">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-bawang-putih-utuh-premium-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/buncis-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/buncis-fix-1.webp" alt="Buncis" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Buncis</h3><p class="prod-desc">Hijau alami, renyah, kaya serat.</p><div class="price-box"><span class="price" id="price-buncis">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/buncis')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/buncis-fix-1.webp" alt="Buncis" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Buncis</h3><div class="price-box"><span class="price" id="price-buncis">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Buncis" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/jagung-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/jagung-fix-1.webp" alt="Jagung Manis" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Jagung Manis</h3><p class="prod-desc">Manis alami jagung asli, bukan perasa.</p><div class="price-box"><span class="price" id="price-jagung">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/jagung')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/jagung-fix-1.webp" alt="Jagung" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Jagung Manis</h3><div class="price-box"><span class="price" id="price-jagung">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Jagung" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/kentang-krispi-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/kentang-krispi-fix-1.webp" alt="Kentang Krispi" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Kentang Krispi Mustofa</h3><p class="prod-desc">Potongan stik kecil renyah.</p><div class="price-box"><span class="price" id="price-kentang-krispi">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/kentang-krispi')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/kentang-krispi-fix-1.webp" alt="Kentang Krispi" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Kentang Krispi Mustofa</h3><div class="price-box"><span class="price" id="price-kentang-krispi">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Kentang%20Krispi" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/kentang-wedges-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/kentang-wedges-fix-1.webp" alt="Kentang Wedges" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Kentang Wedges</h3><p class="prod-desc">Potongan tebal, empuk di dalam.</p><div class="price-box"><span class="price" id="price-kentang-wedges">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/kentang-wedges')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/kentang-wedges-fix-1.webp" alt="Kentang Wedges" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Kentang Wedges</h3><div class="price-box"><span class="price" id="price-kentang-wedges">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Kentang%20Wedges" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/labu-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/labu-fix-1.webp" alt="Labu Madu" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Labu Madu</h3><p class="prod-desc">Manis legit khas labu.</p><div class="price-box"><span class="price" id="price-labu">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/labu')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/labu-fix-1.webp" alt="Labu" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Labu Madu</h3><div class="price-box"><span class="price" id="price-labu">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Labu" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/okra-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/okra-fix-1.webp" alt="Okra" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Okra</h3><p class="prod-desc">Sayur sehat, tekstur unik.</p><div class="price-box"><span class="price" id="price-okra">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/okra')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/okra-fix-1.webp" alt="Okra" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Okra</h3><div class="price-box"><span class="price" id="price-okra">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Okra" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/ubi-madu-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/ubi-madu-fix-1.webp" alt="Ubi Madu" loading="lazy"></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Ubi Madu</h3><p class="prod-desc">Stik ubi manis alami.</p><div class="price-box"><span class="price" id="price-ubi-madu">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-ubi-madu-manis-alami-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/ubi-madu')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/ubi-madu-fix-1.webp" alt="Ubi Madu" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Ubi Madu</h3><div class="price-box"><span class="price" id="price-ubi-madu">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-ubi-madu-manis-alami-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/ubi-ungu-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/ubi-ungu-fix-1.webp" alt="Ubi Ungu" loading="lazy"></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Ubi Ungu</h3><p class="prod-desc">Kaya antioksidan, warna alami.</p><div class="price-box"><span class="price" id="price-ubi-ungu">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-ubi-ungu-vacuum-frying-premium-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/ubi-ungu')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/ubi-ungu-fix-1.webp" alt="Ubi Ungu" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Ubi Ungu</h3><div class="price-box"><span class="price" id="price-ubi-ungu">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-ubi-ungu-vacuum-frying-premium-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/wortel-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/wortel-fix-1.webp" alt="Wortel" loading="lazy"></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Wortel</h3><p class="prod-desc">Tidak langu, anak-anak suka.</p><div class="price-box"><span class="price" id="price-wortel">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-wortel-renyah-sehat-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/wortel')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/wortel-fix-1.webp" alt="Wortel" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Wortel</h3><div class="price-box"><span class="price" id="price-wortel">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-wortel-renyah-sehat-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
             </div>
 
             <div class="cat-separator"><div class="cat-line solid"></div><h3>Keripik Sayur Bertepung (Crispy)</h3><div class="cat-line solid"></div></div>
             <div class="grid-products">
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/bombay-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/bombay-fix-1.webp" alt="Bombay" loading="lazy"></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Bombay</h3><p class="prod-desc">Manis gurih alami bawang.</p><div class="price-box"><span class="price" id="price-bombay">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-bombay-renyah-sehat-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/bombay')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/bombay-fix-1.webp" alt="Bombay" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Bombay</h3><div class="price-box"><span class="price" id="price-bombay">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-bombay-renyah-sehat-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/brokoli-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/brokoli-fix-1.webp" alt="Brokoli" loading="lazy"></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Brokoli</h3><p class="prod-desc">Sayur hijau krispi.</p><div class="price-box"><span class="price" id="price-brokoli">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-brokoli-renyah-sehat-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/brokoli')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/brokoli-fix-1.webp" alt="Brokoli" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Brokoli</h3><div class="price-box"><span class="price" id="price-brokoli">...</span></div><a href="https://grosirabonsapi.storelink.id/keripik-brokoli-renyah-sehat-kriukque-100gr" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/cabe-besar-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/cabe-besar-fix-1.webp" alt="Cabe Besar" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Cabe Besar</h3><p class="prod-desc">Pedas unik krispi.</p><div class="price-box"><span class="price" id="price-cabe-besar">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/cabe-besar')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/cabe-besar-fix-1.webp" alt="Cabe Besar" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Cabe Besar</h3><div class="price-box"><span class="price" id="price-cabe-besar">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Cabe%20Besar" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/cabe-rawit-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/cabe-rawit-fix-1.webp" alt="Cabe Rawit" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Cabe Rawit</h3><p class="prod-desc">Pedas nampol!</p><div class="price-box"><span class="price" id="price-cabe-rawit">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/cabe-rawit')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/cabe-rawit-fix-1.webp" alt="Cabe Rawit" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Cabe Rawit</h3><div class="price-box"><span class="price" id="price-cabe-rawit">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Cabe%20Rawit" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/gedebog-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/gedebog-fix-1.webp" alt="Gedebog" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Gedebog Pisang</h3><p class="prod-desc">Gurih renyah.</p><div class="price-box"><span class="price" id="price-gedebog">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/gedebog')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/gedebog-fix-1.webp" alt="Gedebog" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Gedebog Pisang</h3><div class="price-box"><span class="price" id="price-gedebog">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Gedebog" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/jamur-kuping-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/jamur-kuping-fix-1.webp" alt="Jamur Kuping" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Jamur Kuping</h3><p class="prod-desc">Tekstur kenyal jadi krispi.</p><div class="price-box"><span class="price" id="price-jamur-kuping">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/jamur-kuping')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/jamur-kuping-fix-1.webp" alt="Jamur Kuping" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Jamur Kuping</h3><div class="price-box"><span class="price" id="price-jamur-kuping">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Jamur%20Kuping" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/jamur-tiram-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/jamur-tiram-fix-1.webp" alt="Jamur Tiram" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Jamur Tiram</h3><p class="prod-desc">Gurih original jamur.</p><div class="price-box"><span class="price" id="price-jamur-tiram">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/jamur-tiram')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/jamur-tiram-fix-1.webp" alt="Jamur Tiram" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Jamur Tiram</h3><div class="price-box"><span class="price" id="price-jamur-tiram">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Jamur%20Tiram" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/paprika-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/paprika-fix-1.webp" alt="Paprika" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Paprika</h3><p class="prod-desc">Aroma khas paprika.</p><div class="price-box"><span class="price" id="price-paprika">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/paprika')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/paprika-fix-1.webp" alt="Paprika" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Paprika</h3><div class="price-box"><span class="price" id="price-paprika">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Paprika" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
             </div>
 
             <div class="cat-separator"><div class="cat-line solid"></div><h3>Keripik Buah Asli</h3><div class="cat-line solid"></div></div>
             <div class="grid-products">
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/apel-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/apel-fix-1.webp" alt="Apel" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Apel Malang</h3><p class="prod-desc">Manis asam segar.</p><div class="price-box"><span class="price" id="price-apel">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/apel')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/apel-fix-1.webp" alt="Apel" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Apel Malang</h3><div class="price-box"><span class="price" id="price-apel">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Apel" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/naga-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/naga-fix-1.webp" alt="Buah Naga" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Buah Naga</h3><p class="prod-desc">Warna merah alami.</p><div class="price-box"><span class="price" id="price-naga">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/naga')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/naga-fix-1.webp" alt="Buah Naga" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Buah Naga</h3><div class="price-box"><span class="price" id="price-naga">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Buah%20Naga" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/mangga-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/mangga-fix-1.webp" alt="Mangga" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Mangga</h3><p class="prod-desc">Wangi harum mangga asli.</p><div class="price-box"><span class="price" id="price-mangga">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/mangga')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/mangga-fix-1.webp" alt="Mangga" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Mangga</h3><div class="price-box"><span class="price" id="price-mangga">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Mangga" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/nangka-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/nangka-fix-1.webp" alt="Nangka" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Nangka</h3><p class="prod-desc">Manis legit tanpa gula.</p><div class="price-box"><span class="price" id="price-nangka">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/nangka')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/nangka-fix-1.webp" alt="Nangka" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Nangka</h3><div class="price-box"><span class="price" id="price-nangka">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Nangka" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/pisang-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/pisang-fix-1.webp" alt="Pisang" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Pisang</h3><p class="prod-desc">Pisang matang manis.</p><div class="price-box"><span class="price" id="price-pisang">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/pisang')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/pisang-fix-1.webp" alt="Pisang" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Pisang</h3><div class="price-box"><span class="price" id="price-pisang">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Pisang" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/salak-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/salak-fix-1.webp" alt="Salak" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Salak</h3><p class="prod-desc">Renyah masir.</p><div class="price-box"><span class="price" id="price-salak">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/salak')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/salak-fix-1.webp" alt="Salak" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Salak</h3><div class="price-box"><span class="price" id="price-salak">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Salak" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/strawberry-fix-1.webp'])"><span class="prod-badge badge-new">KriukQue</span><img src="images/strawberry-fix-1.webp" alt="Strawberry" loading="lazy"><i class="fas fa-image" style="display:none;"></i></div>
-                    <div class="prod-info"><h3 class="prod-title">Keripik Strawberry</h3><p class="prod-desc">Whole fruit, asam manis.</p><div class="price-box"><span class="price" id="price-strawberry">...</span></div><a href="#" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/strawberry')">
+                        <span class="prod-badge badge-new">KriukQue</span>
+                        <img src="images/strawberry-fix-1.webp" alt="Strawberry" loading="lazy" onerror="this.style.display='none';">
+                    </div>
+                    <div class="prod-info"><h3 class="prod-title">Keripik Strawberry</h3><div class="price-box"><span class="price" id="price-strawberry">...</span></div><a href="https://wa.me/6285725046201?text=Halo%20Admin,%20saya%20mau%20pesan%20Keripik%20Strawberry" class="btn-checkout" aria-label="Beli"><i class="fas fa-shopping-cart"></i> Beli Sekarang</a></div>
                 </div>
             </div>
 
             <div class="cat-separator"><div class="cat-line solid"></div><h3>Produk Mix</h3><div class="cat-line solid"></div></div>
             <div class="grid-products">
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/mix-akar-fix-1.webp'])">
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/mix-akar')">
                         <span class="prod-badge badge-new">KriukQue</span>
-                        <img src="images/mix-akar-fix-1.webp" alt="Mix Akar Manis" loading="lazy">
+                        <img src="images/mix-akar-fix-1.webp" alt="Mix Akar Manis" loading="lazy" onerror="this.style.display='none';">
                     </div>
                     <div class="prod-info">
                         <h3 class="prod-title">Keripik Akar Manis (Mix)</h3>
@@ -371,7 +450,7 @@
             <div class="cat-separator"><div class="cat-line solid"></div><h3>Kopi Nusantara</h3><div class="cat-line solid"></div></div>
             <div class="grid-products">
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/exelsa-fix-1.webp'])">
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/exelsa')">
                         <span class="prod-badge badge-dark">PREMIUM</span>
                         <img src="images/exelsa-fix-1.webp" alt="Kopi Excelsa" loading="lazy">
                     </div>
@@ -383,7 +462,7 @@
                     </div>
                 </div>
                 <div class="prod-card">
-                    <div class="prod-img-box" onclick="openLightbox(['images/robusta-fix-1.webp'])">
+                    <div class="prod-img-box" onclick="openLightboxFromSlug('images/robusta')">
                         <span class="prod-badge badge-dark">BOLD</span>
                         <img src="images/robusta-fix-1.webp" alt="Kopi Robusta" loading="lazy">
                     </div>
@@ -454,6 +533,18 @@
         const imgElement = document.getElementById('lightbox-img');
         const captionElement = document.getElementById('caption');
         const navBtns = document.querySelector('.lightbox-nav');
+        const prevBtn = document.querySelector('.nav-btn:first-child');
+        const nextBtn = document.querySelector('.nav-btn:last-child');
+
+        // Fungsi Otomatis Generator Gambar (1-10)
+        function openLightboxFromSlug(slugBase) {
+            // Generate Array: slug-fix-1.webp sampai slug-fix-10.webp
+            let images = [];
+            for (let i = 1; i <= 10; i++) {
+                images.push(slugBase + '-fix-' + i + '.webp');
+            }
+            openLightbox(images);
+        }
 
         function openLightbox(images, captionText = '') {
             currentGallery = images;
@@ -462,17 +553,29 @@
             lightbox.style.display = "flex";
             updateImage(captionText);
         }
+
         function closeLightbox() { lightbox.style.display = "none"; }
+
         function updateImage(defaultCaption) {
             imgElement.src = currentGallery[currentIndex];
             captionElement.innerHTML = currentGallery.length > 1 ? defaultCaption + ` (${currentIndex + 1}/${currentGallery.length})` : defaultCaption;
+            
+            // Update Tombol Navigasi (Matikan jika di ujung)
+            if(currentIndex === 0) prevBtn.classList.add('disabled'); else prevBtn.classList.remove('disabled');
+            if(currentIndex === currentGallery.length - 1) nextBtn.classList.add('disabled'); else nextBtn.classList.remove('disabled');
         }
+
         function changeImage(direction) {
-            currentIndex += direction;
-            if (currentIndex >= currentGallery.length) currentIndex = 0;
-            if (currentIndex < 0) currentIndex = currentGallery.length - 1;
+            let nextIndex = currentIndex + direction;
+            
+            // STOP jika di ujung (Tidak Muter/Loop)
+            if (nextIndex < 0) return;
+            if (nextIndex >= currentGallery.length) return;
+
+            currentIndex = nextIndex;
             updateImage(""); 
         }
+
         lightbox.addEventListener('click', function(e) { if (e.target === lightbox) closeLightbox(); });
         document.addEventListener('keydown', function(e) {
             if(lightbox.style.display === "flex") {
@@ -482,8 +585,8 @@
             }
         });
 
-        // --- 2. SISTEM HARGA OTOMATIS (Tanpa Pembulatan) ---
-        // Ganti Harga Modal di sini jika ada perubahan
+        // --- 2. SISTEM HARGA OTOMATIS ---
+        // Masukkan Harga Modal per KG di sini (Script akan menghitung otomatis)
         const dbHarga = {
             // Keripik Sayur Asli
             wortel: 130000,
@@ -495,11 +598,11 @@
             kentang_krispi: 150000,
             kentang_wedges: 160000,
             bawang_merah: 300000,
-            bawang_putih: 300000,
+            bawang_putih: 270000,
             buncis: 150000,
             
             // Keripik Sayur Bertepung
-            gedebog: 90000,
+            gedebog: 9000,
             jamur_tiram: 110000,
             jamur_kuping: 120000,
             brokoli: 150000,
@@ -526,18 +629,19 @@
         };
 
         function formatRupiah(angka) {
-            return "Rp " + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            // Menggunakan toLocaleString untuk format angka Indonesia
+            return "Rp " + Math.round(angka).toLocaleString('id-ID');
         }
 
         function hitung(modalPerKg) {
             if(!modalPerKg || modalPerKg === 0) return 0; // Cek jika data kosong
             
-            // Rumus: (Harga/10 + 2000) + 65%
+            // Rumus: ((Harga/10) + 2000) + 65%
             let modalPer100g = modalPerKg / 10;
             let plusOverhead = modalPer100g + 2000;
             let hargaJual = plusOverhead * 1.65; // Ditambah 65%
             
-            return hargaJual; // TANPA PEMBULATAN (Sesuai Request)
+            return hargaJual; 
         }
 
         function updatePrices() {
