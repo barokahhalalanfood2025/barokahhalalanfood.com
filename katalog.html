@@ -83,10 +83,10 @@
         .cat-hero h2 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--text-dark); font-weight: 800; }
         .cod-badge { background: #dcfce7; color: #14532d; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 800; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; border: 2px solid #16a34a; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
 
-        /* --- 3. PRICING TABLE --- */
+       /* --- 3. PRICING TABLE (UPDATED) --- */
         .pricing-section { margin-bottom: 2rem; }
         
-        /* PERUBAHAN: max-width diubah jadi 600px */
+        /* Lebar disamakan dengan kalkulator (600px) */
         .pricing-box { 
             max-width: 600px; 
             margin: 0 auto; 
@@ -97,11 +97,54 @@
             border: 1px solid #f3f4f6; 
         }
         
-        .pricing-header { background: var(--text-dark); color: white; padding: 1rem; text-align: center; font-weight: bold; letter-spacing: 0.5px; }
-        .pricing-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-        .pricing-table th { background-color: #f9fafb; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; color: var(--red-700); }
-        .pricing-table th, .pricing-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #f3f4f6; }
-        .discount-badge { background: #14532d; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+        .pricing-header { 
+            background: var(--text-dark); 
+            color: white; 
+            padding: 1rem; 
+            text-align: center; 
+            font-weight: bold; 
+            letter-spacing: 0.5px; 
+        }
+
+        .pricing-table { 
+            width: 100%; 
+            border-collapse: collapse; /* Agar garis menyatu (tidak double) */
+            font-size: 0.9rem; 
+        }
+
+        .pricing-table th, 
+        .pricing-table td { 
+            /* PERUBAHAN 1: Padding diperkecil (0.6rem) biar rapat */
+            padding: 0.6rem 1rem; 
+            text-align: left; 
+            /* PERUBAHAN 2: Garis pembatas di semua sisi */
+            border: 1px solid #d1d5db; 
+        }
+
+        .pricing-table th { 
+            background-color: #e5e7eb; /* Header tabel abu-abu lebih gelap */
+            font-weight: 800; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            color: var(--text-dark); 
+        }
+
+        /* PERUBAHAN 3: Warna Selang-seling (Zebra) */
+        .pricing-table tbody tr:nth-child(even) {
+            background-color: #f9fafb; /* Baris Genap: Abu sangat muda */
+        }
+        .pricing-table tbody tr:nth-child(odd) {
+            background-color: #ffffff; /* Baris Ganjil: Putih */
+        }
+
+        .discount-badge { 
+            background: #14532d; 
+            color: white; 
+            padding: 3px 8px; /* Diperkecil sedikit */
+            border-radius: 4px; 
+            font-size: 0.85rem; 
+            font-weight: bold; 
+        }
 
         /* --- 4. CALCULATOR STYLE (NEW) --- */
         .calc-section { margin-bottom: 3rem; }
