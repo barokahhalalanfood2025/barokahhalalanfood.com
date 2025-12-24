@@ -714,7 +714,12 @@
 
     // --- 2. DATABASE HARGA ---
     const dbHarga = {
-        // Keripik Sayur Asli
+        // Abon & Pempek (Fixed)
+        abon_100: { price: 35999, isFixed: true },
+        abon_sachet: { price: 37900, isFixed: true },
+        pempek: { price: 35999, isFixed: true },
+
+        // Keripik Sayur Asli (Modal)
         wortel: 130000,
         ubi_ungu: 100000,
         ubi_madu: 100000,
@@ -728,7 +733,7 @@
         buncis: 150000,
         edamame: 150000,
         
-        // Keripik Sayur Bertepung
+        // Keripik Sayur Bertepung (Modal)
         gedebog: 9000,
         jamur_tiram: 110000,
         jamur_kuping: 120000,
@@ -739,7 +744,7 @@
         cabe_rawit: 140000,
         bunga_kol: 130000,
         
-        // Buah
+        // Buah (Modal)
         nangka: 105000,
         apel: 125000,
         salak: 140000,
@@ -748,84 +753,158 @@
         naga: 220000,
         mangga: 140000,
 
-        // Mix & Kopi
+        // Mix & Kopi (Modal)
         mix_akar: 115000, 
         excelsa: 160000,
-        robusta: 140000,
-        
-        // Produk Fixed (Untuk keperluan kalkulator)
-        abon_sapi: 280000, // Asumsi harga modal
-        pempek: 150000     // Asumsi harga modal
+        robusta: 140000
     };
 
-    // Dictionary Nama Produk (Agar tampilan di dropdown bagus)
+    // Dictionary Nama Produk (Tampilan di Dropdown & WA)
+    // SUDAH DIPERBAIKI: Tambah 'Keripik' di depan nama
     const productNames = {
-        wortel: "Keripik Wortel", ubi_ungu: "Keripik Ubi Ungu", ubi_madu: "Keripik Ubi Madu", okra: "Keripik Okra", jagung: "Keripik Jagung", labu: "Keripik Labu", kentang_krispi: "Kentang Krispi", kentang_wedges: "Kentang Wedges", bawang_merah: "Keripik Bawang Merah", bawang_putih: "Keripik Bawang Putih", buncis: "Keripik Buncis", edamame: "Keripik Edamame",
-        gedebog: "Keripik Gedebog", jamur_tiram: "Keripik Jamur Tiram", jamur_kuping: "Keripik Jamur Kuping", brokoli: "Keripik Brokoli", bombay: "Keripik Bombay", paprika: "Keripik Paprika", cabe_besar: "Keripik Cabe Besar", cabe_rawit: "Keripik Cabe Rawit", bunga_kol: "Keripik Bunga Kol",
-        nangka: "Keripik Nangka", apel: "Keripik Apel", salak: "Keripik Salak", pisang: "Keripik Pisang", strawberry: "Keripik Strawberry", naga: "Keripik Buah Naga", mangga: "Keripik Mangga",
-        mix_akar: "Mix Akar Manis", excelsa: "Kopi Excelsa", robusta: "Kopi Robusta"
+        // Abon
+        abon_100: "Abon Sapi Tumbuk (100gr)",
+        abon_sachet: "Abon Sapi (Pack isi 10 Sachet)",
+        pempek: "Pempek Palembang (Paket Hemat)",
+
+        // Sayur Asli
+        bawang_merah: "Keripik Bawang Merah",
+        bawang_putih: "Keripik Bawang Putih",
+        buncis: "Keripik Buncis",
+        edamame: "Keripik Edamame",
+        jagung: "Keripik Jagung Manis",
+        kentang_krispi: "Keripik Kentang Krispi", // Fix
+        kentang_wedges: "Keripik Kentang Wedges", // Fix
+        labu: "Keripik Labu Madu",
+        okra: "Keripik Okra",
+        ubi_madu: "Keripik Ubi Madu",
+        ubi_ungu: "Keripik Ubi Ungu",
+        wortel: "Keripik Wortel",
+
+        // Sayur Tepung
+        bombay: "Keripik Bombay",
+        brokoli: "Keripik Brokoli",
+        bunga_kol: "Keripik Bunga Kol",
+        cabe_besar: "Keripik Cabe Besar",
+        cabe_rawit: "Keripik Cabe Rawit",
+        gedebog: "Keripik Gedebog Pisang",
+        jamur_kuping: "Keripik Jamur Kuping",
+        jamur_tiram: "Keripik Jamur Tiram",
+        paprika: "Keripik Paprika",
+
+        // Buah
+        apel: "Keripik Apel",
+        mangga: "Keripik Mangga",
+        naga: "Keripik Buah Naga",
+        nangka: "Keripik Nangka",
+        pisang: "Keripik Pisang",
+        salak: "Keripik Salak",
+        strawberry: "Keripik Strawberry",
+
+        // Lainnya
+        mix_akar: "Keripik Mix Akar Manis", // Fix
+        excelsa: "Kopi Excelsa",
+        robusta: "Kopi Robusta"
     };
+
+    // Konfigurasi Kategori Dropdown (Agar urut dan ada judul)
+    const dropDownCategories = [
+        {
+            title: "=== ABON & PEMPEK ===",
+            keys: ["abon_100", "abon_sachet", "pempek"]
+        },
+        {
+            title: "=== KERIPIK SAYUR ASLI ===",
+            keys: ["bawang_merah", "bawang_putih", "buncis", "edamame", "jagung", "kentang_krispi", "kentang_wedges", "labu", "okra", "ubi_madu", "ubi_ungu", "wortel"] // Urut Abjad
+        },
+        {
+            title: "=== KERIPIK SAYUR BERTEPUNG ===",
+            keys: ["bombay", "brokoli", "bunga_kol", "cabe_besar", "cabe_rawit", "gedebog", "jamur_kuping", "jamur_tiram", "paprika"] // Urut Abjad
+        },
+        {
+            title: "=== KERIPIK BUAH ===",
+            keys: ["apel", "naga", "mangga", "nangka", "pisang", "salak", "strawberry"] // Urut Abjad
+        },
+        {
+            title: "=== PRODUK MIX ===",
+            keys: ["mix_akar"]
+        },
+        {
+            title: "=== KOPI NUSANTARA ===",
+            keys: ["excelsa", "robusta"]
+        }
+    ];
 
     function formatRupiah(angka) {
         return "Rp " + Math.round(angka).toLocaleString('id-ID');
     }
 
-    function hitung(modalPerKg) {
+    function hitung(data) {
+        if (typeof data === 'object' && data.isFixed) return data.price; // Harga Tetap
+        
+        let modalPerKg = data;
         if(!modalPerKg || modalPerKg === 0) return 0;
+        
+        // Rumus
         let modalPer100g = modalPerKg / 10;
         let plusOverhead = modalPer100g + 2000;
         let hargaJual = plusOverhead * 1.65; 
+        
         return hargaJual; 
     }
 
     function updatePrices() {
-        // Harga Tetap
-        const elAbon = document.getElementById('price-abon-100'); if(elAbon) elAbon.innerText = "Rp 35.999";
-        const elAbonS = document.getElementById('price-abon-sachet'); if(elAbonS) elAbonS.innerText = "Rp 37.900";
-        const elPempek = document.getElementById('price-pempek'); if(elPempek) elPempek.innerText = "Rp 35.999";
+        // 1. Update Harga Tetap di HTML
+        const elAbon = document.getElementById('price-abon-100'); if(elAbon) elAbon.innerText = formatRupiah(hitung(dbHarga.abon_100));
+        const elAbonS = document.getElementById('price-abon-sachet'); if(elAbonS) elAbonS.innerText = formatRupiah(hitung(dbHarga.abon_sachet));
+        const elPempek = document.getElementById('price-pempek'); if(elPempek) elPempek.innerText = formatRupiah(hitung(dbHarga.pempek));
 
-        // Loop Update Harga Dinamis
-        const ids = [
-            'wortel', 'ubi_ungu', 'ubi_madu', 'okra', 'jagung', 'labu', 'kentang_krispi', 'kentang_wedges', 
-            'bawang_merah', 'bawang_putih', 'buncis', 'edamame', 'gedebog', 'jamur_tiram', 'jamur_kuping', 
-            'brokoli', 'bombay', 'paprika', 'cabe_besar', 'cabe_rawit', 'bunga_kol', 'nangka', 'apel', 
-            'salak', 'pisang', 'strawberry', 'naga', 'mangga', 'mix_akar', 'excelsa', 'robusta'
-        ];
+        // 2. Update Harga Rumus di HTML
+        // Loop semua keys di dbHarga kecuali yang fixed
+        for (const [key, value] of Object.entries(dbHarga)) {
+            if (typeof value === 'object' && value.isFixed) continue;
 
-        ids.forEach(key => {
-            // Kita cari elemen dengan ID 'price-kunci' (contoh: price-wortel)
-            // Kopi punya prefix berbeda di HTML (price-kopi-excelsa), kita handle manual mapping atau sesuaikan ID
             let htmlId = 'price-' + key.replace('_', '-'); 
-            
-            // Fix khusus untuk ID yang tidak standar
+            // Manual mapping untuk ID yang tidak standar
             if(key === 'excelsa') htmlId = 'price-kopi-excelsa';
             if(key === 'robusta') htmlId = 'price-kopi-robusta';
             if(key === 'mix_akar') htmlId = 'price-akar-manis';
 
             const el = document.getElementById(htmlId);
             if(el) {
-                const price = hitung(dbHarga[key]);
+                const price = hitung(value);
                 el.innerText = formatRupiah(price);
             }
-        });
+        }
         
-        populateDropdown(); // Panggil fungsi isi dropdown
+        populateDropdown(); 
     }
 
-    // --- 3. LOGIKA KALKULATOR GROSIR ---
+    // --- 3. LOGIKA KALKULATOR GROSIR (UPDATED: WITH CATEGORIES) ---
     function populateDropdown() {
         const select = document.getElementById('calc-product');
-        // Clear dulu kecuali opsi pertama
         select.innerHTML = '<option value="">-- Pilih Produk --</option>';
         
-        // Urutkan nama produk A-Z
-        const sortedKeys = Object.keys(productNames).sort((a,b) => productNames[a].localeCompare(productNames[b]));
+        // Loop per Kategori
+        dropDownCategories.forEach(cat => {
+            // Buat Judul Kategori (Disabled Option sebagai pemisah)
+            const optGroup = document.createElement('option');
+            optGroup.text = cat.title;
+            optGroup.disabled = true;
+            optGroup.style.fontWeight = "bold";
+            optGroup.style.backgroundColor = "#f3f4f6";
+            optGroup.style.color = "#1f2937";
+            select.appendChild(optGroup);
 
-        sortedKeys.forEach(key => {
-            const option = document.createElement('option');
-            option.value = key;
-            option.text = productNames[key];
-            select.appendChild(option);
+            // Masukkan Produk di Kategori tsb
+            cat.keys.forEach(key => {
+                if(productNames[key]) {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.text = "   " + productNames[key]; // Kasih spasi biar agak menjorok
+                    select.appendChild(option);
+                }
+            });
         });
     }
 
@@ -841,10 +920,7 @@
 
         resultBox.style.display = 'block';
 
-        // 1. Ambil Harga Dasar (Normal)
         let hargaDasar = hitung(dbHarga[key]);
-        
-        // 2. Tentukan Diskon
         let diskonPersen = 0;
         let namaTier = "Normal";
 
@@ -853,12 +929,10 @@
         else if (qty >= 10) { diskonPersen = 0.10; namaTier = "Silver"; }
         else if (qty >= 6) { diskonPersen = 0.081; namaTier = "Bronze"; }
 
-        // 3. Hitung Total
         let hargaSetelahDiskon = hargaDasar * (1 - diskonPersen);
         let totalBayar = hargaSetelahDiskon * qty;
         let totalHemat = (hargaDasar * qty) - totalBayar;
 
-        // 4. Tampilkan
         document.getElementById('res-normal').innerText = formatRupiah(hargaDasar);
         document.getElementById('res-tier-name').innerText = namaTier;
         document.getElementById('res-disc-percent').innerText = (diskonPersen * 100).toFixed(1) + "%";
@@ -874,7 +948,6 @@
         document.getElementById('res-total-pay').innerText = formatRupiah(totalBayar);
         document.getElementById('res-saving').innerText = formatRupiah(totalHemat);
 
-        // 5. Update Link WA
         let namaProduk = productNames[key];
         let pesanWA = `Halo Admin, saya mau pesan Grosir dari website:%0A%0AProduk: ${namaProduk}%0AJumlah: ${qty} Pack%0A(Estimasi Tier: ${namaTier})%0A%0AMohon info ketersediaan stok & ongkir. Terima kasih.`;
         document.getElementById('btn-order-calc').href = `https://wa.me/6285725046201?text=${pesanWA}`;
@@ -882,6 +955,5 @@
 
     document.addEventListener("DOMContentLoaded", updatePrices);
 </script>
-
 </body>
 </html>
