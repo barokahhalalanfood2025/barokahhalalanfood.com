@@ -61,19 +61,17 @@
     }
     </script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* --- 1. GLOBAL & FONT --- */
-        @font-face { font-family: 'Font Awesome 6 Free'; font-style: normal; font-weight: 900; src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2) format('woff2'); }
-        @font-face { font-family: 'Font Awesome 6 Brands'; font-style: normal; font-weight: 400; src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2) format('woff2'); }
-        .fa, .fas, .fab { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; }
-        .fas { font-family: 'Font Awesome 6 Free'; font-weight: 900; } .fab { font-family: 'Font Awesome 6 Brands'; font-weight: 400; }
-        
-        :root { --red-600: #dc2626; --red-700: #b91c1c; --green-600: #16a34a; --gray-100: #f3f4f6; --text-dark: #1f2937; --white: #ffffff; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: var(--gray-100); color: var(--text-dark); line-height: 1.6; }
-        a { text-decoration: none; transition: 0.3s; }
-        .container { max-width: 1300px; margin: 0 auto; padding: 0 1rem; }
-        img { max-width: 100%; height: auto; display: block; }
+    /* Font Awesome sudah dipanggil via Link CDN di atas, jadi di sini hapus saja @font-face nya */
+    
+    :root { --red-600: #dc2626; --red-700: #b91c1c; --green-600: #16a34a; --gray-100: #f3f4f6; --text-dark: #1f2937; --white: #ffffff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: var(--gray-100); color: var(--text-dark); line-height: 1.6; }
+    a { text-decoration: none; transition: 0.3s; }
+    .container { max-width: 1300px; margin: 0 auto; padding: 0 1rem; }
+    img { max-width: 100%; height: auto; display: block; }
 
         /* --- 2. HEADER & HERO --- */
         header { background: var(--white); padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 50; }
@@ -87,7 +85,18 @@
 
         /* --- 3. PRICING TABLE --- */
         .pricing-section { margin-bottom: 2rem; }
-        .pricing-box { max-width: 800px; margin: 0 auto; background: white; border-radius: 0.8rem; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #f3f4f6; }
+        
+        /* PERUBAHAN: max-width diubah jadi 600px */
+        .pricing-box { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: white; 
+            border-radius: 0.8rem; 
+            overflow: hidden; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+            border: 1px solid #f3f4f6; 
+        }
+        
         .pricing-header { background: var(--text-dark); color: white; padding: 1rem; text-align: center; font-weight: bold; letter-spacing: 0.5px; }
         .pricing-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
         .pricing-table th { background-color: #f9fafb; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; color: var(--red-700); }
@@ -185,7 +194,7 @@
     <header>
         <div class="container nav-flex">
             <a href="index.html" class="btn-back"><i class="fas fa-home"></i> Home</a>
-            <div class="logo"><h1>BAROKAH FOOD</h1></div>
+            <div class="logo"><h1>BAROKAH HALALAN FOOD</h1></div>
         </div>
     </header>
 
