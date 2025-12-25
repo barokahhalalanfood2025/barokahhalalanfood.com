@@ -33,7 +33,7 @@ ul { list-style: none; }
 
 /* Wave Separator */
 .wave-separator, .wave-footer { width: 100%; line-height: 0; overflow: hidden; position: relative; z-index: 5; }
-.wave-separator { background-color: var(--red-darker); margin-top: -1px; }
+.wave-separator { background-color: transparent; margin-top: -1px; }
 .wave-footer { background: var(--gray-light); margin-bottom: -1px; }
 .wave-separator svg, .wave-footer svg { display: block; width: 100%; height: 100px; }
 
@@ -286,6 +286,7 @@ footer { background: var(--gray-dark); color: #9ca3af; padding: 3rem 0; text-ali
     .fun-list { display: inline-block; text-align: left; }
     .btn-fun { width: 100%; padding: 1rem; }
 }
+
 
 
 
