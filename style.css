@@ -6,19 +6,12 @@
 
 :root {
     /* Color Palette */
-    --red-primary: #c2201a;
-    --red-dark: #991b1b;
-    --red-darker: #7f1d1d;
-    --green-primary: #15803d;
-    --green-dark: #14532d;
-    --yellow-pale: #fffde7;
-    --yellow-light: #fef08a;
-    --yellow-gold: #fbbf24;
-    --gray-light: #f3f4f6;
-    --gray-dark: #1f2937;
-    --gray-text: #4b5563;
+    --red-primary: #c2201a; --red-dark: #991b1b; --red-darker: #7f1d1d;
+    --green-primary: #15803d; --green-dark: #14532d;
+    --yellow-pale: #fffde7; --yellow-light: #fef08a; --yellow-gold: #fbbf24;
+    --gray-light: #f3f4f6; --gray-dark: #1f2937; --gray-text: #4b5563;
     --white: #ffffff;
-    
+    --bg-hero-light: #ede8e6;
     /* Effects */
     --shadow-card: 0 10px 30px rgba(0,0,0,0.08);
     --shadow-float: 0 20px 50px rgba(0,0,0,0.3);
@@ -35,29 +28,17 @@ ul { list-style: none; }
 /* =========================================
    2. UTILITY & COMPONENTS
    ========================================= */
-/* WAVE SEPARATOR FIX */
-.wave-separator {
-    width: 100%;
-    background-color: var(--red-darker); 
-    line-height: 0; 
-    overflow: hidden;
-    position: relative;
-    z-index: 5;
-    margin-top: -1px; 
-}
-.wave-separator svg { display: block; width: 100%; height: 100px; }
-.wave-footer { background: var(--gray-light); margin-bottom: -1px; line-height: 0; }
-.wave-footer svg { display: block; width: 100%; height: 100px; }
+/* Text Accent (HIJAU TEBAL) - BARU DITAMBAHKAN */
+.text-accent { color: #28a745; font-weight: 700; }
 
-@media (max-width: 768px) {
-    .wave-separator svg, .wave-footer svg { height: 50px; }
-}
+/* Wave Separator */
+.wave-separator, .wave-footer { width: 100%; line-height: 0; overflow: hidden; position: relative; z-index: 5; }
+.wave-separator { background-color: var(--red-darker); margin-top: -1px; }
+.wave-footer { background: var(--gray-light); margin-bottom: -1px; }
+.wave-separator svg, .wave-footer svg { display: block; width: 100%; height: 100px; }
 
 /* Buttons */
-.btn-main, .btn-bold, .btn-cat-premium, .btn-fun {
-    display: inline-block; border-radius: 50px; font-weight: 800; 
-    text-align: center; text-transform: uppercase; cursor: pointer; border: none;
-}
+.btn-main, .btn-bold, .btn-cat-premium, .btn-fun { display: inline-block; border-radius: 50px; font-weight: 800; text-align: center; text-transform: uppercase; cursor: pointer; border: none; }
 
 /* =========================================
    3. HEADER
@@ -71,264 +52,73 @@ header { background: var(--white); padding: 0.8rem 0; box-shadow: 0 2px 10px rgb
 .btn-main:hover { background: var(--green-primary); }
 
 /* =========================================
-   PERBAIKAN HERO SECTION (FINAL FIX)
+   4. HERO SECTION (UPDATED)
    ========================================= */
+.hero-bold { background: var(--bg-hero-light) !important; color: var(--gray-dark); padding: 3rem 1.5rem 8rem; position: relative; overflow: hidden; text-align: center; }
+.bold-wrap { display: flex; flex-direction: column-reverse; gap: 2rem; max-width: 1200px; margin: 0 auto; position: relative; z-index: 10; }
 
-:root {
-    --bg-hero-light: #ede8e6; 
-}
+/* Typography & Elements */
+.bold-title { color: #000000; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; font-size: 2rem; }
+.bold-highlight { color: var(--red-primary); font-style: normal; font-weight: 900; display: block; }
+.bold-desc { font-size: 1rem; color: #4b5563; margin-bottom: 1.5rem; }
+.bold-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; justify-content: center; }
+.bold-badges span { background: var(--white); color: var(--green-dark); border: 1px solid var(--green-primary); padding: 5px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
 
-/* Container Utama */
-.hero-bold {
-    background: var(--bg-hero-light) !important;
-    color: var(--gray-dark);
-    /* Padding bawah besar agar tidak tertutup wave */
-    padding: 3rem 1.5rem 8rem; 
-    position: relative;
-    overflow: hidden; /* Mencegah scroll samping */
-}
+/* Image & Button */
+.bold-img-box { width: 100%; position: relative; margin-bottom: 1rem; }
+.bold-img { border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; height: auto; }
+.hero-action-container { width: 100%; position: relative; z-index: 20; margin: 0 auto; }
+.btn-bold { background: var(--yellow-gold); color: #000000; padding: 0.8rem 1.5rem; font-size: 1rem; box-shadow: 0 4px 0 #b45309; width: 100%; display: block; }
+.bold-trust { margin-top: 10px; font-size: 0.8rem; color: #555; background: rgba(255,255,255,0.5); padding: 5px; border-radius: 5px; }
 
-/* Wrapper Layout (Grid System) */
-.bold-wrap {
-    display: flex;
-    flex-direction: column-reverse; /* HP: Gambar di atas, Teks di bawah (dibalik) */
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 10;
-}
+/* Wave Bottom */
+.wave-bottom { position: absolute; bottom: 0; left: 0; width: 100%; line-height: 0; z-index: 1; }
+.wave-bottom svg { width: 100%; height: auto; min-height: 50px; display: block; }
 
-/* Styling Judul */
-.bold-title {
-    color: #000000;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    font-size: 2rem; /* Ukuran default HP */
-}
-
-.bold-highlight {
-    color: var(--red-primary);
-    font-style: normal;
-    font-weight: 900;
-    display: block; 
-}
-
-/* Deskripsi */
-.bold-desc {
-    font-size: 1rem;
-    color: #4b5563;
-    margin-bottom: 1.5rem;
-}
-
-/* Badges (Kotak-kotak kecil) */
-.bold-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px; /* Jarak antar badge */
-    margin-bottom: 2rem;
-}
-
-.bold-badges span {
-    background: var(--white);
-    color: var(--green-dark);
-    border: 1px solid var(--green-primary);
-    padding: 5px 12px;
-    border-radius: 50px;
-    font-size: 0.75rem; /* Diperkecil untuk HP */
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    white-space: nowrap; /* Agar teks tidak turun baris di dalam kotak */
-}
-
-/* Gambar */
-.bold-img-box {
-    width: 100%;
-    position: relative;
-    margin-bottom: 1rem;
-}
-
-.bold-img {
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    width: 100%;
-    height: auto;
-}
-
-/* Tombol & Action Container */
-.hero-action-container {
-    width: 100%;
-    position: relative;
-    z-index: 20; /* Pastikan di atas layer lain */
-}
-
-.btn-bold {
-    background: var(--yellow-gold);
-    color: #000000;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    box-shadow: 0 4px 0 #b45309; /* Efek 3D */
-    border: none;
-    width: 100%; /* HP: Tombol full width */
-    display: block;
-}
-
-.bold-trust {
-    margin-top: 10px;
-    font-size: 0.8rem;
-    color: #555;
-    background: rgba(255,255,255,0.5); /* Background tipis agar terbaca */
-    padding: 5px;
-    border-radius: 5px;
-}
-
-/* WAVE FIX (Agar Full Screen) */
-.wave-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    line-height: 0;
-    z-index: 1;
-}
-.wave-bottom svg {
-    width: 100%;
-    height: auto;
-    min-height: 50px; /* Minimal tinggi agar tidak gepeng */
-    display: block;
-}
-
-/* =========================================
-   MEDIA QUERY: DESKTOP (> 768px)
-   ========================================= */
+/* Desktop Hero Override */
 @media (min-width: 769px) {
-    .hero-bold {
-        padding-top: 5rem;
-        text-align: left; /* Teks rata kiri */
-    }
-
-    .bold-wrap {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Bagi 2 kolom rata */
-        align-items: center; /* Vertikal tengah */
-        gap: 4rem;
-        flex-direction: row; /* Reset flex direction */
-    }
-
-    /* Area Teks (Kiri) */
-    .bold-text-content {
-        grid-column: 1;
-        grid-row: 1;
-        padding-right: 2rem;
-    }
-
-    /* Area Gambar (Kanan) */
-    .bold-img-box {
-        grid-column: 2;
-        grid-row: 1;
-        margin-bottom: 0;
-    }
-
-    .bold-title {
-        font-size: 3rem; /* Huruf besar di Desktop */
-    }
-    
-    .bold-highlight {
-        font-size: 1.1em;
-    }
-
-    .bold-desc {
-        font-size: 1.1rem;
-    }
-
-    .bold-badges {
-        justify-content: flex-start; /* Badge rata kiri */
-    }
-    
-    .bold-badges span {
-        font-size: 0.9rem; /* Badge lebih besar di Desktop */
-        padding: 6px 15px;
-    }
-
-    .hero-action-container {
-        width: auto;
-        display: inline-block;
-    }
-
-    .btn-bold {
-        width: auto; /* Tombol menyesuaikan konten */
-        display: inline-block;
-        padding: 1rem 3rem;
-    }
-    
-    .bold-trust {
-        background: none;
-        text-align: left;
-        padding-left: 0;
-    }
-    
-    /* Wave lebih tinggi di desktop */
-    .wave-bottom svg {
-        min-height: 100px; 
-    }
+    .hero-bold { padding-top: 5rem; text-align: left; }
+    .bold-wrap { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; flex-direction: row; }
+    .bold-text-content { grid-column: 1; grid-row: 1; padding-right: 2rem; }
+    .bold-img-box { grid-column: 2; grid-row: 1; margin-bottom: 0; }
+    .bold-title { font-size: 3rem; }
+    .bold-highlight { font-size: 1.1em; }
+    .bold-desc { font-size: 1.1rem; margin-left: 0; }
+    .bold-badges { justify-content: flex-start; }
+    .bold-badges span { font-size: 0.9rem; padding: 6px 15px; }
+    .hero-action-container { width: auto; display: inline-block; margin: 0; }
+    .btn-bold { width: auto; display: inline-block; padding: 1rem 3rem; }
+    .bold-trust { background: none; text-align: left; padding-left: 0; }
+    .wave-bottom svg { min-height: 100px; }
 }
 
 /* =========================================
    5. VALUES SECTION
    ========================================= */
 .values-bold-section { padding: 4rem 1.5rem; text-align: center; }
-.val-title-bold {
-    font-family: 'Eczar', serif; font-size: 2rem; color: var(--red-dark); 
-    margin-bottom: 3rem; text-transform: uppercase; position: relative; display: inline-block;
-}
-.val-title-bold::after {
-    content: ''; display: block; width: 50%; height: 4px; 
-    background: var(--yellow-gold); margin: 8px auto 0; border-radius: 4px;
-}
+.val-title-bold { font-family: 'Eczar', serif; font-size: 2rem; color: var(--red-dark); margin-bottom: 3rem; text-transform: uppercase; position: relative; display: inline-block; }
+.val-title-bold::after { content: ''; display: block; width: 50%; height: 4px; background: var(--yellow-gold); margin: 8px auto 0; border-radius: 4px; }
 .val-grid-bold { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-.val-card-bold {
-    background: var(--white); padding: 2rem; border-radius: 15px; 
-    box-shadow: var(--shadow-card); border-top: 5px solid var(--red-primary);
-    transition: transform 0.3s;
-}
+.val-card-bold { background: var(--white); padding: 2rem; border-radius: 15px; box-shadow: var(--shadow-card); border-top: 5px solid var(--red-primary); transition: transform 0.3s; }
 .val-card-bold:hover { transform: translateY(-5px); }
-.val-icon-box {
-    width: 70px; height: 70px; background: var(--yellow-pale); border: 2px solid var(--yellow-light);
-    color: var(--red-primary); border-radius: 50%; display: flex; align-items: center; 
-    justify-content: center; margin: 0 auto 1rem; font-size: 2rem;
-}
+.val-icon-box { width: 70px; height: 70px; background: var(--yellow-pale); border: 2px solid var(--yellow-light); color: var(--red-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem; }
+.val-head-bold { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--red-dark); font-weight: 800; }
+.val-desc-bold { font-size: 0.95rem; color: var(--gray-text); line-height: 1.5; }
 
 /* =========================================
    6. CATALOG SECTION
    ========================================= */
-.catalog-premium-section {
-    background: linear-gradient(180deg, var(--red-dark) 0%, var(--red-darker) 100%);
-    padding: 5rem 1.5rem 2rem; text-align: center; color: var(--white);
-}
+.catalog-premium-section { background: linear-gradient(180deg, var(--red-dark) 0%, var(--red-darker) 100%); padding: 5rem 1.5rem 2rem; text-align: center; color: var(--white); }
 .cat-title-premium { font-family: 'Eczar', serif; font-size: 2.2rem; margin-bottom: 3rem; }
 .cat-title-premium span { color: var(--yellow-light); font-style: italic; border-bottom: 2px solid; }
 .cat-grid-premium { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-.prod-card-premium {
-    background: var(--white); border-radius: 15px; overflow: hidden; 
-    box-shadow: var(--shadow-float); display: flex; flex-direction: column;
-}
+.prod-card-premium { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: var(--shadow-float); display: flex; flex-direction: column; }
+.prod-card-premium:hover .prod-img-premium { transform: scale(1.1); }
 .prod-img-box { position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: var(--gray-light); }
 .prod-img-premium { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-.prod-card-premium:hover .prod-img-premium { transform: scale(1.1); }
-.cat-badge {
-    position: absolute; top: 10px; left: 10px; background: var(--red-primary); 
-    color: var(--white); padding: 5px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; z-index: 2;
-}
+.cat-badge { position: absolute; top: 10px; left: 10px; background: var(--red-primary); color: var(--white); padding: 5px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; z-index: 2; }
 .badge-green { background: var(--green-primary); }
-
-/* PERBAIKAN: Ubah warna text jadi Hitam (#000000) agar kontras tinggi */
-.badge-orange { 
-    background: #ea580c; 
-    color: #000000; 
-}
+.badge-orange { background: #ea580c; color: #000000; }
 .badge-black { background: #451a03; }
 .prod-info-premium { padding: 1.5rem; text-align: left; flex-grow: 1; display: flex; flex-direction: column; }
 .prod-title-premium { font-family: 'Eczar', serif; font-size: 1.3rem; color: var(--gray-dark); margin-bottom: 0.5rem; }
@@ -342,10 +132,7 @@ header { background: var(--white); padding: 0.8rem 0; box-shadow: 0 2px 10px rgb
 /* =========================================
    7. COD & FUN SECTION
    ========================================= */
-.cod-fun-section {
-    background: linear-gradient(180deg, var(--yellow-pale) 0%, var(--yellow-gold) 100%);
-    padding: 1rem 1.5rem 5rem; 
-}
+.cod-fun-section { background: linear-gradient(180deg, var(--yellow-pale) 0%, var(--yellow-gold) 100%); padding: 1rem 1.5rem 5rem; }
 .cod-fun-grid { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 3rem; max-width: 900px; margin: 0 auto; }
 .cod-fun-img { width: 100%; max-width: 400px; transform: rotate(-3deg); filter: drop-shadow(10px 10px 0 rgba(0,0,0,0.1)); }
 .cod-fun-content { flex: 1; text-align: left; }
@@ -354,11 +141,7 @@ header { background: var(--white); padding: 0.8rem 0; box-shadow: 0 2px 10px rgb
 .cod-fun-desc { font-size: 1rem; color: var(--gray-text); margin-bottom: 1.5rem; }
 .fun-list li { margin-bottom: 10px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
 .fun-list i { color: var(--red-primary); }
-.btn-fun {
-    background: var(--red-primary); color: var(--white); padding: 1rem 2.5rem;
-    font-size: 1.1rem; box-shadow: 0 6px 0 #7f1d1d; transform: rotate(-1deg);
-    transition: 0.2s;
-}
+.btn-fun { background: var(--red-primary); color: var(--white); padding: 1rem 2.5rem; font-size: 1.1rem; box-shadow: 0 6px 0 #7f1d1d; transform: rotate(-1deg); transition: 0.2s; }
 .btn-fun:hover { transform: translateY(4px); box-shadow: 0 3px 0 #7f1d1d; }
 
 /* =========================================
@@ -372,34 +155,14 @@ footer { background: var(--gray-dark); color: #9ca3af; padding: 3rem 0; text-ali
 .footer-copy { border-top: 1px solid #374151; margin-top: 2rem; padding-top: 1.5rem; font-size: 0.85rem; }
 
 /* =========================================
-   9. ANIMATIONS & MEDIA QUERIES
+   9. ANIMATIONS & MOBILE FIXES
    ========================================= */
 @keyframes wiggle { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
 
 @media (max-width: 768px) {
-    .bold-title { font-size: 2rem; }
-    .hero-bold { padding: 4rem 1rem 6rem; min-height: auto; }
-    
-    /* MOBILE: Gambar Hero Penuh Layar & Lurus */
-    .bold-img-box { max-width: 100%; }
-    .bold-img { transform: rotate(0); border-radius: 10px; } 
-    
-    /* MOBILE: Container Tombol lebih lebar di HP */
-    .hero-action-container { max-width: 90%; margin-top: 2rem; }
-
-    /* MOBILE: Tombol & Teks lebih kecil sedikit */
-    .btn-bold { padding: 0.8rem 1rem; font-size: 1rem; }
-    .bold-trust { padding: 8px 15px; font-size: 0.85rem; }
-
+    .wave-separator svg, .wave-footer svg { height: 40px; }
     .cod-fun-grid { flex-direction: column-reverse; gap: 2rem; text-align: center; }
     .cod-fun-content { text-align: center; }
     .fun-list { display: inline-block; text-align: left; }
     .btn-fun { width: 100%; padding: 1rem; }
-    .wave-separator svg, .wave-footer svg { height: 40px; } 
 }
-
-
-
-
-
-
